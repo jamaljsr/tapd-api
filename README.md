@@ -1,3 +1,34 @@
+# ⚠️ Polar Usage Instuctions ⚠️
+
+This forked repo contains updates I've needed to make in order to use this
+package in Polar. I plan to seperate the commits in this branch into PRs for the
+upstream repo once I'm confident I've found all of the required changes.
+
+Run these commands to setup the Polar `feat/add-taro` branch to use the 
+code in this repo instead of the public NPM package.
+
+```bash
+# Clone this repo and checkout this branch
+$ git clone https://github.com/jamaljsr/taro-api.git
+$ cd taro-api
+$ git checkout v2-updates
+# Compile the TS code into JS
+$ npm install
+$ npm run build
+# Setup an Yarn symlink for this package
+$ yarn link
+```
+
+Run these commands in your local Polar repo to use the local `taro-api`
+package on from this repo
+
+```bash
+$ cd path/to/polar
+$ git checkout feat/add-taro
+$ yarn link "@hodlone/taro-api"
+$ yarn dev
+```
+
 # Description
 
 Taro api client to interact with lightning labs taro daemon.
