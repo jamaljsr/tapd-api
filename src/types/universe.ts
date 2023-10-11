@@ -25,16 +25,24 @@ export interface ProtoGrpcType {
     AssetMetaType: EnumTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
+    AssetVersion: EnumTypeDefinition
+    BurnAssetRequest: MessageTypeDefinition
+    BurnAssetResponse: MessageTypeDefinition
     DebugLevelRequest: MessageTypeDefinition
     DebugLevelResponse: MessageTypeDefinition
     DecodeAddrRequest: MessageTypeDefinition
+    DecodeProofRequest: MessageTypeDefinition
+    DecodeProofResponse: MessageTypeDefinition
+    DecodedProof: MessageTypeDefinition
     ExecuteSendStateEvent: MessageTypeDefinition
     ExportProofRequest: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
+    GenesisReveal: MessageTypeDefinition
+    GetInfoRequest: MessageTypeDefinition
+    GetInfoResponse: MessageTypeDefinition
+    GroupKeyReveal: MessageTypeDefinition
     GroupedAssets: MessageTypeDefinition
-    ImportProofRequest: MessageTypeDefinition
-    ImportProofResponse: MessageTypeDefinition
     KeyDescriptor: MessageTypeDefinition
     KeyLocator: MessageTypeDefinition
     ListAssetRequest: MessageTypeDefinition
@@ -53,7 +61,6 @@ export interface ProtoGrpcType {
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition
     ProofFile: MessageTypeDefinition
-    ProofVerifyResponse: MessageTypeDefinition
     QueryAddrRequest: MessageTypeDefinition
     QueryAddrResponse: MessageTypeDefinition
     ReceiverProofBackoffWaitEvent: MessageTypeDefinition
@@ -69,10 +76,12 @@ export interface ProtoGrpcType {
     TransferInput: MessageTypeDefinition
     TransferOutput: MessageTypeDefinition
     TransferOutputAnchor: MessageTypeDefinition
+    VerifyProofResponse: MessageTypeDefinition
   }
   universerpc: {
     AddFederationServerRequest: MessageTypeDefinition
     AddFederationServerResponse: MessageTypeDefinition
+    AssetFederationSyncConfig: MessageTypeDefinition
     AssetKey: MessageTypeDefinition
     AssetLeaf: MessageTypeDefinition
     AssetLeafKeyResponse: MessageTypeDefinition
@@ -83,17 +92,32 @@ export interface ProtoGrpcType {
     AssetRootQuery: MessageTypeDefinition
     AssetRootRequest: MessageTypeDefinition
     AssetRootResponse: MessageTypeDefinition
+    AssetStatsAsset: MessageTypeDefinition
     AssetStatsQuery: MessageTypeDefinition
     AssetStatsSnapshot: MessageTypeDefinition
     AssetTypeFilter: EnumTypeDefinition
     DeleteFederationServerRequest: MessageTypeDefinition
     DeleteFederationServerResponse: MessageTypeDefinition
+    DeleteRootQuery: MessageTypeDefinition
+    DeleteRootResponse: MessageTypeDefinition
+    GlobalFederationSyncConfig: MessageTypeDefinition
+    GroupedUniverseEvents: MessageTypeDefinition
     ID: MessageTypeDefinition
+    InfoRequest: MessageTypeDefinition
+    InfoResponse: MessageTypeDefinition
     ListFederationServersRequest: MessageTypeDefinition
     ListFederationServersResponse: MessageTypeDefinition
     MerkleSumNode: MessageTypeDefinition
     Outpoint: MessageTypeDefinition
+    ProofType: EnumTypeDefinition
+    QueryEventsRequest: MessageTypeDefinition
+    QueryEventsResponse: MessageTypeDefinition
+    QueryFederationSyncConfigRequest: MessageTypeDefinition
+    QueryFederationSyncConfigResponse: MessageTypeDefinition
     QueryRootResponse: MessageTypeDefinition
+    SetFederationSyncConfigRequest: MessageTypeDefinition
+    SetFederationSyncConfigResponse: MessageTypeDefinition
+    SortDirection: EnumTypeDefinition
     StatsRequest: MessageTypeDefinition
     StatsResponse: MessageTypeDefinition
     SyncRequest: MessageTypeDefinition

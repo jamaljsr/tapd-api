@@ -2,11 +2,11 @@
 
 
 export interface ProofFilePartial {
-  'rawProof'?: (Buffer | Uint8Array | string);
+  'rawProofFile'?: (Buffer | Uint8Array | string);
   'genesisPoint'?: (string);
 }
 
 export interface ProofFile {
-  'rawProof': (Buffer);
+  'rawProofFile': (Buffer);
   'genesisPoint': (string);
 }

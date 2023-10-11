@@ -11,6 +11,8 @@ import type { NextScriptKeyRequestPartial as _assetwalletrpc_NextScriptKeyReques
 import type { NextScriptKeyResponsePartial as _assetwalletrpc_NextScriptKeyResponsePartial, NextScriptKeyResponse as _assetwalletrpc_NextScriptKeyResponse } from '../assetwalletrpc/NextScriptKeyResponse';
 import type { ProveAssetOwnershipRequestPartial as _assetwalletrpc_ProveAssetOwnershipRequestPartial, ProveAssetOwnershipRequest as _assetwalletrpc_ProveAssetOwnershipRequest } from '../assetwalletrpc/ProveAssetOwnershipRequest';
 import type { ProveAssetOwnershipResponsePartial as _assetwalletrpc_ProveAssetOwnershipResponsePartial, ProveAssetOwnershipResponse as _assetwalletrpc_ProveAssetOwnershipResponse } from '../assetwalletrpc/ProveAssetOwnershipResponse';
+import type { RemoveUTXOLeaseRequestPartial as _assetwalletrpc_RemoveUTXOLeaseRequestPartial, RemoveUTXOLeaseRequest as _assetwalletrpc_RemoveUTXOLeaseRequest } from '../assetwalletrpc/RemoveUTXOLeaseRequest';
+import type { RemoveUTXOLeaseResponsePartial as _assetwalletrpc_RemoveUTXOLeaseResponsePartial, RemoveUTXOLeaseResponse as _assetwalletrpc_RemoveUTXOLeaseResponse } from '../assetwalletrpc/RemoveUTXOLeaseResponse';
 import type { SendAssetResponsePartial as _taprpc_SendAssetResponsePartial, SendAssetResponse as _taprpc_SendAssetResponse } from '../taprpc/SendAssetResponse';
 import type { SignVirtualPsbtRequestPartial as _assetwalletrpc_SignVirtualPsbtRequestPartial, SignVirtualPsbtRequest as _assetwalletrpc_SignVirtualPsbtRequest } from '../assetwalletrpc/SignVirtualPsbtRequest';
 import type { SignVirtualPsbtResponsePartial as _assetwalletrpc_SignVirtualPsbtResponsePartial, SignVirtualPsbtResponse as _assetwalletrpc_SignVirtualPsbtResponse } from '../assetwalletrpc/SignVirtualPsbtResponse';
@@ -63,6 +65,15 @@ export interface AssetWalletClient extends grpc.Client {
   proveAssetOwnership(argument: _assetwalletrpc_ProveAssetOwnershipRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ProveAssetOwnershipResponse>): grpc.ClientUnaryCall;
   proveAssetOwnership(argument: _assetwalletrpc_ProveAssetOwnershipRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_ProveAssetOwnershipResponse>): grpc.ClientUnaryCall;
   
+  RemoveUTXOLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  RemoveUTXOLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  RemoveUTXOLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  RemoveUTXOLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  removeUtxoLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  removeUtxoLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  removeUtxoLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  removeUtxoLease(argument: _assetwalletrpc_RemoveUTXOLeaseRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_RemoveUTXOLeaseResponse>): grpc.ClientUnaryCall;
+  
   SignVirtualPsbt(argument: _assetwalletrpc_SignVirtualPsbtRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_SignVirtualPsbtResponse>): grpc.ClientUnaryCall;
   SignVirtualPsbt(argument: _assetwalletrpc_SignVirtualPsbtRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_SignVirtualPsbtResponse>): grpc.ClientUnaryCall;
   SignVirtualPsbt(argument: _assetwalletrpc_SignVirtualPsbtRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_SignVirtualPsbtResponse>): grpc.ClientUnaryCall;
@@ -94,6 +105,8 @@ export interface AssetWalletHandlers extends grpc.UntypedServiceImplementation {
   
   ProveAssetOwnership: grpc.handleUnaryCall<_assetwalletrpc_ProveAssetOwnershipRequest, _assetwalletrpc_ProveAssetOwnershipResponsePartial>;
   
+  RemoveUTXOLease: grpc.handleUnaryCall<_assetwalletrpc_RemoveUTXOLeaseRequest, _assetwalletrpc_RemoveUTXOLeaseResponsePartial>;
+  
   SignVirtualPsbt: grpc.handleUnaryCall<_assetwalletrpc_SignVirtualPsbtRequest, _assetwalletrpc_SignVirtualPsbtResponsePartial>;
   
   VerifyAssetOwnership: grpc.handleUnaryCall<_assetwalletrpc_VerifyAssetOwnershipRequest, _assetwalletrpc_VerifyAssetOwnershipResponsePartial>;
@@ -106,6 +119,7 @@ export interface AssetWalletDefinition extends grpc.ServiceDefinition {
   NextInternalKey: MethodDefinition<_assetwalletrpc_NextInternalKeyRequestPartial, _assetwalletrpc_NextInternalKeyResponsePartial, _assetwalletrpc_NextInternalKeyRequest, _assetwalletrpc_NextInternalKeyResponse>
   NextScriptKey: MethodDefinition<_assetwalletrpc_NextScriptKeyRequestPartial, _assetwalletrpc_NextScriptKeyResponsePartial, _assetwalletrpc_NextScriptKeyRequest, _assetwalletrpc_NextScriptKeyResponse>
   ProveAssetOwnership: MethodDefinition<_assetwalletrpc_ProveAssetOwnershipRequestPartial, _assetwalletrpc_ProveAssetOwnershipResponsePartial, _assetwalletrpc_ProveAssetOwnershipRequest, _assetwalletrpc_ProveAssetOwnershipResponse>
+  RemoveUTXOLease: MethodDefinition<_assetwalletrpc_RemoveUTXOLeaseRequestPartial, _assetwalletrpc_RemoveUTXOLeaseResponsePartial, _assetwalletrpc_RemoveUTXOLeaseRequest, _assetwalletrpc_RemoveUTXOLeaseResponse>
   SignVirtualPsbt: MethodDefinition<_assetwalletrpc_SignVirtualPsbtRequestPartial, _assetwalletrpc_SignVirtualPsbtResponsePartial, _assetwalletrpc_SignVirtualPsbtRequest, _assetwalletrpc_SignVirtualPsbtResponse>
   VerifyAssetOwnership: MethodDefinition<_assetwalletrpc_VerifyAssetOwnershipRequestPartial, _assetwalletrpc_VerifyAssetOwnershipResponsePartial, _assetwalletrpc_VerifyAssetOwnershipRequest, _assetwalletrpc_VerifyAssetOwnershipResponse>
 }

@@ -1,5 +1,6 @@
 // Original file: protos/taprootassets.proto
 
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { GenesisInfoPartial as _taprpc_GenesisInfoPartial, GenesisInfo as _taprpc_GenesisInfo } from '../taprpc/GenesisInfo';
 import type { AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
 import type { AssetGroupPartial as _taprpc_AssetGroupPartial, AssetGroup as _taprpc_AssetGroup } from '../taprpc/AssetGroup';
@@ -8,7 +9,7 @@ import type { PrevWitnessPartial as _taprpc_PrevWitnessPartial, PrevWitness as _
 import type { Long } from '@grpc/proto-loader';
 
 export interface AssetPartial {
-  'version'?: (number);
+  'version'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
   'assetGenesis'?: (_taprpc_GenesisInfoPartial | null);
   'assetType'?: (_taprpc_AssetType | keyof typeof _taprpc_AssetType);
   'amount'?: (number | string | Long);
@@ -21,10 +22,13 @@ export interface AssetPartial {
   'chainAnchor'?: (_taprpc_AnchorInfoPartial | null);
   'prevWitnesses'?: (_taprpc_PrevWitnessPartial)[];
   'isSpent'?: (boolean);
+  'leaseOwner'?: (Buffer | Uint8Array | string);
+  'leaseExpiry'?: (number | string | Long);
+  'isBurn'?: (boolean);
 }
 
 export interface Asset {
-  'version': (number);
+  'version': (keyof typeof _taprpc_AssetVersion);
   'assetGenesis': (_taprpc_GenesisInfo | null);
   'assetType': (keyof typeof _taprpc_AssetType);
   'amount': (string);
@@ -37,4 +41,7 @@ export interface Asset {
   'chainAnchor': (_taprpc_AnchorInfo | null);
   'prevWitnesses': (_taprpc_PrevWitness)[];
   'isSpent': (boolean);
+  'leaseOwner': (Buffer);
+  'leaseExpiry': (string);
+  'isBurn': (boolean);
 }

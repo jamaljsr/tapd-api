@@ -39,16 +39,24 @@ export interface ProtoGrpcType {
     AssetMetaType: EnumTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
+    AssetVersion: EnumTypeDefinition
+    BurnAssetRequest: MessageTypeDefinition
+    BurnAssetResponse: MessageTypeDefinition
     DebugLevelRequest: MessageTypeDefinition
     DebugLevelResponse: MessageTypeDefinition
     DecodeAddrRequest: MessageTypeDefinition
+    DecodeProofRequest: MessageTypeDefinition
+    DecodeProofResponse: MessageTypeDefinition
+    DecodedProof: MessageTypeDefinition
     ExecuteSendStateEvent: MessageTypeDefinition
     ExportProofRequest: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
+    GenesisReveal: MessageTypeDefinition
+    GetInfoRequest: MessageTypeDefinition
+    GetInfoResponse: MessageTypeDefinition
+    GroupKeyReveal: MessageTypeDefinition
     GroupedAssets: MessageTypeDefinition
-    ImportProofRequest: MessageTypeDefinition
-    ImportProofResponse: MessageTypeDefinition
     KeyDescriptor: MessageTypeDefinition
     KeyLocator: MessageTypeDefinition
     ListAssetRequest: MessageTypeDefinition
@@ -67,7 +75,6 @@ export interface ProtoGrpcType {
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition
     ProofFile: MessageTypeDefinition
-    ProofVerifyResponse: MessageTypeDefinition
     QueryAddrRequest: MessageTypeDefinition
     QueryAddrResponse: MessageTypeDefinition
     ReceiverProofBackoffWaitEvent: MessageTypeDefinition
@@ -83,6 +90,7 @@ export interface ProtoGrpcType {
     TransferInput: MessageTypeDefinition
     TransferOutput: MessageTypeDefinition
     TransferOutputAnchor: MessageTypeDefinition
+    VerifyProofResponse: MessageTypeDefinition
   }
 }
 

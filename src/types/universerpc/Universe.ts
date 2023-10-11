@@ -14,10 +14,20 @@ import type { AssetRootResponsePartial as _universerpc_AssetRootResponsePartial,
 import type { AssetStatsQueryPartial as _universerpc_AssetStatsQueryPartial, AssetStatsQuery as _universerpc_AssetStatsQuery } from '../universerpc/AssetStatsQuery';
 import type { DeleteFederationServerRequestPartial as _universerpc_DeleteFederationServerRequestPartial, DeleteFederationServerRequest as _universerpc_DeleteFederationServerRequest } from '../universerpc/DeleteFederationServerRequest';
 import type { DeleteFederationServerResponsePartial as _universerpc_DeleteFederationServerResponsePartial, DeleteFederationServerResponse as _universerpc_DeleteFederationServerResponse } from '../universerpc/DeleteFederationServerResponse';
+import type { DeleteRootQueryPartial as _universerpc_DeleteRootQueryPartial, DeleteRootQuery as _universerpc_DeleteRootQuery } from '../universerpc/DeleteRootQuery';
+import type { DeleteRootResponsePartial as _universerpc_DeleteRootResponsePartial, DeleteRootResponse as _universerpc_DeleteRootResponse } from '../universerpc/DeleteRootResponse';
 import type { IDPartial as _universerpc_IDPartial, ID as _universerpc_ID } from '../universerpc/ID';
+import type { InfoRequestPartial as _universerpc_InfoRequestPartial, InfoRequest as _universerpc_InfoRequest } from '../universerpc/InfoRequest';
+import type { InfoResponsePartial as _universerpc_InfoResponsePartial, InfoResponse as _universerpc_InfoResponse } from '../universerpc/InfoResponse';
 import type { ListFederationServersRequestPartial as _universerpc_ListFederationServersRequestPartial, ListFederationServersRequest as _universerpc_ListFederationServersRequest } from '../universerpc/ListFederationServersRequest';
 import type { ListFederationServersResponsePartial as _universerpc_ListFederationServersResponsePartial, ListFederationServersResponse as _universerpc_ListFederationServersResponse } from '../universerpc/ListFederationServersResponse';
+import type { QueryEventsRequestPartial as _universerpc_QueryEventsRequestPartial, QueryEventsRequest as _universerpc_QueryEventsRequest } from '../universerpc/QueryEventsRequest';
+import type { QueryEventsResponsePartial as _universerpc_QueryEventsResponsePartial, QueryEventsResponse as _universerpc_QueryEventsResponse } from '../universerpc/QueryEventsResponse';
+import type { QueryFederationSyncConfigRequestPartial as _universerpc_QueryFederationSyncConfigRequestPartial, QueryFederationSyncConfigRequest as _universerpc_QueryFederationSyncConfigRequest } from '../universerpc/QueryFederationSyncConfigRequest';
+import type { QueryFederationSyncConfigResponsePartial as _universerpc_QueryFederationSyncConfigResponsePartial, QueryFederationSyncConfigResponse as _universerpc_QueryFederationSyncConfigResponse } from '../universerpc/QueryFederationSyncConfigResponse';
 import type { QueryRootResponsePartial as _universerpc_QueryRootResponsePartial, QueryRootResponse as _universerpc_QueryRootResponse } from '../universerpc/QueryRootResponse';
+import type { SetFederationSyncConfigRequestPartial as _universerpc_SetFederationSyncConfigRequestPartial, SetFederationSyncConfigRequest as _universerpc_SetFederationSyncConfigRequest } from '../universerpc/SetFederationSyncConfigRequest';
+import type { SetFederationSyncConfigResponsePartial as _universerpc_SetFederationSyncConfigResponsePartial, SetFederationSyncConfigResponse as _universerpc_SetFederationSyncConfigResponse } from '../universerpc/SetFederationSyncConfigResponse';
 import type { StatsRequestPartial as _universerpc_StatsRequestPartial, StatsRequest as _universerpc_StatsRequest } from '../universerpc/StatsRequest';
 import type { StatsResponsePartial as _universerpc_StatsResponsePartial, StatsResponse as _universerpc_StatsResponse } from '../universerpc/StatsResponse';
 import type { SyncRequestPartial as _universerpc_SyncRequestPartial, SyncRequest as _universerpc_SyncRequest } from '../universerpc/SyncRequest';
@@ -62,6 +72,15 @@ export interface UniverseClient extends grpc.Client {
   assetRoots(argument: _universerpc_AssetRootRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
   assetRoots(argument: _universerpc_AssetRootRequestPartial, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
   
+  DeleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  DeleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  DeleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  DeleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  deleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  deleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  deleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  deleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
+  
   DeleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
   DeleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
   DeleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
@@ -70,6 +89,15 @@ export interface UniverseClient extends grpc.Client {
   deleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
   deleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
   deleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
+  
+  Info(argument: _universerpc_InfoRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  Info(argument: _universerpc_InfoRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  Info(argument: _universerpc_InfoRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  Info(argument: _universerpc_InfoRequestPartial, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  info(argument: _universerpc_InfoRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  info(argument: _universerpc_InfoRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  info(argument: _universerpc_InfoRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
+  info(argument: _universerpc_InfoRequestPartial, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
   
   InsertProof(argument: _universerpc_AssetProofPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   InsertProof(argument: _universerpc_AssetProofPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
@@ -107,6 +135,24 @@ export interface UniverseClient extends grpc.Client {
   queryAssetStats(argument: _universerpc_AssetStatsQueryPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_UniverseAssetStats>): grpc.ClientUnaryCall;
   queryAssetStats(argument: _universerpc_AssetStatsQueryPartial, callback: grpc.requestCallback<_universerpc_UniverseAssetStats>): grpc.ClientUnaryCall;
   
+  QueryEvents(argument: _universerpc_QueryEventsRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  QueryEvents(argument: _universerpc_QueryEventsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  QueryEvents(argument: _universerpc_QueryEventsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  QueryEvents(argument: _universerpc_QueryEventsRequestPartial, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  queryEvents(argument: _universerpc_QueryEventsRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  queryEvents(argument: _universerpc_QueryEventsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  queryEvents(argument: _universerpc_QueryEventsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  queryEvents(argument: _universerpc_QueryEventsRequestPartial, callback: grpc.requestCallback<_universerpc_QueryEventsResponse>): grpc.ClientUnaryCall;
+  
+  QueryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  QueryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  QueryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  QueryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  queryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  queryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  queryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  queryFederationSyncConfig(argument: _universerpc_QueryFederationSyncConfigRequestPartial, callback: grpc.requestCallback<_universerpc_QueryFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  
   QueryProof(argument: _universerpc_UniverseKeyPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   QueryProof(argument: _universerpc_UniverseKeyPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   QueryProof(argument: _universerpc_UniverseKeyPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
@@ -115,6 +161,15 @@ export interface UniverseClient extends grpc.Client {
   queryProof(argument: _universerpc_UniverseKeyPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   queryProof(argument: _universerpc_UniverseKeyPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   queryProof(argument: _universerpc_UniverseKeyPartial, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
+  
+  SetFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  SetFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  SetFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  SetFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  setFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  setFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  setFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
+  setFederationSyncConfig(argument: _universerpc_SetFederationSyncConfigRequestPartial, callback: grpc.requestCallback<_universerpc_SetFederationSyncConfigResponse>): grpc.ClientUnaryCall;
   
   SyncUniverse(argument: _universerpc_SyncRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_SyncResponse>): grpc.ClientUnaryCall;
   SyncUniverse(argument: _universerpc_SyncRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_SyncResponse>): grpc.ClientUnaryCall;
@@ -145,7 +200,11 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   AssetRoots: grpc.handleUnaryCall<_universerpc_AssetRootRequest, _universerpc_AssetRootResponsePartial>;
   
+  DeleteAssetRoot: grpc.handleUnaryCall<_universerpc_DeleteRootQuery, _universerpc_DeleteRootResponsePartial>;
+  
   DeleteFederationServer: grpc.handleUnaryCall<_universerpc_DeleteFederationServerRequest, _universerpc_DeleteFederationServerResponsePartial>;
+  
+  Info: grpc.handleUnaryCall<_universerpc_InfoRequest, _universerpc_InfoResponsePartial>;
   
   InsertProof: grpc.handleUnaryCall<_universerpc_AssetProof, _universerpc_AssetProofResponsePartial>;
   
@@ -155,7 +214,13 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   QueryAssetStats: grpc.handleUnaryCall<_universerpc_AssetStatsQuery, _universerpc_UniverseAssetStatsPartial>;
   
+  QueryEvents: grpc.handleUnaryCall<_universerpc_QueryEventsRequest, _universerpc_QueryEventsResponsePartial>;
+  
+  QueryFederationSyncConfig: grpc.handleUnaryCall<_universerpc_QueryFederationSyncConfigRequest, _universerpc_QueryFederationSyncConfigResponsePartial>;
+  
   QueryProof: grpc.handleUnaryCall<_universerpc_UniverseKey, _universerpc_AssetProofResponsePartial>;
+  
+  SetFederationSyncConfig: grpc.handleUnaryCall<_universerpc_SetFederationSyncConfigRequest, _universerpc_SetFederationSyncConfigResponsePartial>;
   
   SyncUniverse: grpc.handleUnaryCall<_universerpc_SyncRequest, _universerpc_SyncResponsePartial>;
   
@@ -168,12 +233,17 @@ export interface UniverseDefinition extends grpc.ServiceDefinition {
   AssetLeafKeys: MethodDefinition<_universerpc_IDPartial, _universerpc_AssetLeafKeyResponsePartial, _universerpc_ID, _universerpc_AssetLeafKeyResponse>
   AssetLeaves: MethodDefinition<_universerpc_IDPartial, _universerpc_AssetLeafResponsePartial, _universerpc_ID, _universerpc_AssetLeafResponse>
   AssetRoots: MethodDefinition<_universerpc_AssetRootRequestPartial, _universerpc_AssetRootResponsePartial, _universerpc_AssetRootRequest, _universerpc_AssetRootResponse>
+  DeleteAssetRoot: MethodDefinition<_universerpc_DeleteRootQueryPartial, _universerpc_DeleteRootResponsePartial, _universerpc_DeleteRootQuery, _universerpc_DeleteRootResponse>
   DeleteFederationServer: MethodDefinition<_universerpc_DeleteFederationServerRequestPartial, _universerpc_DeleteFederationServerResponsePartial, _universerpc_DeleteFederationServerRequest, _universerpc_DeleteFederationServerResponse>
+  Info: MethodDefinition<_universerpc_InfoRequestPartial, _universerpc_InfoResponsePartial, _universerpc_InfoRequest, _universerpc_InfoResponse>
   InsertProof: MethodDefinition<_universerpc_AssetProofPartial, _universerpc_AssetProofResponsePartial, _universerpc_AssetProof, _universerpc_AssetProofResponse>
   ListFederationServers: MethodDefinition<_universerpc_ListFederationServersRequestPartial, _universerpc_ListFederationServersResponsePartial, _universerpc_ListFederationServersRequest, _universerpc_ListFederationServersResponse>
   QueryAssetRoots: MethodDefinition<_universerpc_AssetRootQueryPartial, _universerpc_QueryRootResponsePartial, _universerpc_AssetRootQuery, _universerpc_QueryRootResponse>
   QueryAssetStats: MethodDefinition<_universerpc_AssetStatsQueryPartial, _universerpc_UniverseAssetStatsPartial, _universerpc_AssetStatsQuery, _universerpc_UniverseAssetStats>
+  QueryEvents: MethodDefinition<_universerpc_QueryEventsRequestPartial, _universerpc_QueryEventsResponsePartial, _universerpc_QueryEventsRequest, _universerpc_QueryEventsResponse>
+  QueryFederationSyncConfig: MethodDefinition<_universerpc_QueryFederationSyncConfigRequestPartial, _universerpc_QueryFederationSyncConfigResponsePartial, _universerpc_QueryFederationSyncConfigRequest, _universerpc_QueryFederationSyncConfigResponse>
   QueryProof: MethodDefinition<_universerpc_UniverseKeyPartial, _universerpc_AssetProofResponsePartial, _universerpc_UniverseKey, _universerpc_AssetProofResponse>
+  SetFederationSyncConfig: MethodDefinition<_universerpc_SetFederationSyncConfigRequestPartial, _universerpc_SetFederationSyncConfigResponsePartial, _universerpc_SetFederationSyncConfigRequest, _universerpc_SetFederationSyncConfigResponse>
   SyncUniverse: MethodDefinition<_universerpc_SyncRequestPartial, _universerpc_SyncResponsePartial, _universerpc_SyncRequest, _universerpc_SyncResponse>
   UniverseStats: MethodDefinition<_universerpc_StatsRequestPartial, _universerpc_StatsResponsePartial, _universerpc_StatsRequest, _universerpc_StatsResponse>
 }

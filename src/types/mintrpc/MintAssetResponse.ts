@@ -1,10 +1,11 @@
 // Original file: protos/mint.proto
 
+import type { MintingBatchPartial as _mintrpc_MintingBatchPartial, MintingBatch as _mintrpc_MintingBatch } from '../mintrpc/MintingBatch';
 
 export interface MintAssetResponsePartial {
-  'batchKey'?: (Buffer | Uint8Array | string);
+  'pendingBatch'?: (_mintrpc_MintingBatchPartial | null);
 }
 
 export interface MintAssetResponse {
-  'batchKey': (Buffer);
+  'pendingBatch': (_mintrpc_MintingBatch | null);
 }

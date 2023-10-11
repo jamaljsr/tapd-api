@@ -2,6 +2,7 @@
 
 import type { AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
 import type { AssetMetaPartial as _taprpc_AssetMetaPartial, AssetMeta as _taprpc_AssetMeta } from '../taprpc/AssetMeta';
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface MintAssetPartial {
@@ -11,6 +12,7 @@ export interface MintAssetPartial {
   'amount'?: (number | string | Long);
   'groupKey'?: (Buffer | Uint8Array | string);
   'groupAnchor'?: (string);
+  'assetVersion'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
 }
 
 export interface MintAsset {
@@ -20,4 +22,5 @@ export interface MintAsset {
   'amount': (string);
   'groupKey': (Buffer);
   'groupAnchor': (string);
+  'assetVersion': (keyof typeof _taprpc_AssetVersion);
 }
