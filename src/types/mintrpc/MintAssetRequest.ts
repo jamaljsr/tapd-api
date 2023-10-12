@@ -5,9 +5,11 @@ import type { MintAssetPartial as _mintrpc_MintAssetPartial, MintAsset as _mintr
 export interface MintAssetRequestPartial {
   'asset'?: (_mintrpc_MintAssetPartial | null);
   'enableEmission'?: (boolean);
+  'shortResponse'?: (boolean);
 }
 
 export interface MintAssetRequest {
   'asset': (_mintrpc_MintAsset | null);
   'enableEmission': (boolean);
+  'shortResponse': (boolean);
 }

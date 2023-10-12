@@ -1,6 +1,7 @@
 // Original file: protos/taprootassets.proto
 
 import type { AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface AddrPartial {
@@ -13,6 +14,8 @@ export interface AddrPartial {
   'internalKey'?: (Buffer | Uint8Array | string);
   'tapscriptSibling'?: (Buffer | Uint8Array | string);
   'taprootOutputKey'?: (Buffer | Uint8Array | string);
+  'proofCourierAddr'?: (string);
+  'assetVersion'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
 }
 
 export interface Addr {
@@ -25,4 +28,6 @@ export interface Addr {
   'internalKey': (Buffer);
   'tapscriptSibling': (Buffer);
   'taprootOutputKey': (Buffer);
+  'proofCourierAddr': (string);
+  'assetVersion': (keyof typeof _taprpc_AssetVersion);
 }

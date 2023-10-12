@@ -4,19 +4,21 @@
 export interface AnchorInfoPartial {
   'anchorTx'?: (Buffer | Uint8Array | string);
   'anchorTxid'?: (string);
-  'anchorBlockHash'?: (Buffer | Uint8Array | string);
+  'anchorBlockHash'?: (string);
   'anchorOutpoint'?: (string);
   'internalKey'?: (Buffer | Uint8Array | string);
   'merkleRoot'?: (Buffer | Uint8Array | string);
   'tapscriptSibling'?: (Buffer | Uint8Array | string);
+  'blockHeight'?: (number);
 }
 
 export interface AnchorInfo {
   'anchorTx': (Buffer);
   'anchorTxid': (string);
-  'anchorBlockHash': (Buffer);
+  'anchorBlockHash': (string);
   'anchorOutpoint': (string);
   'internalKey': (Buffer);
   'merkleRoot': (Buffer);
   'tapscriptSibling': (Buffer);
+  'blockHeight': (number);
 }

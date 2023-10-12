@@ -45,8 +45,11 @@ export class MintApi {
   }
 
   /**
-   * @mintAsset MintAsset will attempts to mint the set of assets (async by default to
-   * ensure proper batching) specified in the request.
+   * @mintAsset will attempt to mint the set of assets (async by default to
+   * ensure proper batching) specified in the request. The pending batch is
+   * returned that shows the other pending assets that are part of the next
+   * batch. This call will block until the operation succeeds (asset is staged
+   * in the batch) or fails.
    */
 
   async mintAsset(

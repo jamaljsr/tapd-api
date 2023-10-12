@@ -2,7 +2,9 @@
 
 
 export interface ListUtxosRequestPartial {
+  'includeLeased'?: (boolean);
 }
 
 export interface ListUtxosRequest {
+  'includeLeased': (boolean);
 }

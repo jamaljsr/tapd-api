@@ -10,6 +10,8 @@ import {
   NextInternalKeyResponse,
   NextScriptKeyRequestPartial,
   NextScriptKeyResponse,
+  RemoveUTXOLeaseRequestPartial,
+  RemoveUTXOLeaseResponse,
   SendAssetResponse,
   SignVirtualPsbtRequestPartial,
   SignVirtualPsbtResponse,
@@ -99,5 +101,15 @@ export class AssetWalletApi {
     request: NextScriptKeyRequestPartial = {}
   ): Promise<NextScriptKeyResponse> {
     return promisify(this.client.NextScriptKey.bind(this.client))(request);
+  }
+
+  /**
+   * @removeUTXOLease removes the lease/lock/reservation of the given managed
+   * UTXO.
+   */
+  async removeUTXOLease(
+    request: RemoveUTXOLeaseRequestPartial = {}
+  ): Promise<RemoveUTXOLeaseResponse> {
+    return promisify(this.client.RemoveUTXOLease.bind(this.client))(request);
   }
 }

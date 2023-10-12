@@ -1,10 +1,11 @@
 // Original file: protos/mint.proto
 
+import type { MintingBatchPartial as _mintrpc_MintingBatchPartial, MintingBatch as _mintrpc_MintingBatch } from '../mintrpc/MintingBatch';
 
 export interface FinalizeBatchResponsePartial {
-  'batchKey'?: (Buffer | Uint8Array | string);
+  'batch'?: (_mintrpc_MintingBatchPartial | null);
 }
 
 export interface FinalizeBatchResponse {
-  'batchKey': (Buffer);
+  'batch': (_mintrpc_MintingBatch | null);
 }

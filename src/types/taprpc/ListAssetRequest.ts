@@ -4,9 +4,11 @@
 export interface ListAssetRequestPartial {
   'withWitness'?: (boolean);
   'includeSpent'?: (boolean);
+  'includeLeased'?: (boolean);
 }
 
 export interface ListAssetRequest {
   'withWitness': (boolean);
   'includeSpent': (boolean);
+  'includeLeased': (boolean);
 }

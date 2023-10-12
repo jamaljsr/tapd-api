@@ -5,11 +5,15 @@ import {
   Addr,
   AddrReceivesRequestPartial,
   AddrReceivesResponse,
+  BurnAssetRequestPartial,
+  BurnAssetResponse,
   DebugLevelRequestPartial,
   DebugLevelResponse,
   DecodeAddrRequestPartial,
-  ImportProofRequestPartial,
-  ImportProofResponse,
+  DecodeProofRequestPartial,
+  DecodeProofResponse,
+  GetInfoRequestPartial,
+  GetInfoResponse,
   ListAssetRequestPartial,
   ListAssetResponse,
   ListBalancesRequestPartial,
@@ -22,7 +26,6 @@ import {
   ListUtxosResponse,
   NewAddrRequestPartial,
   ProofFilePartial,
-  ProofVerifyResponse,
   QueryAddrRequestPartial,
   QueryAddrResponse,
   SendAssetRequestPartial,
@@ -30,6 +33,7 @@ import {
   StopRequestPartial,
   StopResponse,
   TaprootAssetsClient,
+  VerifyProofResponse,
 } from './types';
 import { ProtoGrpcType } from './types/taprootassets';
 
@@ -182,31 +186,51 @@ export class TaprootAssetsApi {
 
   async verifyProof(
     request: ProofFilePartial = {}
-  ): Promise<ProofVerifyResponse> {
+  ): Promise<VerifyProofResponse> {
     return promisify(this.client.VerifyProof.bind(this.client))(request);
   }
 
   /**
-   * @importProof ImportProof attempts to import a proof file into the daemon. If successful,
-    a new asset will be inserted on disk, spendable using the specified target
-    script key, and internal key.
+   * @decodeProof attempts to decode a given proof file into human readable
+   * format.
    */
 
-  async importProof(
-    request: ImportProofRequestPartial = {}
-  ): Promise<ImportProofResponse> {
-    return promisify(this.client.ImportProof.bind(this.client))(request);
+  async decodeProof(
+    request: DecodeProofRequestPartial = {}
+  ): Promise<DecodeProofResponse> {
+    return promisify(this.client.DecodeProof.bind(this.client))(request);
   }
 
   /**
    * @sendAsset SendAsset uses a passed taro address to attempt to complete an asset send.
-    The method returns information w.r.t the on chain send, as well as the
-    proof file information the receiver needs to fully receive the asset.
+   * The method returns information w.r.t the on chain send, as well as the
+   * proof file information the receiver needs to fully receive the asset.
    */
 
   async sendAsset(
     request: SendAssetRequestPartial = {}
   ): Promise<SendAssetResponse> {
     return promisify(this.client.SendAsset.bind(this.client))(request);
+  }
+
+  /**
+   * @burnAsset burns the given number of units of a given asset by sending them
+   * to a provably un-spendable script key. Burning means irrevocably destroying
+   * a certain number of assets, reducing the total supply of the asset. Because
+   * burning is such a destructive and non-reversible operation, some specific
+   * values need to be set in the request to avoid accidental burns.
+   */
+
+  async burnAsset(
+    request: BurnAssetRequestPartial = {}
+  ): Promise<BurnAssetResponse> {
+    return promisify(this.client.BurnAsset.bind(this.client))(request);
+  }
+
+  /**
+   * @getInfo returns the information for the node.
+   */
+  async getInfo(request: GetInfoRequestPartial = {}): Promise<GetInfoResponse> {
+    return promisify(this.client.GetInfo.bind(this.client))(request);
   }
 }

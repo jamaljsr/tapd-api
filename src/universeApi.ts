@@ -6,19 +6,33 @@ import {
   AddFederationServerResponse,
   AssetLeafKeyResponse,
   AssetLeafResponse,
+  AssetProofPartial,
+  AssetProofResponse,
   AssetRootQueryPartial,
   AssetRootRequestPartial,
   AssetRootResponse,
+  AssetStatsQueryPartial,
   DeleteFederationServerRequestPartial,
   DeleteFederationServerResponse,
+  DeleteRootQueryPartial,
+  DeleteRootResponse,
   IDPartial,
-  IssuanceProofPartial,
-  IssuanceProofResponse,
+  InfoRequestPartial,
+  InfoResponse,
   ListFederationServersRequestPartial,
   ListFederationServersResponse,
+  QueryEventsRequestPartial,
+  QueryEventsResponse,
+  QueryFederationSyncConfigRequestPartial,
+  QueryFederationSyncConfigResponse,
   QueryRootResponse,
+  SetFederationSyncConfigRequestPartial,
+  SetFederationSyncConfigResponse,
+  StatsRequestPartial,
+  StatsResponse,
   SyncRequestPartial,
   SyncResponse,
+  UniverseAssetStats,
   UniverseClient,
   UniverseKeyPartial,
 } from './types';
@@ -77,6 +91,17 @@ export class UniverseApi {
   }
 
   /**
+   * @deleteAssetRoot deletes the Universe root for a specific asset, including
+    all associated universe keys, leaves, and events.
+   */
+
+  async deleteAssetRoot(
+    request: DeleteRootQueryPartial = {}
+  ): Promise<DeleteRootResponse> {
+    return promisify(this.client.DeleteAssetRoot.bind(this.client))(request);
+  }
+
+  /**
    * @assetLeafKeys AssetLeafKeys queries for the set of Universe keys associated with a given
    * asset_id or group_key. Each key takes the form: (outpoint, script_key),
    * where outpoint is an outpoint in the Bitcoin blockcahin that anchors a
@@ -110,7 +135,7 @@ export class UniverseApi {
 
   async queryProof(
     request: UniverseKeyPartial = {}
-  ): Promise<IssuanceProofResponse> {
+  ): Promise<AssetProofResponse> {
     return promisify(this.client.QueryProof.bind(this.client))(request);
   }
 
@@ -122,9 +147,17 @@ export class UniverseApi {
    */
 
   async insertProof(
-    request: IssuanceProofPartial = {}
-  ): Promise<IssuanceProofResponse> {
+    request: AssetProofPartial = {}
+  ): Promise<AssetProofResponse> {
     return promisify(this.client.InsertProof.bind(this.client))(request);
+  }
+
+  /**
+   * @info returns a set of information about the current state of the Universe.
+   */
+
+  async info(request: InfoRequestPartial = {}): Promise<InfoResponse> {
+    return promisify(this.client.Info.bind(this.client))(request);
   }
 
   /**
@@ -176,6 +209,68 @@ export class UniverseApi {
     request: DeleteFederationServerRequestPartial = {}
   ): Promise<DeleteFederationServerResponse> {
     return promisify(this.client.DeleteFederationServer.bind(this.client))(
+      request
+    );
+  }
+
+  /**
+   * @universeStats returns a set of aggregate statistics for the current state
+    of the Universe. Stats returned include: total number of syncs, total
+    number of proofs, and total number of known assets.
+   */
+
+  async universeStats(
+    request: StatsRequestPartial = {}
+  ): Promise<StatsResponse> {
+    return promisify(this.client.UniverseStats.bind(this.client))(request);
+  }
+
+  /**
+   * @queryAssetStats returns a set of statistics for a given set of assets.
+    Stats can be queried for all assets, or based on the: asset ID, name, or
+    asset type. Pagination is supported via the offset and limit params.
+    Results can also be sorted based on any of the main query params.
+   */
+
+  async queryAssetStats(
+    request: AssetStatsQueryPartial = {}
+  ): Promise<UniverseAssetStats> {
+    return promisify(this.client.QueryAssetStats.bind(this.client))(request);
+  }
+
+  /**
+   * @queryEvents returns the number of sync and proof events for a given time
+    period, grouped by day.
+   */
+
+  async queryEvents(
+    request: QueryEventsRequestPartial = {}
+  ): Promise<QueryEventsResponse> {
+    return promisify(this.client.QueryEvents.bind(this.client))(request);
+  }
+
+  /**
+   * @setFederationSyncConfig sets the configuration of the universe federation
+    sync.
+   */
+
+  async setFederationSyncConfig(
+    request: SetFederationSyncConfigRequestPartial = {}
+  ): Promise<SetFederationSyncConfigResponse> {
+    return promisify(this.client.SetFederationSyncConfig.bind(this.client))(
+      request
+    );
+  }
+
+  /**
+   * @queryFederationSyncConfig queries the universe federation sync configuration
+    settings.
+   */
+
+  async queryFederationSyncConfig(
+    request: QueryFederationSyncConfigRequestPartial = {}
+  ): Promise<QueryFederationSyncConfigResponse> {
+    return promisify(this.client.QueryFederationSyncConfig.bind(this.client))(
       request
     );
   }

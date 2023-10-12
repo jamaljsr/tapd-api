@@ -4,11 +4,15 @@
 export interface FetchAssetMetaRequestPartial {
   'assetId'?: (Buffer | Uint8Array | string);
   'metaHash'?: (Buffer | Uint8Array | string);
-  'asset'?: "assetId"|"metaHash";
+  'assetIdStr'?: (string);
+  'metaHashStr'?: (string);
+  'asset'?: "assetId"|"metaHash"|"assetIdStr"|"metaHashStr";
 }
 
 export interface FetchAssetMetaRequest {
   'assetId'?: (Buffer);
   'metaHash'?: (Buffer);
-  'asset': "assetId"|"metaHash";
+  'assetIdStr'?: (string);
+  'metaHashStr'?: (string);
+  'asset': "assetId"|"metaHash"|"assetIdStr"|"metaHashStr";
 }
