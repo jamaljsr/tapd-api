@@ -6,9 +6,9 @@ Taproot Assets api client to interact with lightning labs `tapd` daemon.
 
 Import the module.
 ```
-import { TapClient } from "@hodlone/tap-api"
+import { TapClient } from "@lightningpolar/tapd-api"
 // OR
-const { TapClient } = require("@hodlone/tap-api");
+const { TapClient } = require("@lightningpolar/tapd-api");
 ```
 
 Creating a client instance.
