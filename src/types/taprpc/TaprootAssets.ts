@@ -31,11 +31,13 @@ import type { NewAddrRequestPartial as _taprpc_NewAddrRequestPartial, NewAddrReq
 import type { ProofFilePartial as _taprpc_ProofFilePartial, ProofFile as _taprpc_ProofFile } from '../taprpc/ProofFile';
 import type { QueryAddrRequestPartial as _taprpc_QueryAddrRequestPartial, QueryAddrRequest as _taprpc_QueryAddrRequest } from '../taprpc/QueryAddrRequest';
 import type { QueryAddrResponsePartial as _taprpc_QueryAddrResponsePartial, QueryAddrResponse as _taprpc_QueryAddrResponse } from '../taprpc/QueryAddrResponse';
+import type { ReceiveAssetEventPartial as _taprpc_ReceiveAssetEventPartial, ReceiveAssetEvent as _taprpc_ReceiveAssetEvent } from '../taprpc/ReceiveAssetEvent';
 import type { SendAssetEventPartial as _taprpc_SendAssetEventPartial, SendAssetEvent as _taprpc_SendAssetEvent } from '../taprpc/SendAssetEvent';
 import type { SendAssetRequestPartial as _taprpc_SendAssetRequestPartial, SendAssetRequest as _taprpc_SendAssetRequest } from '../taprpc/SendAssetRequest';
 import type { SendAssetResponsePartial as _taprpc_SendAssetResponsePartial, SendAssetResponse as _taprpc_SendAssetResponse } from '../taprpc/SendAssetResponse';
 import type { StopRequestPartial as _taprpc_StopRequestPartial, StopRequest as _taprpc_StopRequest } from '../taprpc/StopRequest';
 import type { StopResponsePartial as _taprpc_StopResponsePartial, StopResponse as _taprpc_StopResponse } from '../taprpc/StopResponse';
+import type { SubscribeReceiveAssetEventNtfnsRequestPartial as _taprpc_SubscribeReceiveAssetEventNtfnsRequestPartial, SubscribeReceiveAssetEventNtfnsRequest as _taprpc_SubscribeReceiveAssetEventNtfnsRequest } from '../taprpc/SubscribeReceiveAssetEventNtfnsRequest';
 import type { SubscribeSendAssetEventNtfnsRequestPartial as _taprpc_SubscribeSendAssetEventNtfnsRequestPartial, SubscribeSendAssetEventNtfnsRequest as _taprpc_SubscribeSendAssetEventNtfnsRequest } from '../taprpc/SubscribeSendAssetEventNtfnsRequest';
 import type { VerifyProofResponsePartial as _taprpc_VerifyProofResponsePartial, VerifyProofResponse as _taprpc_VerifyProofResponse } from '../taprpc/VerifyProofResponse';
 
@@ -193,6 +195,11 @@ export interface TaprootAssetsClient extends grpc.Client {
   stopDaemon(argument: _taprpc_StopRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_StopResponse>): grpc.ClientUnaryCall;
   stopDaemon(argument: _taprpc_StopRequestPartial, callback: grpc.requestCallback<_taprpc_StopResponse>): grpc.ClientUnaryCall;
   
+  SubscribeReceiveAssetEventNtfns(argument: _taprpc_SubscribeReceiveAssetEventNtfnsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_ReceiveAssetEvent>;
+  SubscribeReceiveAssetEventNtfns(argument: _taprpc_SubscribeReceiveAssetEventNtfnsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_ReceiveAssetEvent>;
+  subscribeReceiveAssetEventNtfns(argument: _taprpc_SubscribeReceiveAssetEventNtfnsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_ReceiveAssetEvent>;
+  subscribeReceiveAssetEventNtfns(argument: _taprpc_SubscribeReceiveAssetEventNtfnsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_ReceiveAssetEvent>;
+  
   SubscribeSendAssetEventNtfns(argument: _taprpc_SubscribeSendAssetEventNtfnsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_SendAssetEvent>;
   SubscribeSendAssetEventNtfns(argument: _taprpc_SubscribeSendAssetEventNtfnsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_SendAssetEvent>;
   subscribeSendAssetEventNtfns(argument: _taprpc_SubscribeSendAssetEventNtfnsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_SendAssetEvent>;
@@ -244,6 +251,8 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
   
   StopDaemon: grpc.handleUnaryCall<_taprpc_StopRequest, _taprpc_StopResponsePartial>;
   
+  SubscribeReceiveAssetEventNtfns: grpc.handleServerStreamingCall<_taprpc_SubscribeReceiveAssetEventNtfnsRequest, _taprpc_ReceiveAssetEventPartial>;
+  
   SubscribeSendAssetEventNtfns: grpc.handleServerStreamingCall<_taprpc_SubscribeSendAssetEventNtfnsRequest, _taprpc_SendAssetEventPartial>;
   
   VerifyProof: grpc.handleUnaryCall<_taprpc_ProofFile, _taprpc_VerifyProofResponsePartial>;
@@ -268,6 +277,7 @@ export interface TaprootAssetsDefinition extends grpc.ServiceDefinition {
   QueryAddrs: MethodDefinition<_taprpc_QueryAddrRequestPartial, _taprpc_QueryAddrResponsePartial, _taprpc_QueryAddrRequest, _taprpc_QueryAddrResponse>
   SendAsset: MethodDefinition<_taprpc_SendAssetRequestPartial, _taprpc_SendAssetResponsePartial, _taprpc_SendAssetRequest, _taprpc_SendAssetResponse>
   StopDaemon: MethodDefinition<_taprpc_StopRequestPartial, _taprpc_StopResponsePartial, _taprpc_StopRequest, _taprpc_StopResponse>
+  SubscribeReceiveAssetEventNtfns: MethodDefinition<_taprpc_SubscribeReceiveAssetEventNtfnsRequestPartial, _taprpc_ReceiveAssetEventPartial, _taprpc_SubscribeReceiveAssetEventNtfnsRequest, _taprpc_ReceiveAssetEvent>
   SubscribeSendAssetEventNtfns: MethodDefinition<_taprpc_SubscribeSendAssetEventNtfnsRequestPartial, _taprpc_SendAssetEventPartial, _taprpc_SubscribeSendAssetEventNtfnsRequest, _taprpc_SendAssetEvent>
   VerifyProof: MethodDefinition<_taprpc_ProofFilePartial, _taprpc_VerifyProofResponsePartial, _taprpc_ProofFile, _taprpc_VerifyProofResponse>
 }

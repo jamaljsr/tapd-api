@@ -82,9 +82,11 @@ export interface ProtoGrpcType {
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition
     ProofFile: MessageTypeDefinition
+    ProofTransferBackoffWaitEvent: MessageTypeDefinition
+    ProofTransferType: EnumTypeDefinition
     QueryAddrRequest: MessageTypeDefinition
     QueryAddrResponse: MessageTypeDefinition
-    ReceiverProofBackoffWaitEvent: MessageTypeDefinition
+    ReceiveAssetEvent: MessageTypeDefinition
     ScriptKey: MessageTypeDefinition
     SendAssetEvent: MessageTypeDefinition
     SendAssetRequest: MessageTypeDefinition
@@ -92,6 +94,7 @@ export interface ProtoGrpcType {
     SplitCommitment: MessageTypeDefinition
     StopRequest: MessageTypeDefinition
     StopResponse: MessageTypeDefinition
+    SubscribeReceiveAssetEventNtfnsRequest: MessageTypeDefinition
     SubscribeSendAssetEventNtfnsRequest: MessageTypeDefinition
     TaprootAssets: SubtypeConstructor<typeof grpc.Client, _taprpc_TaprootAssetsClient> & { service: _taprpc_TaprootAssetsDefinition }
     TransferInput: MessageTypeDefinition

@@ -3,7 +3,6 @@
 
 export interface AnchorInfoPartial {
   'anchorTx'?: (Buffer | Uint8Array | string);
-  'anchorTxid'?: (string);
   'anchorBlockHash'?: (string);
   'anchorOutpoint'?: (string);
   'internalKey'?: (Buffer | Uint8Array | string);
@@ -14,7 +13,6 @@ export interface AnchorInfoPartial {
 
 export interface AnchorInfo {
   'anchorTx': (Buffer);
-  'anchorTxid': (string);
   'anchorBlockHash': (string);
   'anchorOutpoint': (string);
   'internalKey': (Buffer);
