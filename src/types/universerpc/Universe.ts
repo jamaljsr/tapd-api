@@ -5,6 +5,7 @@ import type { MethodDefinition } from '@grpc/proto-loader'
 import type { AddFederationServerRequestPartial as _universerpc_AddFederationServerRequestPartial, AddFederationServerRequest as _universerpc_AddFederationServerRequest } from '../universerpc/AddFederationServerRequest';
 import type { AddFederationServerResponsePartial as _universerpc_AddFederationServerResponsePartial, AddFederationServerResponse as _universerpc_AddFederationServerResponse } from '../universerpc/AddFederationServerResponse';
 import type { AssetLeafKeyResponsePartial as _universerpc_AssetLeafKeyResponsePartial, AssetLeafKeyResponse as _universerpc_AssetLeafKeyResponse } from '../universerpc/AssetLeafKeyResponse';
+import type { AssetLeafKeysRequestPartial as _universerpc_AssetLeafKeysRequestPartial, AssetLeafKeysRequest as _universerpc_AssetLeafKeysRequest } from '../universerpc/AssetLeafKeysRequest';
 import type { AssetLeafResponsePartial as _universerpc_AssetLeafResponsePartial, AssetLeafResponse as _universerpc_AssetLeafResponse } from '../universerpc/AssetLeafResponse';
 import type { AssetProofPartial as _universerpc_AssetProofPartial, AssetProof as _universerpc_AssetProof } from '../universerpc/AssetProof';
 import type { AssetProofResponsePartial as _universerpc_AssetProofResponsePartial, AssetProofResponse as _universerpc_AssetProofResponse } from '../universerpc/AssetProofResponse';
@@ -45,14 +46,14 @@ export interface UniverseClient extends grpc.Client {
   addFederationServer(argument: _universerpc_AddFederationServerRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AddFederationServerResponse>): grpc.ClientUnaryCall;
   addFederationServer(argument: _universerpc_AddFederationServerRequestPartial, callback: grpc.requestCallback<_universerpc_AddFederationServerResponse>): grpc.ClientUnaryCall;
   
-  AssetLeafKeys(argument: _universerpc_IDPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  AssetLeafKeys(argument: _universerpc_IDPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  AssetLeafKeys(argument: _universerpc_IDPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  AssetLeafKeys(argument: _universerpc_IDPartial, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  assetLeafKeys(argument: _universerpc_IDPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  assetLeafKeys(argument: _universerpc_IDPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  assetLeafKeys(argument: _universerpc_IDPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
-  assetLeafKeys(argument: _universerpc_IDPartial, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  AssetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  AssetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  AssetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  AssetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  assetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  assetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  assetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
+  assetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
   
   AssetLeaves(argument: _universerpc_IDPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
   AssetLeaves(argument: _universerpc_IDPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
@@ -194,7 +195,7 @@ export interface UniverseClient extends grpc.Client {
 export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   AddFederationServer: grpc.handleUnaryCall<_universerpc_AddFederationServerRequest, _universerpc_AddFederationServerResponsePartial>;
   
-  AssetLeafKeys: grpc.handleUnaryCall<_universerpc_ID, _universerpc_AssetLeafKeyResponsePartial>;
+  AssetLeafKeys: grpc.handleUnaryCall<_universerpc_AssetLeafKeysRequest, _universerpc_AssetLeafKeyResponsePartial>;
   
   AssetLeaves: grpc.handleUnaryCall<_universerpc_ID, _universerpc_AssetLeafResponsePartial>;
   
@@ -230,7 +231,7 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
 
 export interface UniverseDefinition extends grpc.ServiceDefinition {
   AddFederationServer: MethodDefinition<_universerpc_AddFederationServerRequestPartial, _universerpc_AddFederationServerResponsePartial, _universerpc_AddFederationServerRequest, _universerpc_AddFederationServerResponse>
-  AssetLeafKeys: MethodDefinition<_universerpc_IDPartial, _universerpc_AssetLeafKeyResponsePartial, _universerpc_ID, _universerpc_AssetLeafKeyResponse>
+  AssetLeafKeys: MethodDefinition<_universerpc_AssetLeafKeysRequestPartial, _universerpc_AssetLeafKeyResponsePartial, _universerpc_AssetLeafKeysRequest, _universerpc_AssetLeafKeyResponse>
   AssetLeaves: MethodDefinition<_universerpc_IDPartial, _universerpc_AssetLeafResponsePartial, _universerpc_ID, _universerpc_AssetLeafResponse>
   AssetRoots: MethodDefinition<_universerpc_AssetRootRequestPartial, _universerpc_AssetRootResponsePartial, _universerpc_AssetRootRequest, _universerpc_AssetRootResponse>
   DeleteAssetRoot: MethodDefinition<_universerpc_DeleteRootQueryPartial, _universerpc_DeleteRootResponsePartial, _universerpc_DeleteRootQuery, _universerpc_DeleteRootResponse>

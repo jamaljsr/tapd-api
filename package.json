@@ -1,6 +1,6 @@
 {
-  "name": "@hodlone/taro-api",
-  "version": "0.1.2",
+  "name": "@lightningpolar/tapd-api",
+  "version": "0.3.1-alpha",
   "description": "Bitcoin Taproot Assets Protocol API client for Lightning Labs tapd daemon",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
     "README.md"
   ],
   "scripts": {
-    "publish": "tsc && npm publish --access public",
+    "push": "tsc && npm publish --access public",
     "build": "tsc",
     "generate:clean": "rm -rf ./src/types",
     "generate:protos": "./scripts/update_protos.sh",
@@ -22,6 +22,12 @@
   "author": {
     "name": "Ricardo Alonzo"
   },
+  "contributors": [
+    {
+      "name": "Jamal James",
+      "url": "https://github.com/jamaljsr"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "@grpc/grpc-js": "1.7.2",
@@ -29,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hodlone/taro-api.git"
+    "url": "git+https://github.com/jamaljsr/tapd-api.git"
   },
   "devDependencies": {
     "typescript": "4.8.4"
