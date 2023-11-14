@@ -11,7 +11,7 @@
     "README.md"
   ],
   "scripts": {
-    "publish": "tsc && npm publish --access public",
+    "push": "tsc && npm publish --access public",
     "build": "tsc",
     "generate:clean": "rm -rf ./src/types",
     "generate:protos": "./scripts/update_protos.sh",
