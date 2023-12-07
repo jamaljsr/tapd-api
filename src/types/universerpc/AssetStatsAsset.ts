@@ -11,6 +11,7 @@ export interface AssetStatsAssetPartial {
   'assetType'?: (_taprpc_AssetType | keyof typeof _taprpc_AssetType);
   'genesisHeight'?: (number);
   'genesisTimestamp'?: (number | string | Long);
+  'anchorPoint'?: (string);
 }
 
 export interface AssetStatsAsset {
@@ -21,4 +22,5 @@ export interface AssetStatsAsset {
   'assetType': (keyof typeof _taprpc_AssetType);
   'genesisHeight': (number);
   'genesisTimestamp': (string);
+  'anchorPoint': (string);
 }

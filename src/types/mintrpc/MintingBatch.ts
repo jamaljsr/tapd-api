@@ -1,18 +1,18 @@
 // Original file: protos/mint.proto
 
 import type { BatchState as _mintrpc_BatchState } from '../mintrpc/BatchState';
-import type { MintAssetPartial as _mintrpc_MintAssetPartial, MintAsset as _mintrpc_MintAsset } from '../mintrpc/MintAsset';
+import type { PendingAssetPartial as _mintrpc_PendingAssetPartial, PendingAsset as _mintrpc_PendingAsset } from '../mintrpc/PendingAsset';
 
 export interface MintingBatchPartial {
   'batchKey'?: (Buffer | Uint8Array | string);
   'batchTxid'?: (string);
   'state'?: (_mintrpc_BatchState | keyof typeof _mintrpc_BatchState);
-  'assets'?: (_mintrpc_MintAssetPartial)[];
+  'assets'?: (_mintrpc_PendingAssetPartial)[];
 }
 
 export interface MintingBatch {
   'batchKey': (Buffer);
   'batchTxid': (string);
   'state': (keyof typeof _mintrpc_BatchState);
-  'assets': (_mintrpc_MintAsset)[];
+  'assets': (_mintrpc_PendingAsset)[];
 }
