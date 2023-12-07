@@ -44,6 +44,7 @@ export interface ProtoGrpcType {
     AssetHumanReadable: MessageTypeDefinition
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
+    AssetReceiveCompleteEvent: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
