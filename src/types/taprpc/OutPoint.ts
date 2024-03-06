@@ -1,4 +1,4 @@
-// Original file: protos/assetwallet.proto
+// Original file: protos/taprootassets.proto
 
 
 export interface OutPointPartial {
