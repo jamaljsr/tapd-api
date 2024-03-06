@@ -1,13 +1,13 @@
 // Original file: protos/taprootassets.proto
 
-import type { AddrEventStatus as _taprpc_AddrEventStatus } from '../taprpc/AddrEventStatus';
+import type { AddrEventStatusPartial as _taprpc_AddrEventStatusPartial, AddrEventStatus as _taprpc_AddrEventStatus } from '../taprpc/AddrEventStatus';
 
 export interface AddrReceivesRequestPartial {
   'filterAddr'?: (string);
-  'filterStatus'?: (_taprpc_AddrEventStatus | keyof typeof _taprpc_AddrEventStatus);
+  'filterStatus'?: (_taprpc_AddrEventStatusPartial);
 }
 
 export interface AddrReceivesRequest {
   'filterAddr': (string);
-  'filterStatus': (keyof typeof _taprpc_AddrEventStatus);
+  'filterStatus': (_taprpc_AddrEventStatus);
 }

@@ -73,6 +73,7 @@ export interface ProtoGrpcType {
     ListUtxosResponse: MessageTypeDefinition
     ManagedUtxo: MessageTypeDefinition
     NewAddrRequest: MessageTypeDefinition
+    OutPoint: MessageTypeDefinition
     OutputType: EnumTypeDefinition
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition

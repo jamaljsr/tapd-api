@@ -18,7 +18,6 @@ export interface ProtoGrpcType {
     NextInternalKeyResponse: MessageTypeDefinition
     NextScriptKeyRequest: MessageTypeDefinition
     NextScriptKeyResponse: MessageTypeDefinition
-    OutPoint: MessageTypeDefinition
     PrevId: MessageTypeDefinition
     ProveAssetOwnershipRequest: MessageTypeDefinition
     ProveAssetOwnershipResponse: MessageTypeDefinition
@@ -79,6 +78,7 @@ export interface ProtoGrpcType {
     ListUtxosResponse: MessageTypeDefinition
     ManagedUtxo: MessageTypeDefinition
     NewAddrRequest: MessageTypeDefinition
+    OutPoint: MessageTypeDefinition
     OutputType: EnumTypeDefinition
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition
