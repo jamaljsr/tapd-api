@@ -1,3 +1,4 @@
+import { ClientReadableStream } from '@grpc/grpc-js';
 import { promisify } from 'util';
 import { TapdClientOptions } from './';
 import { loadProto } from './proto';
@@ -12,6 +13,8 @@ import {
   DecodeAddrRequestPartial,
   DecodeProofRequestPartial,
   DecodeProofResponse,
+  FundChannelRequestPartial,
+  FundChannelResponse,
   GetInfoRequestPartial,
   GetInfoResponse,
   ListAssetRequestPartial,
@@ -28,10 +31,14 @@ import {
   ProofFilePartial,
   QueryAddrRequestPartial,
   QueryAddrResponse,
+  ReceiveEvent,
   SendAssetRequestPartial,
   SendAssetResponse,
+  SendEvent,
   StopRequestPartial,
   StopResponse,
+  SubscribeReceiveEventsRequestPartial,
+  SubscribeSendEventsRequestPartial,
   TaprootAssetsClient,
   VerifyProofResponse,
 } from './types';
@@ -232,5 +239,34 @@ export class TaprootAssetsApi {
    */
   async getInfo(request: GetInfoRequestPartial = {}): Promise<GetInfoResponse> {
     return promisify(this.client.GetInfo.bind(this.client))(request);
+  }
+
+  /**
+   * @subscribeReceiveEvents allows a caller to subscribe to receive events for
+   * incoming asset transfers.
+   */
+  subscribeReceiveEvents(
+    request: SubscribeReceiveEventsRequestPartial = {}
+  ): ClientReadableStream<ReceiveEvent> {
+    return this.client.SubscribeReceiveEvents(request);
+  }
+
+  /**
+   * @subscribeSendEvents allows a caller to subscribe to send events for outgoing
+    asset transfers.
+   */
+  subscribeSendEvents(
+    request: SubscribeSendEventsRequestPartial = {}
+  ): ClientReadableStream<SendEvent> {
+    return this.client.SubscribeSendEvents(request);
+  }
+
+  /**
+   * @fundChannel
+   */
+  async fundChannel(
+    request: FundChannelRequestPartial = {}
+  ): Promise<FundChannelResponse> {
+    return promisify(this.client.FundChannel.bind(this.client))(request);
   }
 }

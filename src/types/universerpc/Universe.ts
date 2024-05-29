@@ -22,6 +22,8 @@ import type { InfoRequestPartial as _universerpc_InfoRequestPartial, InfoRequest
 import type { InfoResponsePartial as _universerpc_InfoResponsePartial, InfoResponse as _universerpc_InfoResponse } from '../universerpc/InfoResponse';
 import type { ListFederationServersRequestPartial as _universerpc_ListFederationServersRequestPartial, ListFederationServersRequest as _universerpc_ListFederationServersRequest } from '../universerpc/ListFederationServersRequest';
 import type { ListFederationServersResponsePartial as _universerpc_ListFederationServersResponsePartial, ListFederationServersResponse as _universerpc_ListFederationServersResponse } from '../universerpc/ListFederationServersResponse';
+import type { MultiverseRootRequestPartial as _universerpc_MultiverseRootRequestPartial, MultiverseRootRequest as _universerpc_MultiverseRootRequest } from '../universerpc/MultiverseRootRequest';
+import type { MultiverseRootResponsePartial as _universerpc_MultiverseRootResponsePartial, MultiverseRootResponse as _universerpc_MultiverseRootResponse } from '../universerpc/MultiverseRootResponse';
 import type { QueryEventsRequestPartial as _universerpc_QueryEventsRequestPartial, QueryEventsRequest as _universerpc_QueryEventsRequest } from '../universerpc/QueryEventsRequest';
 import type { QueryEventsResponsePartial as _universerpc_QueryEventsResponsePartial, QueryEventsResponse as _universerpc_QueryEventsResponse } from '../universerpc/QueryEventsResponse';
 import type { QueryFederationSyncConfigRequestPartial as _universerpc_QueryFederationSyncConfigRequestPartial, QueryFederationSyncConfigRequest as _universerpc_QueryFederationSyncConfigRequest } from '../universerpc/QueryFederationSyncConfigRequest';
@@ -118,6 +120,15 @@ export interface UniverseClient extends grpc.Client {
   listFederationServers(argument: _universerpc_ListFederationServersRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_ListFederationServersResponse>): grpc.ClientUnaryCall;
   listFederationServers(argument: _universerpc_ListFederationServersRequestPartial, callback: grpc.requestCallback<_universerpc_ListFederationServersResponse>): grpc.ClientUnaryCall;
   
+  MultiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  MultiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  MultiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  MultiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  multiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  multiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  multiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  multiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
+  
   QueryAssetRoots(argument: _universerpc_AssetRootQueryPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryRootResponse>): grpc.ClientUnaryCall;
   QueryAssetRoots(argument: _universerpc_AssetRootQueryPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_QueryRootResponse>): grpc.ClientUnaryCall;
   QueryAssetRoots(argument: _universerpc_AssetRootQueryPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryRootResponse>): grpc.ClientUnaryCall;
@@ -211,6 +222,8 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   ListFederationServers: grpc.handleUnaryCall<_universerpc_ListFederationServersRequest, _universerpc_ListFederationServersResponsePartial>;
   
+  MultiverseRoot: grpc.handleUnaryCall<_universerpc_MultiverseRootRequest, _universerpc_MultiverseRootResponsePartial>;
+  
   QueryAssetRoots: grpc.handleUnaryCall<_universerpc_AssetRootQuery, _universerpc_QueryRootResponsePartial>;
   
   QueryAssetStats: grpc.handleUnaryCall<_universerpc_AssetStatsQuery, _universerpc_UniverseAssetStatsPartial>;
@@ -239,6 +252,7 @@ export interface UniverseDefinition extends grpc.ServiceDefinition {
   Info: MethodDefinition<_universerpc_InfoRequestPartial, _universerpc_InfoResponsePartial, _universerpc_InfoRequest, _universerpc_InfoResponse>
   InsertProof: MethodDefinition<_universerpc_AssetProofPartial, _universerpc_AssetProofResponsePartial, _universerpc_AssetProof, _universerpc_AssetProofResponse>
   ListFederationServers: MethodDefinition<_universerpc_ListFederationServersRequestPartial, _universerpc_ListFederationServersResponsePartial, _universerpc_ListFederationServersRequest, _universerpc_ListFederationServersResponse>
+  MultiverseRoot: MethodDefinition<_universerpc_MultiverseRootRequestPartial, _universerpc_MultiverseRootResponsePartial, _universerpc_MultiverseRootRequest, _universerpc_MultiverseRootResponse>
   QueryAssetRoots: MethodDefinition<_universerpc_AssetRootQueryPartial, _universerpc_QueryRootResponsePartial, _universerpc_AssetRootQuery, _universerpc_QueryRootResponse>
   QueryAssetStats: MethodDefinition<_universerpc_AssetStatsQueryPartial, _universerpc_UniverseAssetStatsPartial, _universerpc_AssetStatsQuery, _universerpc_UniverseAssetStats>
   QueryEvents: MethodDefinition<_universerpc_QueryEventsRequestPartial, _universerpc_QueryEventsResponsePartial, _universerpc_QueryEventsRequest, _universerpc_QueryEventsResponse>

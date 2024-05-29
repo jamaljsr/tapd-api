@@ -9,7 +9,6 @@ export interface GenesisInfoPartial {
   'assetId'?: (Buffer | Uint8Array | string);
   'assetType'?: (_taprpc_AssetTypePartial);
   'outputIndex'?: (number);
-  'version'?: (number);
 }
 
 export interface GenesisInfo {
@@ -19,5 +18,4 @@ export interface GenesisInfo {
   'assetId': (Buffer);
   'assetType': (_taprpc_AssetType);
   'outputIndex': (number);
-  'version': (number);
 }

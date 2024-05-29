@@ -10,6 +10,8 @@ import type { ListBatchRequestPartial as _mintrpc_ListBatchRequestPartial, ListB
 import type { ListBatchResponsePartial as _mintrpc_ListBatchResponsePartial, ListBatchResponse as _mintrpc_ListBatchResponse } from '../mintrpc/ListBatchResponse';
 import type { MintAssetRequestPartial as _mintrpc_MintAssetRequestPartial, MintAssetRequest as _mintrpc_MintAssetRequest } from '../mintrpc/MintAssetRequest';
 import type { MintAssetResponsePartial as _mintrpc_MintAssetResponsePartial, MintAssetResponse as _mintrpc_MintAssetResponse } from '../mintrpc/MintAssetResponse';
+import type { MintEventPartial as _mintrpc_MintEventPartial, MintEvent as _mintrpc_MintEvent } from '../mintrpc/MintEvent';
+import type { SubscribeMintEventsRequestPartial as _mintrpc_SubscribeMintEventsRequestPartial, SubscribeMintEventsRequest as _mintrpc_SubscribeMintEventsRequest } from '../mintrpc/SubscribeMintEventsRequest';
 
 export interface MintClient extends grpc.Client {
   CancelBatch(argument: _mintrpc_CancelBatchRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_mintrpc_CancelBatchResponse>): grpc.ClientUnaryCall;
@@ -48,6 +50,11 @@ export interface MintClient extends grpc.Client {
   mintAsset(argument: _mintrpc_MintAssetRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_mintrpc_MintAssetResponse>): grpc.ClientUnaryCall;
   mintAsset(argument: _mintrpc_MintAssetRequestPartial, callback: grpc.requestCallback<_mintrpc_MintAssetResponse>): grpc.ClientUnaryCall;
   
+  SubscribeMintEvents(argument: _mintrpc_SubscribeMintEventsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_mintrpc_MintEvent>;
+  SubscribeMintEvents(argument: _mintrpc_SubscribeMintEventsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_mintrpc_MintEvent>;
+  subscribeMintEvents(argument: _mintrpc_SubscribeMintEventsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_mintrpc_MintEvent>;
+  subscribeMintEvents(argument: _mintrpc_SubscribeMintEventsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_mintrpc_MintEvent>;
+  
 }
 
 export interface MintHandlers extends grpc.UntypedServiceImplementation {
@@ -59,6 +66,8 @@ export interface MintHandlers extends grpc.UntypedServiceImplementation {
   
   MintAsset: grpc.handleUnaryCall<_mintrpc_MintAssetRequest, _mintrpc_MintAssetResponsePartial>;
   
+  SubscribeMintEvents: grpc.handleServerStreamingCall<_mintrpc_SubscribeMintEventsRequest, _mintrpc_MintEventPartial>;
+  
 }
 
 export interface MintDefinition extends grpc.ServiceDefinition {
@@ -66,4 +75,5 @@ export interface MintDefinition extends grpc.ServiceDefinition {
   FinalizeBatch: MethodDefinition<_mintrpc_FinalizeBatchRequestPartial, _mintrpc_FinalizeBatchResponsePartial, _mintrpc_FinalizeBatchRequest, _mintrpc_FinalizeBatchResponse>
   ListBatches: MethodDefinition<_mintrpc_ListBatchRequestPartial, _mintrpc_ListBatchResponsePartial, _mintrpc_ListBatchRequest, _mintrpc_ListBatchResponse>
   MintAsset: MethodDefinition<_mintrpc_MintAssetRequestPartial, _mintrpc_MintAssetResponsePartial, _mintrpc_MintAssetRequest, _mintrpc_MintAssetResponse>
+  SubscribeMintEvents: MethodDefinition<_mintrpc_SubscribeMintEventsRequestPartial, _mintrpc_MintEventPartial, _mintrpc_SubscribeMintEventsRequest, _mintrpc_MintEvent>
 }

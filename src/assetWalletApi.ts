@@ -4,17 +4,28 @@ import { loadProto } from './proto';
 import {
   AnchorVirtualPsbtsRequestPartial,
   AssetWalletClient,
+  CommitVirtualPsbtsRequestPartial,
+  CommitVirtualPsbtsResponse,
   FundVirtualPsbtRequestPartial,
   FundVirtualPsbtResponse,
   NextInternalKeyRequestPartial,
   NextInternalKeyResponse,
   NextScriptKeyRequestPartial,
   NextScriptKeyResponse,
+  ProveAssetOwnershipRequestPartial,
+  ProveAssetOwnershipResponse,
+  PublishAndLogRequestPartial,
+  QueryInternalKeyRequestPartial,
+  QueryInternalKeyResponse,
+  QueryScriptKeyRequestPartial,
+  QueryScriptKeyResponse,
   RemoveUTXOLeaseRequestPartial,
   RemoveUTXOLeaseResponse,
   SendAssetResponse,
   SignVirtualPsbtRequestPartial,
   SignVirtualPsbtResponse,
+  VerifyAssetOwnershipRequestPartial,
+  VerifyAssetOwnershipResponse,
 } from './types';
 import { ProtoGrpcType } from './types/assetwallet';
 
@@ -69,13 +80,44 @@ export class AssetWalletApi {
   }
 
   /**
-   * @anchorVirtualPsbts AnchorVirtualPsbts merges and then commits multiple virtual transactions in
-   * a single BTC level anchor transaction.
+   * @anchorVirtualPsbts merges and then commits multiple virtual transactions in
+   * a single BTC level anchor transaction. This RPC should be used if the BTC
+   * level anchor transaction of the assets to be spent are encumbered by a
+   * normal key and don't require any special spending conditions. For any custom
+   * spending conditions on the BTC level, the two RPCs CommitVirtualPsbts and
+   * PublishAndLogTransfer should be used instead (which in combination do the
+   * same as this RPC but allow for more flexibility).
    */
   async anchorVirtualPsbts(
     request: AnchorVirtualPsbtsRequestPartial = {}
   ): Promise<SendAssetResponse> {
     return promisify(this.client.AnchorVirtualPsbts.bind(this.client))(request);
+  }
+
+  /**
+   * @commitVirtualPsbts creates the output commitments and proofs for the given
+   * virtual transactions by committing them to the BTC level anchor transaction.
+   * In addition, the BTC level anchor transaction is funded and prepared up to
+   * the point where it is ready to be signed.
+   */
+  async commitVirtualPsbts(
+    request: CommitVirtualPsbtsRequestPartial = {}
+  ): Promise<CommitVirtualPsbtsResponse> {
+    return promisify(this.client.CommitVirtualPsbts.bind(this.client))(request);
+  }
+
+  /**
+   * @publishAndLogTransfer accepts a fully committed and signed anchor
+   * transaction and publishes it to the Bitcoin network. It also logs the
+   * transfer of the given active and passive assets in the database and ships
+   * any outgoing proofs to the counterparties.
+   */
+  async publishAndLogTransfer(
+    request: PublishAndLogRequestPartial = {}
+  ): Promise<SendAssetResponse> {
+    return promisify(this.client.PublishAndLogTransfer.bind(this.client))(
+      request
+    );
   }
 
   /**
@@ -101,6 +143,51 @@ export class AssetWalletApi {
     request: NextScriptKeyRequestPartial = {}
   ): Promise<NextScriptKeyResponse> {
     return promisify(this.client.NextScriptKey.bind(this.client))(request);
+  }
+
+  /**
+   * @queryInternalKey returns the key descriptor for the given internal key.
+   */
+  async queryInternalKey(
+    request: QueryInternalKeyRequestPartial = {}
+  ): Promise<QueryInternalKeyResponse> {
+    return promisify(this.client.QueryInternalKey.bind(this.client))(request);
+  }
+
+  /**
+   * @queryScriptKey returns the full script key descriptor for the given tweaked
+   * script key.
+   */
+  async queryScriptKey(
+    request: QueryScriptKeyRequestPartial = {}
+  ): Promise<QueryScriptKeyResponse> {
+    return promisify(this.client.QueryScriptKey.bind(this.client))(request);
+  }
+
+  /**
+   * @proveAssetOwnership creates an ownership proof embedded in an asset
+   * transition proof. That ownership proof is a signed virtual transaction
+   * spending the asset with a valid witness to prove the prover owns the keys
+   * that can spend the asset.
+   */
+  async proveAssetOwnership(
+    request: ProveAssetOwnershipRequestPartial = {}
+  ): Promise<ProveAssetOwnershipResponse> {
+    return promisify(this.client.ProveAssetOwnership.bind(this.client))(
+      request
+    );
+  }
+
+  /**
+   * @verifyAssetOwnership verifies the asset ownership proof embedded in the
+   * given transition proof of an asset and returns true if the proof is valid.
+   */
+  async verifyAssetOwnership(
+    request: VerifyAssetOwnershipRequestPartial = {}
+  ): Promise<VerifyAssetOwnershipResponse> {
+    return promisify(this.client.VerifyAssetOwnership.bind(this.client))(
+      request
+    );
   }
 
   /**

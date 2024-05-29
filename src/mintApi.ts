@@ -1,3 +1,4 @@
+import { ClientReadableStream } from '@grpc/grpc-js';
 import { promisify } from 'util';
 import { TapdClientOptions } from './';
 import { loadProto } from './proto';
@@ -11,6 +12,8 @@ import {
   MintAssetRequestPartial,
   MintAssetResponse,
   MintClient,
+  MintEvent,
+  SubscribeMintEventsRequestPartial,
 } from './types';
 import { ProtoGrpcType } from './types/mint';
 
@@ -51,7 +54,6 @@ export class MintApi {
    * batch. This call will block until the operation succeeds (asset is staged
    * in the batch) or fails.
    */
-
   async mintAsset(
     request: MintAssetRequestPartial = {}
   ): Promise<MintAssetResponse> {
@@ -61,7 +63,6 @@ export class MintApi {
   /**
    * @finalizeBatch FinalizeBatch will attempt to finalize the current pending batch.
    */
-
   async finalizeBatch(
     request: FinalizeBatchRequestPartial = {}
   ): Promise<FinalizeBatchResponse> {
@@ -71,7 +72,6 @@ export class MintApi {
   /**
    * @cancelBatch CancelBatch will attempt to cancel the current pending batch.
    */
-
   async cancelBatch(
     request: CancelBatchRequestPartial = {}
   ): Promise<CancelBatchResponse> {
@@ -81,10 +81,19 @@ export class MintApi {
   /**
    * @listBatches ListBatches will attempt to cancel the current pending batch.
    */
-
   async listBatches(
     request: ListBatchRequestPartial = {}
   ): Promise<ListBatchResponse> {
     return promisify(this.client.ListBatches.bind(this.client))(request);
+  }
+
+  /**
+   * @subscribeMintEvents allows a caller to subscribe to mint events for asset
+   * creation batches.
+   */
+  subscribeMintEvents(
+    request: SubscribeMintEventsRequestPartial = {}
+  ): ClientReadableStream<MintEvent> {
+    return this.client.SubscribeMintEvents(request);
   }
 }

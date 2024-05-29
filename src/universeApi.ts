@@ -21,6 +21,8 @@ import {
   InfoResponse,
   ListFederationServersRequestPartial,
   ListFederationServersResponse,
+  MultiverseRootRequestPartial,
+  MultiverseRootResponse,
   QueryEventsRequestPartial,
   QueryEventsResponse,
   QueryFederationSyncConfigRequestPartial,
@@ -66,6 +68,18 @@ export class UniverseApi {
 
   constructor(client: UniverseClient) {
     this.client = client;
+  }
+
+  /**
+   * @multiverseRoot returns the root of the multiverse tree. This is useful to
+   * determine the equality of two multiverse trees, since the root can directly
+   * be compared to another multiverse root to find out if a sync is required.
+   */
+
+  async multiverseRoot(
+    request: MultiverseRootRequestPartial = {}
+  ): Promise<MultiverseRootResponse> {
+    return promisify(this.client.MultiverseRoot.bind(this.client))(request);
   }
 
   /**

@@ -21,8 +21,10 @@ export interface ProtoGrpcType {
     MintAsset: MessageTypeDefinition
     MintAssetRequest: MessageTypeDefinition
     MintAssetResponse: MessageTypeDefinition
+    MintEvent: MessageTypeDefinition
     MintingBatch: MessageTypeDefinition
     PendingAsset: MessageTypeDefinition
+    SubscribeMintEventsRequest: MessageTypeDefinition
   }
   taprpc: {
     Addr: MessageTypeDefinition
@@ -31,6 +33,7 @@ export interface ProtoGrpcType {
     AddrReceivesRequest: MessageTypeDefinition
     AddrReceivesResponse: MessageTypeDefinition
     AnchorInfo: MessageTypeDefinition
+    AnchorTransaction: MessageTypeDefinition
     Asset: MessageTypeDefinition
     AssetBalance: MessageTypeDefinition
     AssetGroup: MessageTypeDefinition
@@ -38,7 +41,6 @@ export interface ProtoGrpcType {
     AssetHumanReadable: MessageTypeDefinition
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
-    AssetReceiveCompleteEvent: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
@@ -50,9 +52,10 @@ export interface ProtoGrpcType {
     DecodeProofRequest: MessageTypeDefinition
     DecodeProofResponse: MessageTypeDefinition
     DecodedProof: MessageTypeDefinition
-    ExecuteSendStateEvent: MessageTypeDefinition
     ExportProofRequest: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
+    FundChannelRequest: MessageTypeDefinition
+    FundChannelResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
@@ -75,24 +78,27 @@ export interface ProtoGrpcType {
     NewAddrRequest: MessageTypeDefinition
     OutPoint: MessageTypeDefinition
     OutputType: EnumTypeDefinition
+    ParcelType: EnumTypeDefinition
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition
     ProofFile: MessageTypeDefinition
-    ProofTransferBackoffWaitEvent: MessageTypeDefinition
-    ProofTransferType: EnumTypeDefinition
     QueryAddrRequest: MessageTypeDefinition
     QueryAddrResponse: MessageTypeDefinition
-    ReceiveAssetEvent: MessageTypeDefinition
+    ReceiveEvent: MessageTypeDefinition
     ScriptKey: MessageTypeDefinition
-    SendAssetEvent: MessageTypeDefinition
     SendAssetRequest: MessageTypeDefinition
     SendAssetResponse: MessageTypeDefinition
+    SendEvent: MessageTypeDefinition
+    SendState: EnumTypeDefinition
     SplitCommitment: MessageTypeDefinition
     StopRequest: MessageTypeDefinition
     StopResponse: MessageTypeDefinition
-    SubscribeReceiveAssetEventNtfnsRequest: MessageTypeDefinition
-    SubscribeSendAssetEventNtfnsRequest: MessageTypeDefinition
+    SubscribeReceiveEventsRequest: MessageTypeDefinition
+    SubscribeSendEventsRequest: MessageTypeDefinition
+    TapBranch: MessageTypeDefinition
+    TapLeaf: MessageTypeDefinition
     TaprootAssets: SubtypeConstructor<typeof grpc.Client, _taprpc_TaprootAssetsClient> & { service: _taprpc_TaprootAssetsDefinition }
+    TapscriptFullTree: MessageTypeDefinition
     TransferInput: MessageTypeDefinition
     TransferOutput: MessageTypeDefinition
     TransferOutputAnchor: MessageTypeDefinition
