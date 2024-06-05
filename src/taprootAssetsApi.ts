@@ -13,8 +13,6 @@ import {
   DecodeAddrRequestPartial,
   DecodeProofRequestPartial,
   DecodeProofResponse,
-  FundChannelRequestPartial,
-  FundChannelResponse,
   GetInfoRequestPartial,
   GetInfoResponse,
   ListAssetRequestPartial,
@@ -259,14 +257,5 @@ export class TaprootAssetsApi {
     request: SubscribeSendEventsRequestPartial = {}
   ): ClientReadableStream<SendEvent> {
     return this.client.SubscribeSendEvents(request);
-  }
-
-  /**
-   * @fundChannel
-   */
-  async fundChannel(
-    request: FundChannelRequestPartial = {}
-  ): Promise<FundChannelResponse> {
-    return promisify(this.client.FundChannel.bind(this.client))(request);
   }
 }

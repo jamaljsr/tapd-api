@@ -1,11 +1,11 @@
 // Original file: protos/mint.proto
 
-import type { MintingBatchPartial as _mintrpc_MintingBatchPartial, MintingBatch as _mintrpc_MintingBatch } from '../mintrpc/MintingBatch';
+import type { VerboseBatchPartial as _mintrpc_VerboseBatchPartial, VerboseBatch as _mintrpc_VerboseBatch } from '../mintrpc/VerboseBatch';
 
 export interface ListBatchResponsePartial {
-  'batches'?: (_mintrpc_MintingBatchPartial)[];
+  'batches'?: (_mintrpc_VerboseBatchPartial)[];
 }
 
 export interface ListBatchResponse {
-  'batches': (_mintrpc_MintingBatch)[];
+  'batches': (_mintrpc_VerboseBatch)[];
 }

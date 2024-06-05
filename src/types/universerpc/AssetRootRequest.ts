@@ -1,17 +1,17 @@
 // Original file: protos/universe.proto
 
-import type { SortDirectionPartial as _universerpc_SortDirectionPartial, SortDirection as _universerpc_SortDirection } from '../universerpc/SortDirection';
+import type { SortDirection as _universerpc_SortDirection } from '../universerpc/SortDirection';
 
 export interface AssetRootRequestPartial {
   'withAmountsById'?: (boolean);
   'offset'?: (number);
   'limit'?: (number);
-  'direction'?: (_universerpc_SortDirectionPartial);
+  'direction'?: (_universerpc_SortDirection | keyof typeof _universerpc_SortDirection);
 }
 
 export interface AssetRootRequest {
   'withAmountsById': (boolean);
   'offset': (number);
   'limit': (number);
-  'direction': (_universerpc_SortDirection);
+  'direction': (keyof typeof _universerpc_SortDirection);
 }

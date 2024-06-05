@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package tapchannelrpc;
+
+option go_package = "github.com/lightninglabs/taproot-assets/taprpc/tapchannelrpc";
+
+service TaprootAssetChannels {
+    /*
+    FundChannel initiates the channel funding negotiation with a peer for the
+    creation of a channel that contains a specified amount of a given asset.
+    */
+    rpc FundChannel (FundChannelRequest) returns (FundChannelResponse);
+
+    /*
+    EncodeCustomRecords allows RPC users to encode Taproot Asset channel related
+    data into the TLV format that is used in the custom records of the lnd
+    payment or other channel related RPCs. This RPC is completely stateless and
+    does not perform any checks on the data provided, other than pure format
+    validation.
+    */
+    rpc EncodeCustomRecords (EncodeCustomRecordsRequest)
+        returns (EncodeCustomRecordsResponse);
+}
+
+message FundChannelRequest {
+    // The asset amount to fund the channel with. The BTC amount is fixed and
+    // cannot be customized (for now).
+    uint64 asset_amount = 1;
+
+    // The asset ID to use for the channel funding.
+    bytes asset_id = 2;
+
+    // The public key of the peer to open the channel with. Must already be
+    // connected to this peer.
+    bytes peer_pubkey = 3;
+
+    // The channel funding fee rate in sat/vByte.
+    uint32 fee_rate_sat_per_vbyte = 4;
+}
+
+message FundChannelResponse {
+    // The channel funding transaction ID.
+    string txid = 1;
+
+    // The index of the channel funding output in the funding transaction.
+    int32 output_index = 2;
+}
+
+message RouterSendPaymentData {
+    // The string encoded asset ID to amount mapping. Instructs the router to
+    // use these assets in the given amounts for the payment. Can be empty for
+    // a payment of an invoice, if the RFQ ID is set instead.
+    map<string, uint64> asset_amounts = 1;
+
+    // The RFQ ID to use for the payment. Can be empty for a direct keysend
+    // payment that doesn't involve any conversion (and thus no RFQ).
+    bytes rfq_id = 2;
+}
+
+message EncodeCustomRecordsRequest {
+    oneof input {
+        RouterSendPaymentData router_send_payment = 1;
+    }
+}
+
+message EncodeCustomRecordsResponse {
+    // The encoded custom records in TLV format.
+    map<uint64, bytes> custom_records = 1;
+}

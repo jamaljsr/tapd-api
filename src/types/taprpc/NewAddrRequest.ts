@@ -2,7 +2,7 @@
 
 import type { ScriptKeyPartial as _taprpc_ScriptKeyPartial, ScriptKey as _taprpc_ScriptKey } from '../taprpc/ScriptKey';
 import type { KeyDescriptorPartial as _taprpc_KeyDescriptorPartial, KeyDescriptor as _taprpc_KeyDescriptor } from '../taprpc/KeyDescriptor';
-import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface NewAddrRequestPartial {
@@ -12,7 +12,7 @@ export interface NewAddrRequestPartial {
   'internalKey'?: (_taprpc_KeyDescriptorPartial | null);
   'tapscriptSibling'?: (Buffer | Uint8Array | string);
   'proofCourierAddr'?: (string);
-  'assetVersion'?: (_taprpc_AssetVersionPartial);
+  'assetVersion'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
 }
 
 export interface NewAddrRequest {
@@ -22,5 +22,5 @@ export interface NewAddrRequest {
   'internalKey': (_taprpc_KeyDescriptor | null);
   'tapscriptSibling': (Buffer);
   'proofCourierAddr': (string);
-  'assetVersion': (_taprpc_AssetVersion);
+  'assetVersion': (keyof typeof _taprpc_AssetVersion);
 }

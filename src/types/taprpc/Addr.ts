@@ -1,13 +1,13 @@
 // Original file: protos/taprootassets.proto
 
-import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
-import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
+import type { AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface AddrPartial {
   'encoded'?: (string);
   'assetId'?: (Buffer | Uint8Array | string);
-  'assetType'?: (_taprpc_AssetTypePartial);
+  'assetType'?: (_taprpc_AssetType | keyof typeof _taprpc_AssetType);
   'amount'?: (number | string | Long);
   'groupKey'?: (Buffer | Uint8Array | string);
   'scriptKey'?: (Buffer | Uint8Array | string);
@@ -15,13 +15,13 @@ export interface AddrPartial {
   'tapscriptSibling'?: (Buffer | Uint8Array | string);
   'taprootOutputKey'?: (Buffer | Uint8Array | string);
   'proofCourierAddr'?: (string);
-  'assetVersion'?: (_taprpc_AssetVersionPartial);
+  'assetVersion'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
 }
 
 export interface Addr {
   'encoded': (string);
   'assetId': (Buffer);
-  'assetType': (_taprpc_AssetType);
+  'assetType': (keyof typeof _taprpc_AssetType);
   'amount': (string);
   'groupKey': (Buffer);
   'scriptKey': (Buffer);
@@ -29,5 +29,5 @@ export interface Addr {
   'tapscriptSibling': (Buffer);
   'taprootOutputKey': (Buffer);
   'proofCourierAddr': (string);
-  'assetVersion': (_taprpc_AssetVersion);
+  'assetVersion': (keyof typeof _taprpc_AssetVersion);
 }

@@ -5,6 +5,8 @@ import type { MethodDefinition } from '@grpc/proto-loader'
 import type { AnchorVirtualPsbtsRequestPartial as _assetwalletrpc_AnchorVirtualPsbtsRequestPartial, AnchorVirtualPsbtsRequest as _assetwalletrpc_AnchorVirtualPsbtsRequest } from '../assetwalletrpc/AnchorVirtualPsbtsRequest';
 import type { CommitVirtualPsbtsRequestPartial as _assetwalletrpc_CommitVirtualPsbtsRequestPartial, CommitVirtualPsbtsRequest as _assetwalletrpc_CommitVirtualPsbtsRequest } from '../assetwalletrpc/CommitVirtualPsbtsRequest';
 import type { CommitVirtualPsbtsResponsePartial as _assetwalletrpc_CommitVirtualPsbtsResponsePartial, CommitVirtualPsbtsResponse as _assetwalletrpc_CommitVirtualPsbtsResponse } from '../assetwalletrpc/CommitVirtualPsbtsResponse';
+import type { DeclareScriptKeyRequestPartial as _assetwalletrpc_DeclareScriptKeyRequestPartial, DeclareScriptKeyRequest as _assetwalletrpc_DeclareScriptKeyRequest } from '../assetwalletrpc/DeclareScriptKeyRequest';
+import type { DeclareScriptKeyResponsePartial as _assetwalletrpc_DeclareScriptKeyResponsePartial, DeclareScriptKeyResponse as _assetwalletrpc_DeclareScriptKeyResponse } from '../assetwalletrpc/DeclareScriptKeyResponse';
 import type { FundVirtualPsbtRequestPartial as _assetwalletrpc_FundVirtualPsbtRequestPartial, FundVirtualPsbtRequest as _assetwalletrpc_FundVirtualPsbtRequest } from '../assetwalletrpc/FundVirtualPsbtRequest';
 import type { FundVirtualPsbtResponsePartial as _assetwalletrpc_FundVirtualPsbtResponsePartial, FundVirtualPsbtResponse as _assetwalletrpc_FundVirtualPsbtResponse } from '../assetwalletrpc/FundVirtualPsbtResponse';
 import type { NextInternalKeyRequestPartial as _assetwalletrpc_NextInternalKeyRequestPartial, NextInternalKeyRequest as _assetwalletrpc_NextInternalKeyRequest } from '../assetwalletrpc/NextInternalKeyRequest';
@@ -44,6 +46,15 @@ export interface AssetWalletClient extends grpc.Client {
   commitVirtualPsbts(argument: _assetwalletrpc_CommitVirtualPsbtsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_CommitVirtualPsbtsResponse>): grpc.ClientUnaryCall;
   commitVirtualPsbts(argument: _assetwalletrpc_CommitVirtualPsbtsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_CommitVirtualPsbtsResponse>): grpc.ClientUnaryCall;
   commitVirtualPsbts(argument: _assetwalletrpc_CommitVirtualPsbtsRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_CommitVirtualPsbtsResponse>): grpc.ClientUnaryCall;
+  
+  DeclareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  DeclareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  DeclareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  DeclareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  declareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  declareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  declareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
+  declareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
   
   FundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
   FundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
@@ -142,6 +153,8 @@ export interface AssetWalletHandlers extends grpc.UntypedServiceImplementation {
   
   CommitVirtualPsbts: grpc.handleUnaryCall<_assetwalletrpc_CommitVirtualPsbtsRequest, _assetwalletrpc_CommitVirtualPsbtsResponsePartial>;
   
+  DeclareScriptKey: grpc.handleUnaryCall<_assetwalletrpc_DeclareScriptKeyRequest, _assetwalletrpc_DeclareScriptKeyResponsePartial>;
+  
   FundVirtualPsbt: grpc.handleUnaryCall<_assetwalletrpc_FundVirtualPsbtRequest, _assetwalletrpc_FundVirtualPsbtResponsePartial>;
   
   NextInternalKey: grpc.handleUnaryCall<_assetwalletrpc_NextInternalKeyRequest, _assetwalletrpc_NextInternalKeyResponsePartial>;
@@ -167,6 +180,7 @@ export interface AssetWalletHandlers extends grpc.UntypedServiceImplementation {
 export interface AssetWalletDefinition extends grpc.ServiceDefinition {
   AnchorVirtualPsbts: MethodDefinition<_assetwalletrpc_AnchorVirtualPsbtsRequestPartial, _taprpc_SendAssetResponsePartial, _assetwalletrpc_AnchorVirtualPsbtsRequest, _taprpc_SendAssetResponse>
   CommitVirtualPsbts: MethodDefinition<_assetwalletrpc_CommitVirtualPsbtsRequestPartial, _assetwalletrpc_CommitVirtualPsbtsResponsePartial, _assetwalletrpc_CommitVirtualPsbtsRequest, _assetwalletrpc_CommitVirtualPsbtsResponse>
+  DeclareScriptKey: MethodDefinition<_assetwalletrpc_DeclareScriptKeyRequestPartial, _assetwalletrpc_DeclareScriptKeyResponsePartial, _assetwalletrpc_DeclareScriptKeyRequest, _assetwalletrpc_DeclareScriptKeyResponse>
   FundVirtualPsbt: MethodDefinition<_assetwalletrpc_FundVirtualPsbtRequestPartial, _assetwalletrpc_FundVirtualPsbtResponsePartial, _assetwalletrpc_FundVirtualPsbtRequest, _assetwalletrpc_FundVirtualPsbtResponse>
   NextInternalKey: MethodDefinition<_assetwalletrpc_NextInternalKeyRequestPartial, _assetwalletrpc_NextInternalKeyResponsePartial, _assetwalletrpc_NextInternalKeyRequest, _assetwalletrpc_NextInternalKeyResponse>
   NextScriptKey: MethodDefinition<_assetwalletrpc_NextScriptKeyRequestPartial, _assetwalletrpc_NextScriptKeyResponsePartial, _assetwalletrpc_NextScriptKeyRequest, _assetwalletrpc_NextScriptKeyResponse>

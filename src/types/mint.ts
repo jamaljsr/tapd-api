@@ -15,6 +15,8 @@ export interface ProtoGrpcType {
     CancelBatchResponse: MessageTypeDefinition
     FinalizeBatchRequest: MessageTypeDefinition
     FinalizeBatchResponse: MessageTypeDefinition
+    FundBatchRequest: MessageTypeDefinition
+    FundBatchResponse: MessageTypeDefinition
     ListBatchRequest: MessageTypeDefinition
     ListBatchResponse: MessageTypeDefinition
     Mint: SubtypeConstructor<typeof grpc.Client, _mintrpc_MintClient> & { service: _mintrpc_MintDefinition }
@@ -24,7 +26,11 @@ export interface ProtoGrpcType {
     MintEvent: MessageTypeDefinition
     MintingBatch: MessageTypeDefinition
     PendingAsset: MessageTypeDefinition
+    SealBatchRequest: MessageTypeDefinition
+    SealBatchResponse: MessageTypeDefinition
     SubscribeMintEventsRequest: MessageTypeDefinition
+    UnsealedAsset: MessageTypeDefinition
+    VerboseBatch: MessageTypeDefinition
   }
   taprpc: {
     Addr: MessageTypeDefinition
@@ -54,13 +60,14 @@ export interface ProtoGrpcType {
     DecodedProof: MessageTypeDefinition
     ExportProofRequest: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
-    FundChannelRequest: MessageTypeDefinition
-    FundChannelResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
     GetInfoResponse: MessageTypeDefinition
+    GroupKeyRequest: MessageTypeDefinition
     GroupKeyReveal: MessageTypeDefinition
+    GroupVirtualTx: MessageTypeDefinition
+    GroupWitness: MessageTypeDefinition
     GroupedAssets: MessageTypeDefinition
     KeyDescriptor: MessageTypeDefinition
     KeyLocator: MessageTypeDefinition
@@ -102,6 +109,7 @@ export interface ProtoGrpcType {
     TransferInput: MessageTypeDefinition
     TransferOutput: MessageTypeDefinition
     TransferOutputAnchor: MessageTypeDefinition
+    TxOut: MessageTypeDefinition
     VerifyProofResponse: MessageTypeDefinition
   }
 }

@@ -1,4 +1,5 @@
 import { AssetWalletApi } from './assetWalletApi';
+import { ChannelsApi } from './channelsApi';
 import { MintApi } from './mintApi';
 import { RfqApi } from './rfqApi';
 import { TaprootAssetsApi } from './taprootAssetsApi';
@@ -37,6 +38,7 @@ export interface TapdRpcApis {
   assetWallet: AssetWalletApi;
   rfq: RfqApi;
   universe: UniverseApi;
+  channels: ChannelsApi;
 }
 
 export class TapClient {
@@ -51,9 +53,17 @@ export class TapClient {
       assetWallet: AssetWalletApi.create(options),
       rfq: RfqApi.create(options),
       universe: UniverseApi.create(options),
+      channels: ChannelsApi.create(options),
     };
   }
 }
 
-export { TaprootAssetsApi, MintApi, AssetWalletApi, RfqApi, UniverseApi };
+export {
+  TaprootAssetsApi,
+  MintApi,
+  AssetWalletApi,
+  RfqApi,
+  UniverseApi,
+  ChannelsApi,
+};
 export * from './types';

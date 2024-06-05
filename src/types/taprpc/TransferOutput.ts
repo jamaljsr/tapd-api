@@ -1,8 +1,8 @@
 // Original file: protos/taprootassets.proto
 
 import type { TransferOutputAnchorPartial as _taprpc_TransferOutputAnchorPartial, TransferOutputAnchor as _taprpc_TransferOutputAnchor } from '../taprpc/TransferOutputAnchor';
-import type { OutputTypePartial as _taprpc_OutputTypePartial, OutputType as _taprpc_OutputType } from '../taprpc/OutputType';
-import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
+import type { OutputType as _taprpc_OutputType } from '../taprpc/OutputType';
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface TransferOutputPartial {
@@ -12,8 +12,8 @@ export interface TransferOutputPartial {
   'amount'?: (number | string | Long);
   'newProofBlob'?: (Buffer | Uint8Array | string);
   'splitCommitRootHash'?: (Buffer | Uint8Array | string);
-  'outputType'?: (_taprpc_OutputTypePartial);
-  'assetVersion'?: (_taprpc_AssetVersionPartial);
+  'outputType'?: (_taprpc_OutputType | keyof typeof _taprpc_OutputType);
+  'assetVersion'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
 }
 
 export interface TransferOutput {
@@ -23,6 +23,6 @@ export interface TransferOutput {
   'amount': (string);
   'newProofBlob': (Buffer);
   'splitCommitRootHash': (Buffer);
-  'outputType': (_taprpc_OutputType);
-  'assetVersion': (_taprpc_AssetVersion);
+  'outputType': (keyof typeof _taprpc_OutputType);
+  'assetVersion': (keyof typeof _taprpc_AssetVersion);
 }

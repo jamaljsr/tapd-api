@@ -15,8 +15,6 @@ import type { DecodeProofRequestPartial as _taprpc_DecodeProofRequestPartial, De
 import type { DecodeProofResponsePartial as _taprpc_DecodeProofResponsePartial, DecodeProofResponse as _taprpc_DecodeProofResponse } from '../taprpc/DecodeProofResponse';
 import type { ExportProofRequestPartial as _taprpc_ExportProofRequestPartial, ExportProofRequest as _taprpc_ExportProofRequest } from '../taprpc/ExportProofRequest';
 import type { FetchAssetMetaRequestPartial as _taprpc_FetchAssetMetaRequestPartial, FetchAssetMetaRequest as _taprpc_FetchAssetMetaRequest } from '../taprpc/FetchAssetMetaRequest';
-import type { FundChannelRequestPartial as _taprpc_FundChannelRequestPartial, FundChannelRequest as _taprpc_FundChannelRequest } from '../taprpc/FundChannelRequest';
-import type { FundChannelResponsePartial as _taprpc_FundChannelResponsePartial, FundChannelResponse as _taprpc_FundChannelResponse } from '../taprpc/FundChannelResponse';
 import type { GetInfoRequestPartial as _taprpc_GetInfoRequestPartial, GetInfoRequest as _taprpc_GetInfoRequest } from '../taprpc/GetInfoRequest';
 import type { GetInfoResponsePartial as _taprpc_GetInfoResponsePartial, GetInfoResponse as _taprpc_GetInfoResponse } from '../taprpc/GetInfoResponse';
 import type { ListAssetRequestPartial as _taprpc_ListAssetRequestPartial, ListAssetRequest as _taprpc_ListAssetRequest } from '../taprpc/ListAssetRequest';
@@ -106,15 +104,6 @@ export interface TaprootAssetsClient extends grpc.Client {
   fetchAssetMeta(argument: _taprpc_FetchAssetMetaRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_AssetMeta>): grpc.ClientUnaryCall;
   fetchAssetMeta(argument: _taprpc_FetchAssetMetaRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_AssetMeta>): grpc.ClientUnaryCall;
   fetchAssetMeta(argument: _taprpc_FetchAssetMetaRequestPartial, callback: grpc.requestCallback<_taprpc_AssetMeta>): grpc.ClientUnaryCall;
-  
-  FundChannel(argument: _taprpc_FundChannelRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  FundChannel(argument: _taprpc_FundChannelRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  FundChannel(argument: _taprpc_FundChannelRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  FundChannel(argument: _taprpc_FundChannelRequestPartial, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  fundChannel(argument: _taprpc_FundChannelRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  fundChannel(argument: _taprpc_FundChannelRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  fundChannel(argument: _taprpc_FundChannelRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
-  fundChannel(argument: _taprpc_FundChannelRequestPartial, callback: grpc.requestCallback<_taprpc_FundChannelResponse>): grpc.ClientUnaryCall;
   
   GetInfo(argument: _taprpc_GetInfoRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_GetInfoResponse>): grpc.ClientUnaryCall;
   GetInfo(argument: _taprpc_GetInfoRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_GetInfoResponse>): grpc.ClientUnaryCall;
@@ -242,8 +231,6 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
   
   FetchAssetMeta: grpc.handleUnaryCall<_taprpc_FetchAssetMetaRequest, _taprpc_AssetMetaPartial>;
   
-  FundChannel: grpc.handleUnaryCall<_taprpc_FundChannelRequest, _taprpc_FundChannelResponsePartial>;
-  
   GetInfo: grpc.handleUnaryCall<_taprpc_GetInfoRequest, _taprpc_GetInfoResponsePartial>;
   
   ListAssets: grpc.handleUnaryCall<_taprpc_ListAssetRequest, _taprpc_ListAssetResponsePartial>;
@@ -280,7 +267,6 @@ export interface TaprootAssetsDefinition extends grpc.ServiceDefinition {
   DecodeProof: MethodDefinition<_taprpc_DecodeProofRequestPartial, _taprpc_DecodeProofResponsePartial, _taprpc_DecodeProofRequest, _taprpc_DecodeProofResponse>
   ExportProof: MethodDefinition<_taprpc_ExportProofRequestPartial, _taprpc_ProofFilePartial, _taprpc_ExportProofRequest, _taprpc_ProofFile>
   FetchAssetMeta: MethodDefinition<_taprpc_FetchAssetMetaRequestPartial, _taprpc_AssetMetaPartial, _taprpc_FetchAssetMetaRequest, _taprpc_AssetMeta>
-  FundChannel: MethodDefinition<_taprpc_FundChannelRequestPartial, _taprpc_FundChannelResponsePartial, _taprpc_FundChannelRequest, _taprpc_FundChannelResponse>
   GetInfo: MethodDefinition<_taprpc_GetInfoRequestPartial, _taprpc_GetInfoResponsePartial, _taprpc_GetInfoRequest, _taprpc_GetInfoResponse>
   ListAssets: MethodDefinition<_taprpc_ListAssetRequestPartial, _taprpc_ListAssetResponsePartial, _taprpc_ListAssetRequest, _taprpc_ListAssetResponse>
   ListBalances: MethodDefinition<_taprpc_ListBalancesRequestPartial, _taprpc_ListBalancesResponsePartial, _taprpc_ListBalancesRequest, _taprpc_ListBalancesResponse>

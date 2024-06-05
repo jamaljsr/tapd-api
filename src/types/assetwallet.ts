@@ -14,6 +14,8 @@ export interface ProtoGrpcType {
     AssetWallet: SubtypeConstructor<typeof grpc.Client, _assetwalletrpc_AssetWalletClient> & { service: _assetwalletrpc_AssetWalletDefinition }
     CommitVirtualPsbtsRequest: MessageTypeDefinition
     CommitVirtualPsbtsResponse: MessageTypeDefinition
+    DeclareScriptKeyRequest: MessageTypeDefinition
+    DeclareScriptKeyResponse: MessageTypeDefinition
     FundVirtualPsbtRequest: MessageTypeDefinition
     FundVirtualPsbtResponse: MessageTypeDefinition
     NextInternalKeyRequest: MessageTypeDefinition
@@ -64,13 +66,14 @@ export interface ProtoGrpcType {
     DecodedProof: MessageTypeDefinition
     ExportProofRequest: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
-    FundChannelRequest: MessageTypeDefinition
-    FundChannelResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
     GetInfoResponse: MessageTypeDefinition
+    GroupKeyRequest: MessageTypeDefinition
     GroupKeyReveal: MessageTypeDefinition
+    GroupVirtualTx: MessageTypeDefinition
+    GroupWitness: MessageTypeDefinition
     GroupedAssets: MessageTypeDefinition
     KeyDescriptor: MessageTypeDefinition
     KeyLocator: MessageTypeDefinition
@@ -112,6 +115,7 @@ export interface ProtoGrpcType {
     TransferInput: MessageTypeDefinition
     TransferOutput: MessageTypeDefinition
     TransferOutputAnchor: MessageTypeDefinition
+    TxOut: MessageTypeDefinition
     VerifyProofResponse: MessageTypeDefinition
   }
 }

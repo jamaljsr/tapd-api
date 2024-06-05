@@ -1,7 +1,7 @@
 // Original file: protos/taprootassets.proto
 
-import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
-import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
+import type { AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
+import type { AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface AssetHumanReadablePartial {
@@ -11,8 +11,8 @@ export interface AssetHumanReadablePartial {
   'relativeLockTime'?: (number);
   'tag'?: (string);
   'metaHash'?: (Buffer | Uint8Array | string);
-  'type'?: (_taprpc_AssetTypePartial);
-  'version'?: (_taprpc_AssetVersionPartial);
+  'type'?: (_taprpc_AssetType | keyof typeof _taprpc_AssetType);
+  'version'?: (_taprpc_AssetVersion | keyof typeof _taprpc_AssetVersion);
 }
 
 export interface AssetHumanReadable {
@@ -22,6 +22,6 @@ export interface AssetHumanReadable {
   'relativeLockTime': (number);
   'tag': (string);
   'metaHash': (Buffer);
-  'type': (_taprpc_AssetType);
-  'version': (_taprpc_AssetVersion);
+  'type': (keyof typeof _taprpc_AssetType);
+  'version': (keyof typeof _taprpc_AssetVersion);
 }
