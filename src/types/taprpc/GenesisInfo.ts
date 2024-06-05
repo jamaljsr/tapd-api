@@ -1,13 +1,13 @@
 // Original file: protos/taprootassets.proto
 
-import type { AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
+import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
 
 export interface GenesisInfoPartial {
   'genesisPoint'?: (string);
   'name'?: (string);
   'metaHash'?: (Buffer | Uint8Array | string);
   'assetId'?: (Buffer | Uint8Array | string);
-  'assetType'?: (_taprpc_AssetType | keyof typeof _taprpc_AssetType);
+  'assetType'?: (_taprpc_AssetTypePartial);
   'outputIndex'?: (number);
 }
 
@@ -16,6 +16,6 @@ export interface GenesisInfo {
   'name': (string);
   'metaHash': (Buffer);
   'assetId': (Buffer);
-  'assetType': (keyof typeof _taprpc_AssetType);
+  'assetType': (_taprpc_AssetType);
   'outputIndex': (number);
 }
