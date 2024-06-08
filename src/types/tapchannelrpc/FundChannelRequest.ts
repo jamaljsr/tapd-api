@@ -7,6 +7,7 @@ export interface FundChannelRequestPartial {
   'assetId'?: (Buffer | Uint8Array | string);
   'peerPubkey'?: (Buffer | Uint8Array | string);
   'feeRateSatPerVbyte'?: (number);
+  'pushSat'?: (number | string | Long);
 }
 
 export interface FundChannelRequest {
@@ -14,4 +15,5 @@ export interface FundChannelRequest {
   'assetId': (Buffer);
   'peerPubkey': (Buffer);
   'feeRateSatPerVbyte': (number);
+  'pushSat': (string);
 }
