@@ -13,7 +13,6 @@
   "scripts": {
     "push": "tsc && npm publish --access public",
     "build": "tsc",
-    "postinstall": "patch-package",
     "generate:clean": "rm -rf ./src/types",
     "generate:protos": "./scripts/update_protos.sh",
     "generate:types": "./node_modules/.bin/proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --inputTemplate=%sPartial --outputTemplate=%s --grpcLib=@grpc/grpc-js --outDir=./src/types/ protos/*.proto",
@@ -32,8 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "@grpc/grpc-js": "1.10.8",
-    "@grpc/proto-loader": "0.7.13",
-    "patch-package": "^8.0.0"
+    "@grpc/proto-loader": "0.7.13"
   },
   "repository": {
     "type": "git",
