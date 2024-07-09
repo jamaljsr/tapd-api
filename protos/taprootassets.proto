@@ -348,6 +348,22 @@ message GenesisReveal {
     GenesisInfo genesis_base_reveal = 1;
 }
 
+message DecimalDisplay {
+    /*
+    Decimal display dictates the number of decimal places to shift the amount to
+    the left converting from Taproot Asset integer representation to a
+    UX-recognizable fractional quantity.
+
+    For example, if the decimal_display value is 2 and there's 100 of those
+    assets, then a wallet would display the amount as "1.00". This field is
+    intended as information for wallets that display balances and has no impact
+    on the behavior of the daemon or any other part of the protocol. This value
+    is encoded in the MetaData field as a JSON field, therefore it is only
+    compatible with assets that have a JSON MetaData field.
+    */
+    uint32 decimal_display = 1;
+}
+
 enum AssetVersion {
     // ASSET_VERSION_V0 is the default asset version. This version will include
     // the witness vector in the leaf for a tap commitment.
@@ -424,6 +440,11 @@ message Asset {
     // determined for script keys that aren't known to the wallet of the local
     // tapd node.
     bool script_key_has_script_path = 19;
+
+    // This field defines a decimal display value that may be present. If this
+    // field is null, it means the presence of a decimal display field is
+    // unknown in the current context.
+    DecimalDisplay decimal_display = 20;
 }
 
 message PrevWitness {
@@ -440,6 +461,10 @@ message SplitCommitment {
 
 message ListAssetResponse {
     repeated Asset assets = 1;
+
+    // This is a count of unconfirmed outgoing transfers. Unconfirmed transfers
+    // do not appear as assets in this endpoint response.
+    uint64 unconfirmed_transfers = 2;
 }
 
 message ListUtxosRequest {
@@ -654,6 +679,10 @@ message TransferOutput {
     OutputType output_type = 7;
 
     AssetVersion asset_version = 8;
+
+    uint64 lock_time = 9;
+
+    uint64 relative_lock_time = 10;
 }
 
 message StopRequest {
@@ -670,6 +699,19 @@ message DebugLevelRequest {
 }
 message DebugLevelResponse {
     string sub_systems = 1;
+}
+
+enum AddrVersion {
+    // ADDR_VERSION_UNSPECIFIED is the default value for an address version in
+    // an RPC message. It is unmarshalled to the latest address version.
+    ADDR_VERSION_UNSPECIFIED = 0;
+
+    // ADDR_VERSION_V0 is the initial address version.
+    ADDR_VERSION_V0 = 1;
+
+    // ADDR_VERSION_V1 is the address version that uses V2 Taproot Asset
+    // commitments.
+    ADDR_VERSION_V1 = 2;
 }
 
 message Addr {
@@ -717,6 +759,9 @@ message Addr {
 
     // The asset version of the address.
     AssetVersion asset_version = 11;
+
+    // The version of the address.
+    AddrVersion address_version = 12;
 }
 
 message QueryAddrRequest {
@@ -786,6 +831,11 @@ message NewAddrRequest {
     The asset version to use when sending/receiving to/from this address.
     */
     AssetVersion asset_version = 7;
+
+    /*
+    The version of this address.
+    */
+    AddrVersion address_version = 8;
 }
 
 message ScriptKey {
@@ -1196,6 +1246,11 @@ enum ParcelType {
     // anymore, as it's not relevant for the remaining steps. Parcels of this
     // type will only get send states starting from SEND_STATE_BROADCAST.
     PARCEL_TYPE_PENDING = 2;
+
+    // The parcel type is a pre-anchored parcel where the full anchor
+    // transaction and all proofs are already available. Parcels of this type
+    // will only get send states starting from SEND_STATE_LOG_COMMITMENT.
+    PARCEL_TYPE_PRE_ANCHORED = 3;
 }
 
 message SendEvent {

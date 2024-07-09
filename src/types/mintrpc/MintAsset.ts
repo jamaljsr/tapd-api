@@ -20,6 +20,7 @@ export interface MintAssetPartial {
   'groupInternalKey'?: (_taprpc_KeyDescriptorPartial | null);
   'groupTapscriptRoot'?: (Buffer | Uint8Array | string);
   'scriptKey'?: (_taprpc_ScriptKeyPartial | null);
+  'decimalDisplay'?: (number);
 }
 
 export interface MintAsset {
@@ -35,4 +36,5 @@ export interface MintAsset {
   'groupInternalKey': (_taprpc_KeyDescriptor | null);
   'groupTapscriptRoot': (Buffer);
   'scriptKey': (_taprpc_ScriptKey | null);
+  'decimalDisplay': (number);
 }

@@ -14,6 +14,8 @@ export interface TransferOutputPartial {
   'splitCommitRootHash'?: (Buffer | Uint8Array | string);
   'outputType'?: (_taprpc_OutputTypePartial);
   'assetVersion'?: (_taprpc_AssetVersionPartial);
+  'lockTime'?: (number | string | Long);
+  'relativeLockTime'?: (number | string | Long);
 }
 
 export interface TransferOutput {
@@ -25,4 +27,6 @@ export interface TransferOutput {
   'splitCommitRootHash': (Buffer);
   'outputType': (_taprpc_OutputType);
   'assetVersion': (_taprpc_AssetVersion);
+  'lockTime': (string);
+  'relativeLockTime': (string);
 }

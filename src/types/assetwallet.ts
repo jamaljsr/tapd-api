@@ -44,6 +44,7 @@ export interface ProtoGrpcType {
     AddrEventStatus: EnumTypeDefinition
     AddrReceivesRequest: MessageTypeDefinition
     AddrReceivesResponse: MessageTypeDefinition
+    AddrVersion: EnumTypeDefinition
     AnchorInfo: MessageTypeDefinition
     AnchorTransaction: MessageTypeDefinition
     Asset: MessageTypeDefinition
@@ -60,6 +61,7 @@ export interface ProtoGrpcType {
     BurnAssetResponse: MessageTypeDefinition
     DebugLevelRequest: MessageTypeDefinition
     DebugLevelResponse: MessageTypeDefinition
+    DecimalDisplay: MessageTypeDefinition
     DecodeAddrRequest: MessageTypeDefinition
     DecodeProofRequest: MessageTypeDefinition
     DecodeProofResponse: MessageTypeDefinition

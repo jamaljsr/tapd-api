@@ -5,6 +5,7 @@ import type { GenesisInfoPartial as _taprpc_GenesisInfoPartial, GenesisInfo as _
 import type { AssetGroupPartial as _taprpc_AssetGroupPartial, AssetGroup as _taprpc_AssetGroup } from '../taprpc/AssetGroup';
 import type { AnchorInfoPartial as _taprpc_AnchorInfoPartial, AnchorInfo as _taprpc_AnchorInfo } from '../taprpc/AnchorInfo';
 import type { PrevWitnessPartial as _taprpc_PrevWitnessPartial, PrevWitness as _taprpc_PrevWitness } from '../taprpc/PrevWitness';
+import type { DecimalDisplayPartial as _taprpc_DecimalDisplayPartial, DecimalDisplay as _taprpc_DecimalDisplay } from '../taprpc/DecimalDisplay';
 import type { Long } from '@grpc/proto-loader';
 
 export interface AssetPartial {
@@ -25,6 +26,7 @@ export interface AssetPartial {
   'isBurn'?: (boolean);
   'scriptKeyDeclaredKnown'?: (boolean);
   'scriptKeyHasScriptPath'?: (boolean);
+  'decimalDisplay'?: (_taprpc_DecimalDisplayPartial | null);
 }
 
 export interface Asset {
@@ -45,4 +47,5 @@ export interface Asset {
   'isBurn': (boolean);
   'scriptKeyDeclaredKnown': (boolean);
   'scriptKeyHasScriptPath': (boolean);
+  'decimalDisplay': (_taprpc_DecimalDisplay | null);
 }

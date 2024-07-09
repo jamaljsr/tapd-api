@@ -2,6 +2,7 @@
 
 import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
 import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
+import type { AddrVersionPartial as _taprpc_AddrVersionPartial, AddrVersion as _taprpc_AddrVersion } from '../taprpc/AddrVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface AddrPartial {
@@ -16,6 +17,7 @@ export interface AddrPartial {
   'taprootOutputKey'?: (Buffer | Uint8Array | string);
   'proofCourierAddr'?: (string);
   'assetVersion'?: (_taprpc_AssetVersionPartial);
+  'addressVersion'?: (_taprpc_AddrVersionPartial);
 }
 
 export interface Addr {
@@ -30,4 +32,5 @@ export interface Addr {
   'taprootOutputKey': (Buffer);
   'proofCourierAddr': (string);
   'assetVersion': (_taprpc_AssetVersion);
+  'addressVersion': (_taprpc_AddrVersion);
 }
