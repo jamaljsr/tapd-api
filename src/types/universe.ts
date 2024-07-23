@@ -126,6 +126,8 @@ export interface ProtoGrpcType {
     MultiverseRootResponse: MessageTypeDefinition
     Outpoint: MessageTypeDefinition
     ProofType: EnumTypeDefinition
+    PushProofRequest: MessageTypeDefinition
+    PushProofResponse: MessageTypeDefinition
     QueryEventsRequest: MessageTypeDefinition
     QueryEventsResponse: MessageTypeDefinition
     QueryFederationSyncConfigRequest: MessageTypeDefinition

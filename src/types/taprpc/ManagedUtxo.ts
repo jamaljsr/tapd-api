@@ -10,6 +10,8 @@ export interface ManagedUtxoPartial {
   'taprootAssetRoot'?: (Buffer | Uint8Array | string);
   'merkleRoot'?: (Buffer | Uint8Array | string);
   'assets'?: (_taprpc_AssetPartial)[];
+  'leaseOwner'?: (Buffer | Uint8Array | string);
+  'leaseExpiryUnix'?: (number | string | Long);
 }
 
 export interface ManagedUtxo {
@@ -19,4 +21,6 @@ export interface ManagedUtxo {
   'taprootAssetRoot': (Buffer);
   'merkleRoot': (Buffer);
   'assets': (_taprpc_Asset)[];
+  'leaseOwner': (Buffer);
+  'leaseExpiryUnix': (string);
 }

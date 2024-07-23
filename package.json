@@ -1,11 +1,11 @@
 {
   "name": "@lightningpolar/tapd-api",
-  "version": "0.3.99-alpha.pre3",
+  "version": "0.3.99-alpha.pre4",
   "description": "Bitcoin Taproot Assets Protocol API client for Lightning Labs tapd daemon",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "config": {
-    "tapd_release_tag": "v0.4.0-alpha.rc2"
+    "tapd_release_tag": "main"
   },
   "files": [
     "dist",

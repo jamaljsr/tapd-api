@@ -24,6 +24,8 @@ import type { ListFederationServersRequestPartial as _universerpc_ListFederation
 import type { ListFederationServersResponsePartial as _universerpc_ListFederationServersResponsePartial, ListFederationServersResponse as _universerpc_ListFederationServersResponse } from '../universerpc/ListFederationServersResponse';
 import type { MultiverseRootRequestPartial as _universerpc_MultiverseRootRequestPartial, MultiverseRootRequest as _universerpc_MultiverseRootRequest } from '../universerpc/MultiverseRootRequest';
 import type { MultiverseRootResponsePartial as _universerpc_MultiverseRootResponsePartial, MultiverseRootResponse as _universerpc_MultiverseRootResponse } from '../universerpc/MultiverseRootResponse';
+import type { PushProofRequestPartial as _universerpc_PushProofRequestPartial, PushProofRequest as _universerpc_PushProofRequest } from '../universerpc/PushProofRequest';
+import type { PushProofResponsePartial as _universerpc_PushProofResponsePartial, PushProofResponse as _universerpc_PushProofResponse } from '../universerpc/PushProofResponse';
 import type { QueryEventsRequestPartial as _universerpc_QueryEventsRequestPartial, QueryEventsRequest as _universerpc_QueryEventsRequest } from '../universerpc/QueryEventsRequest';
 import type { QueryEventsResponsePartial as _universerpc_QueryEventsResponsePartial, QueryEventsResponse as _universerpc_QueryEventsResponse } from '../universerpc/QueryEventsResponse';
 import type { QueryFederationSyncConfigRequestPartial as _universerpc_QueryFederationSyncConfigRequestPartial, QueryFederationSyncConfigRequest as _universerpc_QueryFederationSyncConfigRequest } from '../universerpc/QueryFederationSyncConfigRequest';
@@ -129,6 +131,15 @@ export interface UniverseClient extends grpc.Client {
   multiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
   multiverseRoot(argument: _universerpc_MultiverseRootRequestPartial, callback: grpc.requestCallback<_universerpc_MultiverseRootResponse>): grpc.ClientUnaryCall;
   
+  PushProof(argument: _universerpc_PushProofRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  PushProof(argument: _universerpc_PushProofRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  PushProof(argument: _universerpc_PushProofRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  PushProof(argument: _universerpc_PushProofRequestPartial, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  pushProof(argument: _universerpc_PushProofRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  pushProof(argument: _universerpc_PushProofRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  pushProof(argument: _universerpc_PushProofRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  pushProof(argument: _universerpc_PushProofRequestPartial, callback: grpc.requestCallback<_universerpc_PushProofResponse>): grpc.ClientUnaryCall;
+  
   QueryAssetRoots(argument: _universerpc_AssetRootQueryPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryRootResponse>): grpc.ClientUnaryCall;
   QueryAssetRoots(argument: _universerpc_AssetRootQueryPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_QueryRootResponse>): grpc.ClientUnaryCall;
   QueryAssetRoots(argument: _universerpc_AssetRootQueryPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_QueryRootResponse>): grpc.ClientUnaryCall;
@@ -224,6 +235,8 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   MultiverseRoot: grpc.handleUnaryCall<_universerpc_MultiverseRootRequest, _universerpc_MultiverseRootResponsePartial>;
   
+  PushProof: grpc.handleUnaryCall<_universerpc_PushProofRequest, _universerpc_PushProofResponsePartial>;
+  
   QueryAssetRoots: grpc.handleUnaryCall<_universerpc_AssetRootQuery, _universerpc_QueryRootResponsePartial>;
   
   QueryAssetStats: grpc.handleUnaryCall<_universerpc_AssetStatsQuery, _universerpc_UniverseAssetStatsPartial>;
@@ -253,6 +266,7 @@ export interface UniverseDefinition extends grpc.ServiceDefinition {
   InsertProof: MethodDefinition<_universerpc_AssetProofPartial, _universerpc_AssetProofResponsePartial, _universerpc_AssetProof, _universerpc_AssetProofResponse>
   ListFederationServers: MethodDefinition<_universerpc_ListFederationServersRequestPartial, _universerpc_ListFederationServersResponsePartial, _universerpc_ListFederationServersRequest, _universerpc_ListFederationServersResponse>
   MultiverseRoot: MethodDefinition<_universerpc_MultiverseRootRequestPartial, _universerpc_MultiverseRootResponsePartial, _universerpc_MultiverseRootRequest, _universerpc_MultiverseRootResponse>
+  PushProof: MethodDefinition<_universerpc_PushProofRequestPartial, _universerpc_PushProofResponsePartial, _universerpc_PushProofRequest, _universerpc_PushProofResponse>
   QueryAssetRoots: MethodDefinition<_universerpc_AssetRootQueryPartial, _universerpc_QueryRootResponsePartial, _universerpc_AssetRootQuery, _universerpc_QueryRootResponse>
   QueryAssetStats: MethodDefinition<_universerpc_AssetStatsQueryPartial, _universerpc_UniverseAssetStatsPartial, _universerpc_AssetStatsQuery, _universerpc_UniverseAssetStats>
   QueryEvents: MethodDefinition<_universerpc_QueryEventsRequestPartial, _universerpc_QueryEventsResponsePartial, _universerpc_QueryEventsRequest, _universerpc_QueryEventsResponse>

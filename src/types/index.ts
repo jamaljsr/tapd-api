@@ -188,6 +188,8 @@ export * from './universerpc/MultiverseRootRequest';
 export * from './universerpc/MultiverseRootResponse';
 export * from './universerpc/Outpoint';
 export * from './universerpc/ProofType';
+export * from './universerpc/PushProofRequest';
+export * from './universerpc/PushProofResponse';
 export * from './universerpc/QueryEventsRequest';
 export * from './universerpc/QueryEventsResponse';
 export * from './universerpc/QueryFederationSyncConfigRequest';

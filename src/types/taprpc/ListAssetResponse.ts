@@ -6,9 +6,11 @@ import type { Long } from '@grpc/proto-loader';
 export interface ListAssetResponsePartial {
   'assets'?: (_taprpc_AssetPartial)[];
   'unconfirmedTransfers'?: (number | string | Long);
+  'unconfirmedMints'?: (number | string | Long);
 }
 
 export interface ListAssetResponse {
   'assets': (_taprpc_Asset)[];
   'unconfirmedTransfers': (string);
+  'unconfirmedMints': (string);
 }
