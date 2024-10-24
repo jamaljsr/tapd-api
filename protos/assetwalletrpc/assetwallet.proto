@@ -114,6 +114,26 @@ service AssetWallet {
         returns (DeclareScriptKeyResponse);
 }
 
+enum CoinSelectType {
+    /*
+    Use the default coin selection type, which currently allows script keys and
+    key spend paths.
+    */
+    COIN_SELECT_DEFAULT = 0;
+
+    /*
+    Explicitly only select inputs that are known to be BIP-086 compliant (have
+    a key-spend path only and no script tree).
+    */
+    COIN_SELECT_BIP86_ONLY = 1;
+
+    /*
+    Allow the selection of inputs that have a script tree spend path as well as
+    a key spend path.
+    */
+    COIN_SELECT_SCRIPT_TREES_ALLOWED = 2;
+}
+
 message FundVirtualPsbtRequest {
     oneof template {
         /*
@@ -126,6 +146,12 @@ message FundVirtualPsbtRequest {
         */
         TxTemplate raw = 2;
     }
+
+    /*
+    Specify the type of coins that should be selected. Defaults to allowing both
+    script trees and BIP-086 compliant inputs.
+    */
+    CoinSelectType coin_select_type = 3;
 }
 
 message FundVirtualPsbtResponse {
@@ -398,6 +424,11 @@ message ProveAssetOwnershipRequest {
     bytes script_key = 2;
 
     taprpc.OutPoint outpoint = 3;
+
+    // An optional 32-byte challenge that may be used to bind the generated
+    // proof. This challenge needs to be also presented on the
+    // VerifyAssetOwnership RPC in order to check the proof against it.
+    bytes challenge = 4;
 }
 
 message ProveAssetOwnershipResponse {
@@ -406,10 +437,30 @@ message ProveAssetOwnershipResponse {
 
 message VerifyAssetOwnershipRequest {
     bytes proof_with_witness = 1;
+
+    // An optional 32-byte challenge that may be used to check the ownership
+    // proof against. This challenge must match the one that the prover used
+    // on the ProveAssetOwnership RPC.
+    bytes challenge = 2;
 }
 
 message VerifyAssetOwnershipResponse {
     bool valid_proof = 1;
+
+    // The outpoint the proof commits to.
+    taprpc.OutPoint outpoint = 2;
+
+    // The outpoint in the human-readable form "hash:index".
+    string outpoint_str = 3;
+
+    // The block hash the output is part of.
+    bytes block_hash = 4;
+
+    // The block hash as hexadecimal string of the byte-reversed hash.
+    string block_hash_str = 5;
+
+    // The block height of the block the output is part of.
+    uint32 block_height = 6;
 }
 
 message RemoveUTXOLeaseRequest {

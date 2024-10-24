@@ -3,6 +3,7 @@
 import type { TransferOutputAnchorPartial as _taprpc_TransferOutputAnchorPartial, TransferOutputAnchor as _taprpc_TransferOutputAnchor } from '../taprpc/TransferOutputAnchor';
 import type { OutputTypePartial as _taprpc_OutputTypePartial, OutputType as _taprpc_OutputType } from '../taprpc/OutputType';
 import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
+import type { ProofDeliveryStatusPartial as _taprpc_ProofDeliveryStatusPartial, ProofDeliveryStatus as _taprpc_ProofDeliveryStatus } from '../taprpc/ProofDeliveryStatus';
 import type { Long } from '@grpc/proto-loader';
 
 export interface TransferOutputPartial {
@@ -16,6 +17,7 @@ export interface TransferOutputPartial {
   'assetVersion'?: (_taprpc_AssetVersionPartial);
   'lockTime'?: (number | string | Long);
   'relativeLockTime'?: (number | string | Long);
+  'proofDeliveryStatus'?: (_taprpc_ProofDeliveryStatusPartial);
 }
 
 export interface TransferOutput {
@@ -29,4 +31,5 @@ export interface TransferOutput {
   'assetVersion': (_taprpc_AssetVersion);
   'lockTime': (string);
   'relativeLockTime': (string);
+  'proofDeliveryStatus': (_taprpc_ProofDeliveryStatus);
 }

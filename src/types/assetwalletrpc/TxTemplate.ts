@@ -1,4 +1,4 @@
-// Original file: protos/assetwallet.proto
+// Original file: protos/assetwalletrpc/assetwallet.proto
 
 import type { PrevIdPartial as _assetwalletrpc_PrevIdPartial, PrevId as _assetwalletrpc_PrevId } from '../assetwalletrpc/PrevId';
 import type { Long } from '@grpc/proto-loader';

@@ -40,7 +40,7 @@ export class AssetWalletApi {
 
   static create(options: TapdClientOptions) {
     const { proto, credentials, params } = loadProto<ProtoGrpcType>(
-      'assetwallet.proto',
+      'assetwalletrpc/assetwallet.proto',
       options
     );
 

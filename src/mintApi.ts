@@ -28,7 +28,7 @@ export class MintApi {
 
   static create(options: TapdClientOptions) {
     const { proto, credentials, params } = loadProto<ProtoGrpcType>(
-      'mint.proto',
+      'mintrpc/mint.proto',
       options
     );
 

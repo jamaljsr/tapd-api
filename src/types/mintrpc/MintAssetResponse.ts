@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 import type { MintingBatchPartial as _mintrpc_MintingBatchPartial, MintingBatch as _mintrpc_MintingBatch } from '../mintrpc/MintingBatch';
 

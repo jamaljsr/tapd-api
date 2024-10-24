@@ -1,4 +1,4 @@
-// Original file: protos/assetwallet.proto
+// Original file: protos/assetwalletrpc/assetwallet.proto
 
 import type { Long } from '@grpc/proto-loader';
 

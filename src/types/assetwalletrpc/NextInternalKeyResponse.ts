@@ -1,4 +1,4 @@
-// Original file: protos/assetwallet.proto
+// Original file: protos/assetwalletrpc/assetwallet.proto
 
 import type { KeyDescriptorPartial as _taprpc_KeyDescriptorPartial, KeyDescriptor as _taprpc_KeyDescriptor } from '../taprpc/KeyDescriptor';
 

@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { AssetLeafPartial as _universerpc_AssetLeafPartial, AssetLeaf as _universerpc_AssetLeaf } from '../universerpc/AssetLeaf';
 

@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 import type { Long } from '@grpc/proto-loader';
 

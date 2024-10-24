@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { UniverseSyncModePartial as _universerpc_UniverseSyncModePartial, UniverseSyncMode as _universerpc_UniverseSyncMode } from '../universerpc/UniverseSyncMode';
 import type { SyncTargetPartial as _universerpc_SyncTargetPartial, SyncTarget as _universerpc_SyncTarget } from '../universerpc/SyncTarget';

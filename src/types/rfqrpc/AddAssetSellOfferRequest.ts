@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 import type { AssetSpecifierPartial as _rfqrpc_AssetSpecifierPartial, AssetSpecifier as _rfqrpc_AssetSpecifier } from '../rfqrpc/AssetSpecifier';
 import type { Long } from '@grpc/proto-loader';

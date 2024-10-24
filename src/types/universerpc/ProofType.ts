@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 export const ProofType = {
   PROOF_TYPE_UNSPECIFIED: 'PROOF_TYPE_UNSPECIFIED',

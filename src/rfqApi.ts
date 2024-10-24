@@ -30,7 +30,7 @@ export class RfqApi {
 
   static create(options: TapdClientOptions) {
     const { proto, credentials, params } = loadProto<ProtoGrpcType>(
-      'rfq.proto',
+      'rfqrpc/rfq.proto',
       options
     );
 

@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { OutpointPartial as _universerpc_OutpointPartial, Outpoint as _universerpc_Outpoint } from '../universerpc/Outpoint';
 

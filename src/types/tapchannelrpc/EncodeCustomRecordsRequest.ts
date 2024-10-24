@@ -1,4 +1,4 @@
-// Original file: protos/tapchannel.proto
+// Original file: protos/tapchannelrpc/tapchannel.proto
 
 import type { RouterSendPaymentDataPartial as _tapchannelrpc_RouterSendPaymentDataPartial, RouterSendPaymentData as _tapchannelrpc_RouterSendPaymentData } from '../tapchannelrpc/RouterSendPaymentData';
 

@@ -30,17 +30,44 @@ export const loadProto = <T>(
     callCredentials
   );
 
-  const params = {
-    'grpc.max_receive_message_length': -1,
-    'grpc.max_send_message_length': -1,
+  const debugInterceptor: grpc.Interceptor = (options, next) => {
+    return new grpc.InterceptingCall(next(options), {
+      start: function (metadata, listener, next) {
+        next(metadata, {
+          onReceiveMetadata: function (metadata, next) {
+            console.log('Received metadata:', metadata);
+            next(metadata);
+          },
+          onReceiveMessage: function (message, next) {
+            console.log('Received message:', message);
+            next(message);
+          },
+          onReceiveStatus: function (status, next) {
+            console.log('Received status:', status);
+            next(status);
+          },
+        });
+      },
+    });
   };
 
-  const protoPath = Path.join(__dirname, '../protos', protoFileName);
-  const packageDefinition = protoLoader.loadSync(protoPath, {
+  const params: grpc.ClientOptions = {
+    'grpc.max_receive_message_length': -1,
+    'grpc.max_send_message_length': -1,
+    interceptors: [debugInterceptor],
+  };
+
+  const protosDir = Path.join(__dirname, '../protos');
+  const protoPath = Path.join(protosDir, protoFileName);
+  const dirName = Path.dirname(protoPath);
+  const fileName = Path.basename(protoPath);
+  console.log({ protosDir, protoPath, dirName, fileName });
+  const packageDefinition = protoLoader.loadSync(fileName, {
     longs: String,
     enums: String,
     defaults: true,
     oneofs: true,
+    includeDirs: [protosDir, dirName],
   });
   const proto = grpc.loadPackageDefinition(packageDefinition) as unknown as T;
 

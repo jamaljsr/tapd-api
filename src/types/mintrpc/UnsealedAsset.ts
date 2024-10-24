@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 import type { PendingAssetPartial as _mintrpc_PendingAssetPartial, PendingAsset as _mintrpc_PendingAsset } from '../mintrpc/PendingAsset';
 import type { GroupKeyRequestPartial as _taprpc_GroupKeyRequestPartial, GroupKeyRequest as _taprpc_GroupKeyRequest } from '../taprpc/GroupKeyRequest';

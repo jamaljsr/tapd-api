@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { AssetKeyPartial as _universerpc_AssetKeyPartial, AssetKey as _universerpc_AssetKey } from '../universerpc/AssetKey';
 

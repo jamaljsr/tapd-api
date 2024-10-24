@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 import type { PeerAcceptedSellQuotePartial as _rfqrpc_PeerAcceptedSellQuotePartial, PeerAcceptedSellQuote as _rfqrpc_PeerAcceptedSellQuote } from '../rfqrpc/PeerAcceptedSellQuote';
 import type { Long } from '@grpc/proto-loader';

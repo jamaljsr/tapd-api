@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 import type * as grpc from '@grpc/grpc-js'
 import type { MethodDefinition } from '@grpc/proto-loader'

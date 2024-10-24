@@ -1,7 +1,9 @@
+import { ClientReadableStream } from '@grpc/grpc-js';
 import { promisify } from 'util';
 import { TapdClientOptions } from './';
 import { loadProto } from './proto';
 import {
+  AddInvoiceRequestPartial,
   EncodeCustomRecordsRequestPartial,
   EncodeCustomRecordsResponse,
   FundChannelRequestPartial,
@@ -9,6 +11,9 @@ import {
   TaprootAssetChannelsClient,
 } from './types';
 import { ProtoGrpcType } from './types/tapchannel';
+import { AddInvoiceResponse } from './types/tapchannelrpc/AddInvoiceResponse';
+import { SendPaymentRequestPartial } from './types/tapchannelrpc/SendPaymentRequest';
+import { SendPaymentResponse } from './types/tapchannelrpc/SendPaymentResponse';
 
 /**
  * @ChannelsApi API interface for Tap's daemon.
@@ -20,7 +25,7 @@ export class ChannelsApi {
    */
   static create(options: TapdClientOptions) {
     const { proto, credentials, params } = loadProto<ProtoGrpcType>(
-      'tapchannel.proto',
+      'tapchannelrpc/tapchannel.proto',
       options
     );
 
@@ -65,5 +70,28 @@ export class ChannelsApi {
     return promisify(this.client.EncodeCustomRecords.bind(this.client))(
       request
     );
+  }
+
+  /**
+   * @sendPayment is a wrapper around lnd's routerrpc.SendPaymentV2 RPC method
+   * with asset specific parameters. It allows RPC users to send asset keysend
+   * payments (direct payments) or payments to an invoice with a specified asset
+   * amount.
+   */
+  sendPayment(
+    request: SendPaymentRequestPartial = {}
+  ): ClientReadableStream<SendPaymentResponse> {
+    return this.client.SendPayment(request);
+  }
+
+  /**
+   * @addInvoice is a wrapper around lnd's lnrpc.AddInvoice method with asset
+   * specific parameters. It allows RPC users to create invoices that correspond
+   * to the specified asset amount.
+   */
+  async addInvoice(
+    request: AddInvoiceRequestPartial = {}
+  ): Promise<AddInvoiceResponse> {
+    return promisify(this.client.AddInvoice.bind(this.client))(request);
   }
 }

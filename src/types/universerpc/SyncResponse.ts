@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { SyncedUniversePartial as _universerpc_SyncedUniversePartial, SyncedUniverse as _universerpc_SyncedUniverse } from '../universerpc/SyncedUniverse';
 

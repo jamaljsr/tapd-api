@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc_AssetType } from '../taprpc/AssetType';

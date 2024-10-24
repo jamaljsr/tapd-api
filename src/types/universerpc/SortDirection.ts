@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 export const SortDirection = {
   SORT_DIRECTION_ASC: 'SORT_DIRECTION_ASC',

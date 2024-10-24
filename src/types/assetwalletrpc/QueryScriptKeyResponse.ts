@@ -1,4 +1,4 @@
-// Original file: protos/assetwallet.proto
+// Original file: protos/assetwalletrpc/assetwallet.proto
 
 import type { ScriptKeyPartial as _taprpc_ScriptKeyPartial, ScriptKey as _taprpc_ScriptKey } from '../taprpc/ScriptKey';
 

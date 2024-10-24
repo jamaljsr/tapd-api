@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 export const AssetTypeFilter = {
   FILTER_ASSET_NONE: 'FILTER_ASSET_NONE',

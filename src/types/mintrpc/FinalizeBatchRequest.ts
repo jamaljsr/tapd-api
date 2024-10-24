@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 import type { TapscriptFullTreePartial as _taprpc_TapscriptFullTreePartial, TapscriptFullTree as _taprpc_TapscriptFullTree } from '../taprpc/TapscriptFullTree';
 import type { TapBranchPartial as _taprpc_TapBranchPartial, TapBranch as _taprpc_TapBranch } from '../taprpc/TapBranch';

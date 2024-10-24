@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 export const BatchState = {
   BATCH_STATE_UNKNOWN: 'BATCH_STATE_UNKNOWN',

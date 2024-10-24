@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { AssetStatsAssetPartial as _universerpc_AssetStatsAssetPartial, AssetStatsAsset as _universerpc_AssetStatsAsset } from '../universerpc/AssetStatsAsset';
 import type { Long } from '@grpc/proto-loader';

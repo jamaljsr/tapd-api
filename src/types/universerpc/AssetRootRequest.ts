@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { SortDirectionPartial as _universerpc_SortDirectionPartial, SortDirection as _universerpc_SortDirection } from '../universerpc/SortDirection';
 

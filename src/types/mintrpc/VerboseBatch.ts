@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 import type { MintingBatchPartial as _mintrpc_MintingBatchPartial, MintingBatch as _mintrpc_MintingBatch } from '../mintrpc/MintingBatch';
 import type { UnsealedAssetPartial as _mintrpc_UnsealedAssetPartial, UnsealedAsset as _mintrpc_UnsealedAsset } from '../mintrpc/UnsealedAsset';

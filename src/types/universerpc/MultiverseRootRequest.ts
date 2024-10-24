@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { ProofTypePartial as _universerpc_ProofTypePartial, ProofType as _universerpc_ProofType } from '../universerpc/ProofType';
 import type { IDPartial as _universerpc_IDPartial, ID as _universerpc_ID } from '../universerpc/ID';

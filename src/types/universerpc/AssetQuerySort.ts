@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 export const AssetQuerySort = {
   SORT_BY_NONE: 'SORT_BY_NONE',

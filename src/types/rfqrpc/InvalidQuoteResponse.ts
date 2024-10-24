@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 import type { QuoteRespStatusPartial as _rfqrpc_QuoteRespStatusPartial, QuoteRespStatus as _rfqrpc_QuoteRespStatus } from '../rfqrpc/QuoteRespStatus';
 

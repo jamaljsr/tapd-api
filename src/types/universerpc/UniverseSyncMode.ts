@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 export const UniverseSyncMode = {
   SYNC_ISSUANCE_ONLY: 'SYNC_ISSUANCE_ONLY',

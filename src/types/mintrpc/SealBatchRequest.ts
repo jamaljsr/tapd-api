@@ -1,4 +1,4 @@
-// Original file: protos/mint.proto
+// Original file: protos/mintrpc/mint.proto
 
 import type { GroupWitnessPartial as _taprpc_GroupWitnessPartial, GroupWitness as _taprpc_GroupWitness } from '../taprpc/GroupWitness';
 

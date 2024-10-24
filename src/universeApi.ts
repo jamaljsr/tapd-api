@@ -51,7 +51,7 @@ export class UniverseApi {
 
   static create(options: TapdClientOptions) {
     const { proto, credentials, params } = loadProto<ProtoGrpcType>(
-      'universe.proto',
+      'universerpc/universe.proto',
       options
     );
 

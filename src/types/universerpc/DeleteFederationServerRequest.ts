@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { UniverseFederationServerPartial as _universerpc_UniverseFederationServerPartial, UniverseFederationServer as _universerpc_UniverseFederationServer } from '../universerpc/UniverseFederationServer';
 

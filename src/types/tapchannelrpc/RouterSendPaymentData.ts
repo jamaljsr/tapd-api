@@ -1,4 +1,4 @@
-// Original file: protos/tapchannel.proto
+// Original file: protos/tapchannelrpc/tapchannel.proto
 
 import type { Long } from '@grpc/proto-loader';
 

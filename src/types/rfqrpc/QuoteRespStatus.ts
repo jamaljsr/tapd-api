@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 export const QuoteRespStatus = {
   INVALID_RATE_TICK: 'INVALID_RATE_TICK',

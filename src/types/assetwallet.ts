@@ -12,6 +12,7 @@ export interface ProtoGrpcType {
   assetwalletrpc: {
     AnchorVirtualPsbtsRequest: MessageTypeDefinition
     AssetWallet: SubtypeConstructor<typeof grpc.Client, _assetwalletrpc_AssetWalletClient> & { service: _assetwalletrpc_AssetWalletDefinition }
+    CoinSelectType: EnumTypeDefinition
     CommitVirtualPsbtsRequest: MessageTypeDefinition
     CommitVirtualPsbtsResponse: MessageTypeDefinition
     DeclareScriptKeyRequest: MessageTypeDefinition
@@ -59,6 +60,7 @@ export interface ProtoGrpcType {
     AssetVersion: EnumTypeDefinition
     BurnAssetRequest: MessageTypeDefinition
     BurnAssetResponse: MessageTypeDefinition
+    ChainHash: MessageTypeDefinition
     DebugLevelRequest: MessageTypeDefinition
     DebugLevelResponse: MessageTypeDefinition
     DecimalDisplay: MessageTypeDefinition
@@ -96,6 +98,7 @@ export interface ProtoGrpcType {
     ParcelType: EnumTypeDefinition
     PrevInputAsset: MessageTypeDefinition
     PrevWitness: MessageTypeDefinition
+    ProofDeliveryStatus: EnumTypeDefinition
     ProofFile: MessageTypeDefinition
     QueryAddrRequest: MessageTypeDefinition
     QueryAddrResponse: MessageTypeDefinition

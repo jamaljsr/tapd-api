@@ -1,4 +1,4 @@
-// Original file: protos/rfq.proto
+// Original file: protos/rfqrpc/rfq.proto
 
 import type { PeerAcceptedBuyQuoteEventPartial as _rfqrpc_PeerAcceptedBuyQuoteEventPartial, PeerAcceptedBuyQuoteEvent as _rfqrpc_PeerAcceptedBuyQuoteEvent } from '../rfqrpc/PeerAcceptedBuyQuoteEvent';
 import type { PeerAcceptedSellQuoteEventPartial as _rfqrpc_PeerAcceptedSellQuoteEventPartial, PeerAcceptedSellQuoteEvent as _rfqrpc_PeerAcceptedSellQuoteEvent } from '../rfqrpc/PeerAcceptedSellQuoteEvent';

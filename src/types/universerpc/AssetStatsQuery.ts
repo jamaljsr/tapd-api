@@ -1,4 +1,4 @@
-// Original file: protos/universe.proto
+// Original file: protos/universerpc/universe.proto
 
 import type { AssetTypeFilterPartial as _universerpc_AssetTypeFilterPartial, AssetTypeFilter as _universerpc_AssetTypeFilter } from '../universerpc/AssetTypeFilter';
 import type { AssetQuerySortPartial as _universerpc_AssetQuerySortPartial, AssetQuerySort as _universerpc_AssetQuerySort } from '../universerpc/AssetQuerySort';
