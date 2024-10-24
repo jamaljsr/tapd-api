@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "config": {
-    "tapd_release_tag": "main"
+    "tapd_release_tag": "3b92c82bb332c62c898637781646211a314bf9a8",
+    "lnd_release_tag": "v0.18.3-beta"
   },
   "files": [
     "dist",
@@ -17,8 +18,8 @@
     "push": "tsc && npm publish --access public",
     "build": "tsc",
     "generate:clean": "rm -rf ./src/types",
-    "generate:protos": "sh ./scripts/update_protos.sh ${npm_package_config_tapd_release_tag}",
-    "generate:types": "./node_modules/.bin/proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --inputTemplate=%sPartial --outputTemplate=%s --grpcLib=@grpc/grpc-js --outDir=./src/types/ protos/*.proto",
+    "generate:protos": "sh ./scripts/update_protos.sh ${npm_package_config_tapd_release_tag} ${npm_package_config_lnd_release_tag}",
+    "generate:types": "sh ./scripts/gen_types.sh",
     "generate:index": "node ./scripts/generateTypesIndex.js",
     "generate": "npm run generate:clean && npm run generate:protos && npm run generate:types && npm run generate:index"
   },
@@ -33,7 +34,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@grpc/grpc-js": "1.10.8",
+    "@grpc/grpc-js": "^1.12.2",
     "@grpc/proto-loader": "0.7.13"
   },
   "repository": {
