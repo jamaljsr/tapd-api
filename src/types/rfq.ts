@@ -19,6 +19,7 @@ export interface ProtoGrpcType {
     AddAssetSellOrderRequest: MessageTypeDefinition
     AddAssetSellOrderResponse: MessageTypeDefinition
     AssetSpecifier: MessageTypeDefinition
+    FixedPoint: MessageTypeDefinition
     InvalidQuoteResponse: MessageTypeDefinition
     PeerAcceptedBuyQuote: MessageTypeDefinition
     PeerAcceptedBuyQuoteEvent: MessageTypeDefinition

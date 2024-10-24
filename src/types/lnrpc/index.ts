@@ -45,6 +45,7 @@ export * from './ChannelUpdate';
 export * from './CheckMacPermRequest';
 export * from './CheckMacPermResponse';
 export * from './CloseChannelRequest';
+export * from './CloseOutput';
 export * from './CloseStatusUpdate';
 export * from './ClosedChannelUpdate';
 export * from './ClosedChannelsRequest';

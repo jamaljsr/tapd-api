@@ -87,6 +87,7 @@ export interface _lnrpc_PendingChannelsResponse_PendingChannelPartial {
   'chanStatusFlags'?: (string);
   'private'?: (boolean);
   'memo'?: (string);
+  'customChannelData'?: (Buffer | Uint8Array | string);
 }
 
 export interface _lnrpc_PendingChannelsResponse_PendingChannel {
@@ -103,6 +104,7 @@ export interface _lnrpc_PendingChannelsResponse_PendingChannel {
   'chanStatusFlags': (string);
   'private': (boolean);
   'memo': (string);
+  'customChannelData': (Buffer);
 }
 
 export interface _lnrpc_PendingChannelsResponse_PendingOpenChannelPartial {

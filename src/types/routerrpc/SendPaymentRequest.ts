@@ -29,6 +29,7 @@ export interface SendPaymentRequestPartial {
   'amp'?: (boolean);
   'timePref'?: (number | string);
   'cancelable'?: (boolean);
+  'firstHopCustomRecords'?: ({[key: number]: Buffer | Uint8Array | string});
 }
 
 export interface SendPaymentRequest {
@@ -56,4 +57,5 @@ export interface SendPaymentRequest {
   'amp': (boolean);
   'timePref': (number);
   'cancelable': (boolean);
+  'firstHopCustomRecords': ({[key: number]: Buffer});
 }

@@ -44,6 +44,7 @@ export interface PaymentPartial {
   'htlcs'?: (_lnrpc_HTLCAttemptPartial)[];
   'paymentIndex'?: (number | string | Long);
   'failureReason'?: (_lnrpc_PaymentFailureReasonPartial);
+  'firstHopCustomRecords'?: ({[key: number]: Buffer | Uint8Array | string});
 }
 
 export interface Payment {
@@ -62,4 +63,5 @@ export interface Payment {
   'htlcs': (_lnrpc_HTLCAttempt)[];
   'paymentIndex': (string);
   'failureReason': (_lnrpc_PaymentFailureReason);
+  'firstHopCustomRecords': ({[key: number]: Buffer});
 }

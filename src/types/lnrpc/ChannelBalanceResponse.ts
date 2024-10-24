@@ -12,6 +12,7 @@ export interface ChannelBalanceResponsePartial {
   'unsettledRemoteBalance'?: (_lnrpc_AmountPartial | null);
   'pendingOpenLocalBalance'?: (_lnrpc_AmountPartial | null);
   'pendingOpenRemoteBalance'?: (_lnrpc_AmountPartial | null);
+  'customChannelData'?: (Buffer | Uint8Array | string);
 }
 
 export interface ChannelBalanceResponse {
@@ -23,4 +24,5 @@ export interface ChannelBalanceResponse {
   'unsettledRemoteBalance': (_lnrpc_Amount | null);
   'pendingOpenLocalBalance': (_lnrpc_Amount | null);
   'pendingOpenRemoteBalance': (_lnrpc_Amount | null);
+  'customChannelData': (Buffer);
 }

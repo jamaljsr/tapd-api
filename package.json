@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "config": {
-    "tapd_release_tag": "3b92c82bb332c62c898637781646211a314bf9a8",
-    "lnd_release_tag": "v0.18.3-beta"
+    "tapd_release_tag": "54f007d7cfc3750f598d67a42de16b4b69f7d027",
+    "lnd_release_tag": "6f0d7f9a87d34f9f6db7cfde4ff899fe31bf5239"
   },
   "files": [
     "dist",

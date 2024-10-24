@@ -16,6 +16,7 @@ export interface InvoiceHTLCPartial {
   'customRecords'?: ({[key: number]: Buffer | Uint8Array | string});
   'mppTotalAmtMsat'?: (number | string | Long);
   'amp'?: (_lnrpc_AMPPartial | null);
+  'customChannelData'?: (Buffer | Uint8Array | string);
 }
 
 export interface InvoiceHTLC {
@@ -30,4 +31,5 @@ export interface InvoiceHTLC {
   'customRecords': ({[key: number]: Buffer});
   'mppTotalAmtMsat': (string);
   'amp': (_lnrpc_AMP | null);
+  'customChannelData': (Buffer);
 }

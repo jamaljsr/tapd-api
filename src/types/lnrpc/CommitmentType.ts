@@ -7,6 +7,7 @@ export const CommitmentType = {
   ANCHORS: 'ANCHORS',
   SCRIPT_ENFORCED_LEASE: 'SCRIPT_ENFORCED_LEASE',
   SIMPLE_TAPROOT: 'SIMPLE_TAPROOT',
+  SIMPLE_TAPROOT_OVERLAY: 'SIMPLE_TAPROOT_OVERLAY',
 } as const;
 
 export type CommitmentTypePartial =
@@ -22,5 +23,7 @@ export type CommitmentTypePartial =
   | 4
   | 'SIMPLE_TAPROOT'
   | 5
+  | 'SIMPLE_TAPROOT_OVERLAY'
+  | 6
 
 export type CommitmentType = typeof CommitmentType[keyof typeof CommitmentType]

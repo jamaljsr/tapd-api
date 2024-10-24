@@ -1,12 +1,12 @@
 // Original file: protos/priceoraclerpc/price_oracle.proto
 
 
-export interface QueryRateTickErrResponsePartial {
+export interface QueryAssetRatesErrResponsePartial {
   'message'?: (string);
   'code'?: (number);
 }
 
-export interface QueryRateTickErrResponse {
+export interface QueryAssetRatesErrResponse {
   'message': (string);
   'code': (number);
 }

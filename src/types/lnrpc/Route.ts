@@ -10,6 +10,8 @@ export interface RoutePartial {
   'hops'?: (_lnrpc_HopPartial)[];
   'totalFeesMsat'?: (number | string | Long);
   'totalAmtMsat'?: (number | string | Long);
+  'firstHopAmountMsat'?: (number | string | Long);
+  'customChannelData'?: (Buffer | Uint8Array | string);
 }
 
 export interface Route {
@@ -19,4 +21,6 @@ export interface Route {
   'hops': (_lnrpc_Hop)[];
   'totalFeesMsat': (string);
   'totalAmtMsat': (string);
+  'firstHopAmountMsat': (string);
+  'customChannelData': (Buffer);
 }

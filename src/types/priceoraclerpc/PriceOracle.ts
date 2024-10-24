@@ -2,26 +2,26 @@
 
 import type * as grpc from '@grpc/grpc-js'
 import type { MethodDefinition } from '@grpc/proto-loader'
-import type { QueryRateTickRequestPartial as _priceoraclerpc_QueryRateTickRequestPartial, QueryRateTickRequest as _priceoraclerpc_QueryRateTickRequest } from '../priceoraclerpc/QueryRateTickRequest';
-import type { QueryRateTickResponsePartial as _priceoraclerpc_QueryRateTickResponsePartial, QueryRateTickResponse as _priceoraclerpc_QueryRateTickResponse } from '../priceoraclerpc/QueryRateTickResponse';
+import type { QueryAssetRatesRequestPartial as _priceoraclerpc_QueryAssetRatesRequestPartial, QueryAssetRatesRequest as _priceoraclerpc_QueryAssetRatesRequest } from '../priceoraclerpc/QueryAssetRatesRequest';
+import type { QueryAssetRatesResponsePartial as _priceoraclerpc_QueryAssetRatesResponsePartial, QueryAssetRatesResponse as _priceoraclerpc_QueryAssetRatesResponse } from '../priceoraclerpc/QueryAssetRatesResponse';
 
 export interface PriceOracleClient extends grpc.Client {
-  QueryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  QueryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  QueryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  QueryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  queryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  queryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  queryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
-  queryRateTick(argument: _priceoraclerpc_QueryRateTickRequestPartial, callback: grpc.requestCallback<_priceoraclerpc_QueryRateTickResponse>): grpc.ClientUnaryCall;
+  QueryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  QueryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  QueryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  QueryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  queryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  queryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  queryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
+  queryAssetRates(argument: _priceoraclerpc_QueryAssetRatesRequestPartial, callback: grpc.requestCallback<_priceoraclerpc_QueryAssetRatesResponse>): grpc.ClientUnaryCall;
   
 }
 
 export interface PriceOracleHandlers extends grpc.UntypedServiceImplementation {
-  QueryRateTick: grpc.handleUnaryCall<_priceoraclerpc_QueryRateTickRequest, _priceoraclerpc_QueryRateTickResponsePartial>;
+  QueryAssetRates: grpc.handleUnaryCall<_priceoraclerpc_QueryAssetRatesRequest, _priceoraclerpc_QueryAssetRatesResponsePartial>;
   
 }
 
 export interface PriceOracleDefinition extends grpc.ServiceDefinition {
-  QueryRateTick: MethodDefinition<_priceoraclerpc_QueryRateTickRequestPartial, _priceoraclerpc_QueryRateTickResponsePartial, _priceoraclerpc_QueryRateTickRequest, _priceoraclerpc_QueryRateTickResponse>
+  QueryAssetRates: MethodDefinition<_priceoraclerpc_QueryAssetRatesRequestPartial, _priceoraclerpc_QueryAssetRatesResponsePartial, _priceoraclerpc_QueryAssetRatesRequest, _priceoraclerpc_QueryAssetRatesResponse>
 }

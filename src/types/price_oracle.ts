@@ -9,13 +9,14 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   priceoraclerpc: {
+    AssetRates: MessageTypeDefinition
     AssetSpecifier: MessageTypeDefinition
+    FixedPoint: MessageTypeDefinition
     PriceOracle: SubtypeConstructor<typeof grpc.Client, _priceoraclerpc_PriceOracleClient> & { service: _priceoraclerpc_PriceOracleDefinition }
-    QueryRateTickErrResponse: MessageTypeDefinition
-    QueryRateTickRequest: MessageTypeDefinition
-    QueryRateTickResponse: MessageTypeDefinition
-    QueryRateTickSuccessResponse: MessageTypeDefinition
-    RateTick: MessageTypeDefinition
+    QueryAssetRatesErrResponse: MessageTypeDefinition
+    QueryAssetRatesOkResponse: MessageTypeDefinition
+    QueryAssetRatesRequest: MessageTypeDefinition
+    QueryAssetRatesResponse: MessageTypeDefinition
     TransactionType: EnumTypeDefinition
   }
 }

@@ -6,10 +6,12 @@ export interface SendToRouteRequestPartial {
   'paymentHash'?: (Buffer | Uint8Array | string);
   'route'?: (_lnrpc_RoutePartial | null);
   'skipTempErr'?: (boolean);
+  'firstHopCustomRecords'?: ({[key: number]: Buffer | Uint8Array | string});
 }
 
 export interface SendToRouteRequest {
   'paymentHash': (Buffer);
   'route': (_lnrpc_Route | null);
   'skipTempErr': (boolean);
+  'firstHopCustomRecords': ({[key: number]: Buffer});
 }

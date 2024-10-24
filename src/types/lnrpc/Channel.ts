@@ -42,6 +42,7 @@ export interface ChannelPartial {
   'peerAlias'?: (string);
   'peerScidAlias'?: (number | string | Long);
   'memo'?: (string);
+  'customChannelData'?: (Buffer | Uint8Array | string);
 }
 
 export interface Channel {
@@ -81,4 +82,5 @@ export interface Channel {
   'peerAlias': (string);
   'peerScidAlias': (string);
   'memo': (string);
+  'customChannelData': (Buffer);
 }

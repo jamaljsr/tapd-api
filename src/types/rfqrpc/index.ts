@@ -8,6 +8,7 @@ export * from './AddAssetSellOfferResponse';
 export * from './AddAssetSellOrderRequest';
 export * from './AddAssetSellOrderResponse';
 export * from './AssetSpecifier';
+export * from './FixedPoint';
 export * from './InvalidQuoteResponse';
 export * from './PeerAcceptedBuyQuote';
 export * from './PeerAcceptedBuyQuoteEvent';

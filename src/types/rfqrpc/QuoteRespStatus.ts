@@ -1,13 +1,13 @@
 // Original file: protos/rfqrpc/rfq.proto
 
 export const QuoteRespStatus = {
-  INVALID_RATE_TICK: 'INVALID_RATE_TICK',
+  INVALID_ASSET_RATES: 'INVALID_ASSET_RATES',
   INVALID_EXPIRY: 'INVALID_EXPIRY',
   PRICE_ORACLE_QUERY_ERR: 'PRICE_ORACLE_QUERY_ERR',
 } as const;
 
 export type QuoteRespStatusPartial =
-  | 'INVALID_RATE_TICK'
+  | 'INVALID_ASSET_RATES'
   | 0
   | 'INVALID_EXPIRY'
   | 1

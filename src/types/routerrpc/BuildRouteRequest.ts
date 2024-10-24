@@ -8,6 +8,7 @@ export interface BuildRouteRequestPartial {
   'outgoingChanId'?: (number | string | Long);
   'hopPubkeys'?: (Buffer | Uint8Array | string)[];
   'paymentAddr'?: (Buffer | Uint8Array | string);
+  'firstHopCustomRecords'?: ({[key: number]: Buffer | Uint8Array | string});
 }
 
 export interface BuildRouteRequest {
@@ -16,4 +17,5 @@ export interface BuildRouteRequest {
   'outgoingChanId': (string);
   'hopPubkeys': (Buffer)[];
   'paymentAddr': (Buffer);
+  'firstHopCustomRecords': ({[key: number]: Buffer});
 }
