@@ -8,11 +8,11 @@ const client = TapClient.create({
 });
 
 (async () => {
-  const { batchKey } = await client.mint.mintAsset({
+  const { pendingBatch } = await client.mint.mintAsset({
     asset: { name: 'example-asset', amount: 1000, assetType: AssetType.NORMAL },
   });
 
-  console.log(batchKey);
+  console.log(pendingBatch);
 
   const { assets } = await client.taprootAssets.listAssets();
 

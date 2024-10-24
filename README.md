@@ -5,6 +5,7 @@ Taproot Assets api client to interact with lightning labs `tapd` daemon.
 # Usage
 
 Import the module.
+
 ```
 import { TapClient } from "@lightningpolar/tapd-api"
 // OR
@@ -12,6 +13,7 @@ const { TapClient } = require("@lightningpolar/tapd-api");
 ```
 
 Creating a client instance.
+
 ```
 const tap = TapClient.create({
   socket: "127.0.0.1:10029",
@@ -22,26 +24,34 @@ const tap = TapClient.create({
 ```
 
 Making calls.
+
 ```
 (async () => {
-  const { batchKey } = await client.mint.mintAsset({ asset: { name: 'example-asset', amount: 1000, assetType: AssetType.NORMAL } });
+  const { pendingBatch } = await client.mint.mintAsset({
+    asset: { name: 'example-asset', amount: 1000, assetType: AssetType.NORMAL },
+  });
 
-  console.log(batchKey);
+  console.log(pendingBatch);
 
-  const { assets } = await client.tap.listAssets();
+  const { assets } = await client.taprootAssets.listAssets();
 
   console.log(assets);
 
-  const address = await client.tap.newAddr({ assetId: assets[0].assetGenesis?.assetId, amt: 100 })
+  const address = await client.taprootAssets.newAddr({
+    assetId: assets[0].assetGenesis?.assetId,
+    amt: 100,
+  });
 
   console.log(address.encoded);
 
-  const transfer = await client.tap.sendAsset({ tapAddrs: [address.encoded] })
+  const transfer = await client.taprootAssets.sendAsset({
+    tapAddrs: [address.encoded],
+  });
 
   console.log(transfer);
 
-  const { transfers } = await client.tap.listTransfers();
+  const { transfers } = await client.taprootAssets.listTransfers();
 
   console.log(transfers[0].anchorTxHash);
-})()
+})();
 ```
