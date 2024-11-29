@@ -10,6 +10,7 @@ export interface QueryAssetRatesRequestPartial {
   'subjectAsset'?: (_priceoraclerpc_AssetSpecifierPartial | null);
   'subjectAssetMaxAmount'?: (number | string | Long);
   'paymentAsset'?: (_priceoraclerpc_AssetSpecifierPartial | null);
+  'paymentAssetMaxAmount'?: (number | string | Long);
   'assetRatesHint'?: (_priceoraclerpc_AssetRatesPartial | null);
 }
 
@@ -18,5 +19,6 @@ export interface QueryAssetRatesRequest {
   'subjectAsset': (_priceoraclerpc_AssetSpecifier | null);
   'subjectAssetMaxAmount': (string);
   'paymentAsset': (_priceoraclerpc_AssetSpecifier | null);
+  'paymentAssetMaxAmount': (string);
   'assetRatesHint': (_priceoraclerpc_AssetRates | null);
 }

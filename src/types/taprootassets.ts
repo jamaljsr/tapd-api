@@ -19,6 +19,7 @@ export interface ProtoGrpcType {
     AnchorTransaction: MessageTypeDefinition
     Asset: MessageTypeDefinition
     AssetBalance: MessageTypeDefinition
+    AssetBurn: MessageTypeDefinition
     AssetGroup: MessageTypeDefinition
     AssetGroupBalance: MessageTypeDefinition
     AssetHumanReadable: MessageTypeDefinition
@@ -54,6 +55,8 @@ export interface ProtoGrpcType {
     ListAssetResponse: MessageTypeDefinition
     ListBalancesRequest: MessageTypeDefinition
     ListBalancesResponse: MessageTypeDefinition
+    ListBurnsRequest: MessageTypeDefinition
+    ListBurnsResponse: MessageTypeDefinition
     ListGroupsRequest: MessageTypeDefinition
     ListGroupsResponse: MessageTypeDefinition
     ListTransfersRequest: MessageTypeDefinition

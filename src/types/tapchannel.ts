@@ -311,6 +311,7 @@ export interface ProtoGrpcType {
     EncodeCustomRecordsResponse: MessageTypeDefinition
     FundChannelRequest: MessageTypeDefinition
     FundChannelResponse: MessageTypeDefinition
+    HodlInvoice: MessageTypeDefinition
     RouterSendPaymentData: MessageTypeDefinition
     SendPaymentRequest: MessageTypeDefinition
     SendPaymentResponse: MessageTypeDefinition

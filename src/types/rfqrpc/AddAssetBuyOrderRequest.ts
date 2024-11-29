@@ -5,18 +5,18 @@ import type { Long } from '@grpc/proto-loader';
 
 export interface AddAssetBuyOrderRequestPartial {
   'assetSpecifier'?: (_rfqrpc_AssetSpecifierPartial | null);
-  'minAssetAmount'?: (number | string | Long);
-  'maxBid'?: (number | string | Long);
+  'assetMaxAmt'?: (number | string | Long);
   'expiry'?: (number | string | Long);
   'peerPubKey'?: (Buffer | Uint8Array | string);
   'timeoutSeconds'?: (number);
+  'skipAssetChannelCheck'?: (boolean);
 }
 
 export interface AddAssetBuyOrderRequest {
   'assetSpecifier': (_rfqrpc_AssetSpecifier | null);
-  'minAssetAmount': (string);
-  'maxBid': (string);
+  'assetMaxAmt': (string);
   'expiry': (string);
   'peerPubKey': (Buffer);
   'timeoutSeconds': (number);
+  'skipAssetChannelCheck': (boolean);
 }

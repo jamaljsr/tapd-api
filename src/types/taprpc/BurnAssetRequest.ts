@@ -7,6 +7,7 @@ export interface BurnAssetRequestPartial {
   'assetIdStr'?: (string);
   'amountToBurn'?: (number | string | Long);
   'confirmationText'?: (string);
+  'note'?: (string);
   'asset'?: "assetId"|"assetIdStr";
 }
 
@@ -15,5 +16,6 @@ export interface BurnAssetRequest {
   'assetIdStr'?: (string);
   'amountToBurn': (string);
   'confirmationText': (string);
+  'note': (string);
   'asset': "assetId"|"assetIdStr";
 }

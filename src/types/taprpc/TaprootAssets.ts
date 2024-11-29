@@ -21,6 +21,8 @@ import type { ListAssetRequestPartial as _taprpc_ListAssetRequestPartial, ListAs
 import type { ListAssetResponsePartial as _taprpc_ListAssetResponsePartial, ListAssetResponse as _taprpc_ListAssetResponse } from '../taprpc/ListAssetResponse';
 import type { ListBalancesRequestPartial as _taprpc_ListBalancesRequestPartial, ListBalancesRequest as _taprpc_ListBalancesRequest } from '../taprpc/ListBalancesRequest';
 import type { ListBalancesResponsePartial as _taprpc_ListBalancesResponsePartial, ListBalancesResponse as _taprpc_ListBalancesResponse } from '../taprpc/ListBalancesResponse';
+import type { ListBurnsRequestPartial as _taprpc_ListBurnsRequestPartial, ListBurnsRequest as _taprpc_ListBurnsRequest } from '../taprpc/ListBurnsRequest';
+import type { ListBurnsResponsePartial as _taprpc_ListBurnsResponsePartial, ListBurnsResponse as _taprpc_ListBurnsResponse } from '../taprpc/ListBurnsResponse';
 import type { ListGroupsRequestPartial as _taprpc_ListGroupsRequestPartial, ListGroupsRequest as _taprpc_ListGroupsRequest } from '../taprpc/ListGroupsRequest';
 import type { ListGroupsResponsePartial as _taprpc_ListGroupsResponsePartial, ListGroupsResponse as _taprpc_ListGroupsResponse } from '../taprpc/ListGroupsResponse';
 import type { ListTransfersRequestPartial as _taprpc_ListTransfersRequestPartial, ListTransfersRequest as _taprpc_ListTransfersRequest } from '../taprpc/ListTransfersRequest';
@@ -132,6 +134,15 @@ export interface TaprootAssetsClient extends grpc.Client {
   listBalances(argument: _taprpc_ListBalancesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListBalancesResponse>): grpc.ClientUnaryCall;
   listBalances(argument: _taprpc_ListBalancesRequestPartial, callback: grpc.requestCallback<_taprpc_ListBalancesResponse>): grpc.ClientUnaryCall;
   
+  ListBurns(argument: _taprpc_ListBurnsRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  ListBurns(argument: _taprpc_ListBurnsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  ListBurns(argument: _taprpc_ListBurnsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  ListBurns(argument: _taprpc_ListBurnsRequestPartial, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  listBurns(argument: _taprpc_ListBurnsRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  listBurns(argument: _taprpc_ListBurnsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  listBurns(argument: _taprpc_ListBurnsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  listBurns(argument: _taprpc_ListBurnsRequestPartial, callback: grpc.requestCallback<_taprpc_ListBurnsResponse>): grpc.ClientUnaryCall;
+  
   ListGroups(argument: _taprpc_ListGroupsRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListGroupsResponse>): grpc.ClientUnaryCall;
   ListGroups(argument: _taprpc_ListGroupsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_ListGroupsResponse>): grpc.ClientUnaryCall;
   ListGroups(argument: _taprpc_ListGroupsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ListGroupsResponse>): grpc.ClientUnaryCall;
@@ -237,6 +248,8 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
   
   ListBalances: grpc.handleUnaryCall<_taprpc_ListBalancesRequest, _taprpc_ListBalancesResponsePartial>;
   
+  ListBurns: grpc.handleUnaryCall<_taprpc_ListBurnsRequest, _taprpc_ListBurnsResponsePartial>;
+  
   ListGroups: grpc.handleUnaryCall<_taprpc_ListGroupsRequest, _taprpc_ListGroupsResponsePartial>;
   
   ListTransfers: grpc.handleUnaryCall<_taprpc_ListTransfersRequest, _taprpc_ListTransfersResponsePartial>;
@@ -270,6 +283,7 @@ export interface TaprootAssetsDefinition extends grpc.ServiceDefinition {
   GetInfo: MethodDefinition<_taprpc_GetInfoRequestPartial, _taprpc_GetInfoResponsePartial, _taprpc_GetInfoRequest, _taprpc_GetInfoResponse>
   ListAssets: MethodDefinition<_taprpc_ListAssetRequestPartial, _taprpc_ListAssetResponsePartial, _taprpc_ListAssetRequest, _taprpc_ListAssetResponse>
   ListBalances: MethodDefinition<_taprpc_ListBalancesRequestPartial, _taprpc_ListBalancesResponsePartial, _taprpc_ListBalancesRequest, _taprpc_ListBalancesResponse>
+  ListBurns: MethodDefinition<_taprpc_ListBurnsRequestPartial, _taprpc_ListBurnsResponsePartial, _taprpc_ListBurnsRequest, _taprpc_ListBurnsResponse>
   ListGroups: MethodDefinition<_taprpc_ListGroupsRequestPartial, _taprpc_ListGroupsResponsePartial, _taprpc_ListGroupsRequest, _taprpc_ListGroupsResponse>
   ListTransfers: MethodDefinition<_taprpc_ListTransfersRequestPartial, _taprpc_ListTransfersResponsePartial, _taprpc_ListTransfersRequest, _taprpc_ListTransfersResponse>
   ListUtxos: MethodDefinition<_taprpc_ListUtxosRequestPartial, _taprpc_ListUtxosResponsePartial, _taprpc_ListUtxosRequest, _taprpc_ListUtxosResponse>
