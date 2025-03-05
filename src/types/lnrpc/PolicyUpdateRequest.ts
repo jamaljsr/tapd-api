@@ -15,6 +15,7 @@ export interface PolicyUpdateRequestPartial {
   'minHtlcMsatSpecified'?: (boolean);
   'feeRatePpm'?: (number);
   'inboundFee'?: (_lnrpc_InboundFeePartial | null);
+  'createMissingEdge'?: (boolean);
   'scope'?: "global"|"chanPoint";
 }
 
@@ -29,5 +30,6 @@ export interface PolicyUpdateRequest {
   'minHtlcMsatSpecified': (boolean);
   'feeRatePpm': (number);
   'inboundFee': (_lnrpc_InboundFee | null);
+  'createMissingEdge': (boolean);
   'scope': "global"|"chanPoint";
 }

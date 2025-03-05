@@ -34,6 +34,8 @@ import type { ProofFilePartial as _taprpc_ProofFilePartial, ProofFile as _taprpc
 import type { QueryAddrRequestPartial as _taprpc_QueryAddrRequestPartial, QueryAddrRequest as _taprpc_QueryAddrRequest } from '../taprpc/QueryAddrRequest';
 import type { QueryAddrResponsePartial as _taprpc_QueryAddrResponsePartial, QueryAddrResponse as _taprpc_QueryAddrResponse } from '../taprpc/QueryAddrResponse';
 import type { ReceiveEventPartial as _taprpc_ReceiveEventPartial, ReceiveEvent as _taprpc_ReceiveEvent } from '../taprpc/ReceiveEvent';
+import type { RegisterTransferRequestPartial as _taprpc_RegisterTransferRequestPartial, RegisterTransferRequest as _taprpc_RegisterTransferRequest } from '../taprpc/RegisterTransferRequest';
+import type { RegisterTransferResponsePartial as _taprpc_RegisterTransferResponsePartial, RegisterTransferResponse as _taprpc_RegisterTransferResponse } from '../taprpc/RegisterTransferResponse';
 import type { SendAssetRequestPartial as _taprpc_SendAssetRequestPartial, SendAssetRequest as _taprpc_SendAssetRequest } from '../taprpc/SendAssetRequest';
 import type { SendAssetResponsePartial as _taprpc_SendAssetResponsePartial, SendAssetResponse as _taprpc_SendAssetResponse } from '../taprpc/SendAssetResponse';
 import type { SendEventPartial as _taprpc_SendEventPartial, SendEvent as _taprpc_SendEvent } from '../taprpc/SendEvent';
@@ -41,6 +43,8 @@ import type { StopRequestPartial as _taprpc_StopRequestPartial, StopRequest as _
 import type { StopResponsePartial as _taprpc_StopResponsePartial, StopResponse as _taprpc_StopResponse } from '../taprpc/StopResponse';
 import type { SubscribeReceiveEventsRequestPartial as _taprpc_SubscribeReceiveEventsRequestPartial, SubscribeReceiveEventsRequest as _taprpc_SubscribeReceiveEventsRequest } from '../taprpc/SubscribeReceiveEventsRequest';
 import type { SubscribeSendEventsRequestPartial as _taprpc_SubscribeSendEventsRequestPartial, SubscribeSendEventsRequest as _taprpc_SubscribeSendEventsRequest } from '../taprpc/SubscribeSendEventsRequest';
+import type { UnpackProofFileRequestPartial as _taprpc_UnpackProofFileRequestPartial, UnpackProofFileRequest as _taprpc_UnpackProofFileRequest } from '../taprpc/UnpackProofFileRequest';
+import type { UnpackProofFileResponsePartial as _taprpc_UnpackProofFileResponsePartial, UnpackProofFileResponse as _taprpc_UnpackProofFileResponse } from '../taprpc/UnpackProofFileResponse';
 import type { VerifyProofResponsePartial as _taprpc_VerifyProofResponsePartial, VerifyProofResponse as _taprpc_VerifyProofResponse } from '../taprpc/VerifyProofResponse';
 
 export interface TaprootAssetsClient extends grpc.Client {
@@ -188,6 +192,15 @@ export interface TaprootAssetsClient extends grpc.Client {
   queryAddrs(argument: _taprpc_QueryAddrRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_QueryAddrResponse>): grpc.ClientUnaryCall;
   queryAddrs(argument: _taprpc_QueryAddrRequestPartial, callback: grpc.requestCallback<_taprpc_QueryAddrResponse>): grpc.ClientUnaryCall;
   
+  RegisterTransfer(argument: _taprpc_RegisterTransferRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  RegisterTransfer(argument: _taprpc_RegisterTransferRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  RegisterTransfer(argument: _taprpc_RegisterTransferRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  RegisterTransfer(argument: _taprpc_RegisterTransferRequestPartial, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  registerTransfer(argument: _taprpc_RegisterTransferRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  registerTransfer(argument: _taprpc_RegisterTransferRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  registerTransfer(argument: _taprpc_RegisterTransferRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  registerTransfer(argument: _taprpc_RegisterTransferRequestPartial, callback: grpc.requestCallback<_taprpc_RegisterTransferResponse>): grpc.ClientUnaryCall;
+  
   SendAsset(argument: _taprpc_SendAssetRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_SendAssetResponse>): grpc.ClientUnaryCall;
   SendAsset(argument: _taprpc_SendAssetRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_SendAssetResponse>): grpc.ClientUnaryCall;
   SendAsset(argument: _taprpc_SendAssetRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_SendAssetResponse>): grpc.ClientUnaryCall;
@@ -215,6 +228,15 @@ export interface TaprootAssetsClient extends grpc.Client {
   SubscribeSendEvents(argument: _taprpc_SubscribeSendEventsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_SendEvent>;
   subscribeSendEvents(argument: _taprpc_SubscribeSendEventsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_SendEvent>;
   subscribeSendEvents(argument: _taprpc_SubscribeSendEventsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_taprpc_SendEvent>;
+  
+  UnpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  UnpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  UnpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  UnpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  unpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  unpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  unpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
+  unpackProofFile(argument: _taprpc_UnpackProofFileRequestPartial, callback: grpc.requestCallback<_taprpc_UnpackProofFileResponse>): grpc.ClientUnaryCall;
   
   VerifyProof(argument: _taprpc_ProofFilePartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_VerifyProofResponse>): grpc.ClientUnaryCall;
   VerifyProof(argument: _taprpc_ProofFilePartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_VerifyProofResponse>): grpc.ClientUnaryCall;
@@ -260,6 +282,8 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
   
   QueryAddrs: grpc.handleUnaryCall<_taprpc_QueryAddrRequest, _taprpc_QueryAddrResponsePartial>;
   
+  RegisterTransfer: grpc.handleUnaryCall<_taprpc_RegisterTransferRequest, _taprpc_RegisterTransferResponsePartial>;
+  
   SendAsset: grpc.handleUnaryCall<_taprpc_SendAssetRequest, _taprpc_SendAssetResponsePartial>;
   
   StopDaemon: grpc.handleUnaryCall<_taprpc_StopRequest, _taprpc_StopResponsePartial>;
@@ -267,6 +291,8 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
   SubscribeReceiveEvents: grpc.handleServerStreamingCall<_taprpc_SubscribeReceiveEventsRequest, _taprpc_ReceiveEventPartial>;
   
   SubscribeSendEvents: grpc.handleServerStreamingCall<_taprpc_SubscribeSendEventsRequest, _taprpc_SendEventPartial>;
+  
+  UnpackProofFile: grpc.handleUnaryCall<_taprpc_UnpackProofFileRequest, _taprpc_UnpackProofFileResponsePartial>;
   
   VerifyProof: grpc.handleUnaryCall<_taprpc_ProofFile, _taprpc_VerifyProofResponsePartial>;
   
@@ -289,9 +315,11 @@ export interface TaprootAssetsDefinition extends grpc.ServiceDefinition {
   ListUtxos: MethodDefinition<_taprpc_ListUtxosRequestPartial, _taprpc_ListUtxosResponsePartial, _taprpc_ListUtxosRequest, _taprpc_ListUtxosResponse>
   NewAddr: MethodDefinition<_taprpc_NewAddrRequestPartial, _taprpc_AddrPartial, _taprpc_NewAddrRequest, _taprpc_Addr>
   QueryAddrs: MethodDefinition<_taprpc_QueryAddrRequestPartial, _taprpc_QueryAddrResponsePartial, _taprpc_QueryAddrRequest, _taprpc_QueryAddrResponse>
+  RegisterTransfer: MethodDefinition<_taprpc_RegisterTransferRequestPartial, _taprpc_RegisterTransferResponsePartial, _taprpc_RegisterTransferRequest, _taprpc_RegisterTransferResponse>
   SendAsset: MethodDefinition<_taprpc_SendAssetRequestPartial, _taprpc_SendAssetResponsePartial, _taprpc_SendAssetRequest, _taprpc_SendAssetResponse>
   StopDaemon: MethodDefinition<_taprpc_StopRequestPartial, _taprpc_StopResponsePartial, _taprpc_StopRequest, _taprpc_StopResponse>
   SubscribeReceiveEvents: MethodDefinition<_taprpc_SubscribeReceiveEventsRequestPartial, _taprpc_ReceiveEventPartial, _taprpc_SubscribeReceiveEventsRequest, _taprpc_ReceiveEvent>
   SubscribeSendEvents: MethodDefinition<_taprpc_SubscribeSendEventsRequestPartial, _taprpc_SendEventPartial, _taprpc_SubscribeSendEventsRequest, _taprpc_SendEvent>
+  UnpackProofFile: MethodDefinition<_taprpc_UnpackProofFileRequestPartial, _taprpc_UnpackProofFileResponsePartial, _taprpc_UnpackProofFileRequest, _taprpc_UnpackProofFileResponse>
   VerifyProof: MethodDefinition<_taprpc_ProofFilePartial, _taprpc_VerifyProofResponsePartial, _taprpc_ProofFile, _taprpc_VerifyProofResponse>
 }

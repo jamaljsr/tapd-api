@@ -40,6 +40,7 @@ export interface ProtoGrpcType {
     DecodeProofResponse: MessageTypeDefinition
     DecodedProof: MessageTypeDefinition
     ExportProofRequest: MessageTypeDefinition
+    ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
@@ -76,6 +77,8 @@ export interface ProtoGrpcType {
     QueryAddrRequest: MessageTypeDefinition
     QueryAddrResponse: MessageTypeDefinition
     ReceiveEvent: MessageTypeDefinition
+    RegisterTransferRequest: MessageTypeDefinition
+    RegisterTransferResponse: MessageTypeDefinition
     ScriptKey: MessageTypeDefinition
     SendAssetRequest: MessageTypeDefinition
     SendAssetResponse: MessageTypeDefinition
@@ -94,6 +97,8 @@ export interface ProtoGrpcType {
     TransferOutput: MessageTypeDefinition
     TransferOutputAnchor: MessageTypeDefinition
     TxOut: MessageTypeDefinition
+    UnpackProofFileRequest: MessageTypeDefinition
+    UnpackProofFileResponse: MessageTypeDefinition
     VerifyProofResponse: MessageTypeDefinition
   }
   universerpc: {

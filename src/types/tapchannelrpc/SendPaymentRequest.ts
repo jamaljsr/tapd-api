@@ -8,6 +8,8 @@ export interface SendPaymentRequestPartial {
   'assetAmount'?: (number | string | Long);
   'peerPubkey'?: (Buffer | Uint8Array | string);
   'paymentRequest'?: (_routerrpc_SendPaymentRequestPartial | null);
+  'rfqId'?: (Buffer | Uint8Array | string);
+  'allowOverpay'?: (boolean);
 }
 
 export interface SendPaymentRequest {
@@ -15,4 +17,6 @@ export interface SendPaymentRequest {
   'assetAmount': (string);
   'peerPubkey': (Buffer);
   'paymentRequest': (_routerrpc_SendPaymentRequest | null);
+  'rfqId': (Buffer);
+  'allowOverpay': (boolean);
 }

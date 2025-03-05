@@ -19,6 +19,7 @@ export interface DecodedProofPartial {
   'isBurn'?: (boolean);
   'genesisReveal'?: (_taprpc_GenesisRevealPartial | null);
   'groupKeyReveal'?: (_taprpc_GroupKeyRevealPartial | null);
+  'altLeaves'?: (Buffer | Uint8Array | string);
 }
 
 export interface DecodedProof {
@@ -35,4 +36,5 @@ export interface DecodedProof {
   'isBurn': (boolean);
   'genesisReveal': (_taprpc_GenesisReveal | null);
   'groupKeyReveal': (_taprpc_GroupKeyReveal | null);
+  'altLeaves': (Buffer);
 }

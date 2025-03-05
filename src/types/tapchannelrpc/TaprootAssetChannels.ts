@@ -4,6 +4,8 @@ import type * as grpc from '@grpc/grpc-js'
 import type { MethodDefinition } from '@grpc/proto-loader'
 import type { AddInvoiceRequestPartial as _tapchannelrpc_AddInvoiceRequestPartial, AddInvoiceRequest as _tapchannelrpc_AddInvoiceRequest } from '../tapchannelrpc/AddInvoiceRequest';
 import type { AddInvoiceResponsePartial as _tapchannelrpc_AddInvoiceResponsePartial, AddInvoiceResponse as _tapchannelrpc_AddInvoiceResponse } from '../tapchannelrpc/AddInvoiceResponse';
+import type { AssetPayReqPartial as _tapchannelrpc_AssetPayReqPartial, AssetPayReq as _tapchannelrpc_AssetPayReq } from '../tapchannelrpc/AssetPayReq';
+import type { AssetPayReqResponsePartial as _tapchannelrpc_AssetPayReqResponsePartial, AssetPayReqResponse as _tapchannelrpc_AssetPayReqResponse } from '../tapchannelrpc/AssetPayReqResponse';
 import type { EncodeCustomRecordsRequestPartial as _tapchannelrpc_EncodeCustomRecordsRequestPartial, EncodeCustomRecordsRequest as _tapchannelrpc_EncodeCustomRecordsRequest } from '../tapchannelrpc/EncodeCustomRecordsRequest';
 import type { EncodeCustomRecordsResponsePartial as _tapchannelrpc_EncodeCustomRecordsResponsePartial, EncodeCustomRecordsResponse as _tapchannelrpc_EncodeCustomRecordsResponse } from '../tapchannelrpc/EncodeCustomRecordsResponse';
 import type { FundChannelRequestPartial as _tapchannelrpc_FundChannelRequestPartial, FundChannelRequest as _tapchannelrpc_FundChannelRequest } from '../tapchannelrpc/FundChannelRequest';
@@ -20,6 +22,15 @@ export interface TaprootAssetChannelsClient extends grpc.Client {
   addInvoice(argument: _tapchannelrpc_AddInvoiceRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_tapchannelrpc_AddInvoiceResponse>): grpc.ClientUnaryCall;
   addInvoice(argument: _tapchannelrpc_AddInvoiceRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_tapchannelrpc_AddInvoiceResponse>): grpc.ClientUnaryCall;
   addInvoice(argument: _tapchannelrpc_AddInvoiceRequestPartial, callback: grpc.requestCallback<_tapchannelrpc_AddInvoiceResponse>): grpc.ClientUnaryCall;
+  
+  DecodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  DecodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  DecodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  DecodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  decodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  decodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  decodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
+  decodeAssetPayReq(argument: _tapchannelrpc_AssetPayReqPartial, callback: grpc.requestCallback<_tapchannelrpc_AssetPayReqResponse>): grpc.ClientUnaryCall;
   
   EncodeCustomRecords(argument: _tapchannelrpc_EncodeCustomRecordsRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_tapchannelrpc_EncodeCustomRecordsResponse>): grpc.ClientUnaryCall;
   EncodeCustomRecords(argument: _tapchannelrpc_EncodeCustomRecordsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_tapchannelrpc_EncodeCustomRecordsResponse>): grpc.ClientUnaryCall;
@@ -49,6 +60,8 @@ export interface TaprootAssetChannelsClient extends grpc.Client {
 export interface TaprootAssetChannelsHandlers extends grpc.UntypedServiceImplementation {
   AddInvoice: grpc.handleUnaryCall<_tapchannelrpc_AddInvoiceRequest, _tapchannelrpc_AddInvoiceResponsePartial>;
   
+  DecodeAssetPayReq: grpc.handleUnaryCall<_tapchannelrpc_AssetPayReq, _tapchannelrpc_AssetPayReqResponsePartial>;
+  
   EncodeCustomRecords: grpc.handleUnaryCall<_tapchannelrpc_EncodeCustomRecordsRequest, _tapchannelrpc_EncodeCustomRecordsResponsePartial>;
   
   FundChannel: grpc.handleUnaryCall<_tapchannelrpc_FundChannelRequest, _tapchannelrpc_FundChannelResponsePartial>;
@@ -59,6 +72,7 @@ export interface TaprootAssetChannelsHandlers extends grpc.UntypedServiceImpleme
 
 export interface TaprootAssetChannelsDefinition extends grpc.ServiceDefinition {
   AddInvoice: MethodDefinition<_tapchannelrpc_AddInvoiceRequestPartial, _tapchannelrpc_AddInvoiceResponsePartial, _tapchannelrpc_AddInvoiceRequest, _tapchannelrpc_AddInvoiceResponse>
+  DecodeAssetPayReq: MethodDefinition<_tapchannelrpc_AssetPayReqPartial, _tapchannelrpc_AssetPayReqResponsePartial, _tapchannelrpc_AssetPayReq, _tapchannelrpc_AssetPayReqResponse>
   EncodeCustomRecords: MethodDefinition<_tapchannelrpc_EncodeCustomRecordsRequestPartial, _tapchannelrpc_EncodeCustomRecordsResponsePartial, _tapchannelrpc_EncodeCustomRecordsRequest, _tapchannelrpc_EncodeCustomRecordsResponse>
   FundChannel: MethodDefinition<_tapchannelrpc_FundChannelRequestPartial, _tapchannelrpc_FundChannelResponsePartial, _tapchannelrpc_FundChannelRequest, _tapchannelrpc_FundChannelResponse>
   SendPayment: MethodDefinition<_tapchannelrpc_SendPaymentRequestPartial, _tapchannelrpc_SendPaymentResponsePartial, _tapchannelrpc_SendPaymentRequest, _tapchannelrpc_SendPaymentResponse>

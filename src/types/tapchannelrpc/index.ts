@@ -1,5 +1,7 @@
 export * from './AddInvoiceRequest';
 export * from './AddInvoiceResponse';
+export * from './AssetPayReq';
+export * from './AssetPayReqResponse';
 export * from './EncodeCustomRecordsRequest';
 export * from './EncodeCustomRecordsResponse';
 export * from './FundChannelRequest';

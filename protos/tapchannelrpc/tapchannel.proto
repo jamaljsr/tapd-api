@@ -7,6 +7,7 @@ option go_package = "github.com/lightninglabs/taproot-assets/taprpc/tapchannelrp
 import "rfqrpc/rfq.proto";
 import "lightning.proto";
 import "routerrpc/router.proto";
+import "taprootassets.proto";
 
 service TaprootAssetChannels {
     /*
@@ -39,6 +40,13 @@ service TaprootAssetChannels {
     to the specified asset amount.
     */
     rpc AddInvoice (AddInvoiceRequest) returns (AddInvoiceResponse);
+
+    /*
+    DecodeAssetPayReq is similar to lnd's lnrpc.DecodePayReq, but it accepts an
+    asset ID and returns the invoice amount expressed in asset units along side
+    the normal information.
+    */
+    rpc DecodeAssetPayReq (AssetPayReq) returns (AssetPayReqResponse);
 }
 
 message FundChannelRequest {
@@ -121,6 +129,19 @@ message SendPaymentRequest {
     // contain a valid keysend record (key 5482373484 and a 32-byte preimage
     // that corresponds to the payment hash).
     routerrpc.SendPaymentRequest payment_request = 4;
+
+    // The rfq id to use for this payment. If the user sets this value then the
+    // payment will immediately be dispatched, skipping the rfq negotiation
+    // phase, and using the following rfq id instead.
+    bytes rfq_id = 5;
+
+    // If a small invoice should be paid that is below the amount that always
+    // needs to be sent out to carry a single asset unit, then by default the
+    // payment is rejected. If this flag is set, then the payment will be
+    // allowed to proceed, even if it is uneconomical, meaning that more sats
+    // are sent out to the network than the invoice amount plus routing fees
+    // require to be paid.
+    bool allow_overpay = 6;
 }
 
 message SendPaymentResponse {
@@ -175,4 +196,31 @@ message AddInvoiceResponse {
 
     // The result of the invoice creation.
     lnrpc.AddInvoiceResponse invoice_result = 2;
+}
+
+message AssetPayReq {
+    // The asset ID that will be used to resolve the invoice's satoshi amount.
+    bytes asset_id = 1;
+
+    // The normal LN invoice that whose amount will be mapped to units of the
+    // asset ID.
+    string pay_req_string = 2;
+}
+
+message AssetPayReqResponse {
+    // The invoice amount, expressed in asset units.
+    uint64 asset_amount = 1;
+
+    // The decimal display corresponding to the asset_id.
+    taprpc.DecimalDisplay decimal_display = 2;
+
+    // The group the asset ID belong to, if applicable.
+    taprpc.AssetGroup asset_group = 3;
+
+    // Genesis information for the asset ID which includes the meta hash, and
+    // asset ID.
+    taprpc.GenesisInfo genesis_info = 4;
+
+    // The normal decoded payment request.
+    lnrpc.PayReq pay_req = 5;
 }

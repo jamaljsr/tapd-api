@@ -10,6 +10,7 @@ export interface PeerAcceptedSellQuotePartial {
   'assetAmount'?: (number | string | Long);
   'bidAssetRate'?: (_rfqrpc_FixedPointPartial | null);
   'expiry'?: (number | string | Long);
+  'minTransportableMsat'?: (number | string | Long);
 }
 
 export interface PeerAcceptedSellQuote {
@@ -19,4 +20,5 @@ export interface PeerAcceptedSellQuote {
   'assetAmount': (string);
   'bidAssetRate': (_rfqrpc_FixedPoint | null);
   'expiry': (string);
+  'minTransportableMsat': (string);
 }

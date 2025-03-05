@@ -8,10 +8,12 @@ export interface UnsealedAssetPartial {
   'asset'?: (_mintrpc_PendingAssetPartial | null);
   'groupKeyRequest'?: (_taprpc_GroupKeyRequestPartial | null);
   'groupVirtualTx'?: (_taprpc_GroupVirtualTxPartial | null);
+  'groupVirtualPsbt'?: (string);
 }
 
 export interface UnsealedAsset {
   'asset': (_mintrpc_PendingAsset | null);
   'groupKeyRequest': (_taprpc_GroupKeyRequest | null);
   'groupVirtualTx': (_taprpc_GroupVirtualTx | null);
+  'groupVirtualPsbt': (string);
 }

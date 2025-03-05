@@ -5,9 +5,11 @@ import type { GroupWitnessPartial as _taprpc_GroupWitnessPartial, GroupWitness a
 export interface SealBatchRequestPartial {
   'shortResponse'?: (boolean);
   'groupWitnesses'?: (_taprpc_GroupWitnessPartial)[];
+  'signedGroupVirtualPsbts'?: (string)[];
 }
 
 export interface SealBatchRequest {
   'shortResponse': (boolean);
   'groupWitnesses': (_taprpc_GroupWitness)[];
+  'signedGroupVirtualPsbts': (string)[];
 }

@@ -5,6 +5,7 @@ import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc
 import type { AssetMetaPartial as _taprpc_AssetMetaPartial, AssetMeta as _taprpc_AssetMeta } from '../taprpc/AssetMeta';
 import type { KeyDescriptorPartial as _taprpc_KeyDescriptorPartial, KeyDescriptor as _taprpc_KeyDescriptor } from '../taprpc/KeyDescriptor';
 import type { ScriptKeyPartial as _taprpc_ScriptKeyPartial, ScriptKey as _taprpc_ScriptKey } from '../taprpc/ScriptKey';
+import type { ExternalKeyPartial as _taprpc_ExternalKeyPartial, ExternalKey as _taprpc_ExternalKey } from '../taprpc/ExternalKey';
 import type { Long } from '@grpc/proto-loader';
 
 export interface MintAssetPartial {
@@ -21,6 +22,7 @@ export interface MintAssetPartial {
   'groupTapscriptRoot'?: (Buffer | Uint8Array | string);
   'scriptKey'?: (_taprpc_ScriptKeyPartial | null);
   'decimalDisplay'?: (number);
+  'externalGroupKey'?: (_taprpc_ExternalKeyPartial | null);
 }
 
 export interface MintAsset {
@@ -37,4 +39,5 @@ export interface MintAsset {
   'groupTapscriptRoot': (Buffer);
   'scriptKey': (_taprpc_ScriptKey | null);
   'decimalDisplay': (number);
+  'externalGroupKey': (_taprpc_ExternalKey | null);
 }
