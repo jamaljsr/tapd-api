@@ -68,6 +68,8 @@ export * from './ReceiveEvent';
 export * from './RegisterTransferRequest';
 export * from './RegisterTransferResponse';
 export * from './ScriptKey';
+export * from './ScriptKeyType';
+export * from './ScriptKeyTypeQuery';
 export * from './SendAssetRequest';
 export * from './SendAssetResponse';
 export * from './SendEvent';

@@ -103,6 +103,8 @@ export interface ProtoGrpcType {
     RegisterTransferRequest: MessageTypeDefinition
     RegisterTransferResponse: MessageTypeDefinition
     ScriptKey: MessageTypeDefinition
+    ScriptKeyType: EnumTypeDefinition
+    ScriptKeyTypeQuery: MessageTypeDefinition
     SendAssetRequest: MessageTypeDefinition
     SendAssetResponse: MessageTypeDefinition
     SendEvent: MessageTypeDefinition

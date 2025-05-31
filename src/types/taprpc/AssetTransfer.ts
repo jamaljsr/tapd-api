@@ -13,6 +13,9 @@ export interface AssetTransferPartial {
   'inputs'?: (_taprpc_TransferInputPartial)[];
   'outputs'?: (_taprpc_TransferOutputPartial)[];
   'anchorTxBlockHash'?: (_taprpc_ChainHashPartial | null);
+  'anchorTxBlockHeight'?: (number);
+  'label'?: (string);
+  'anchorTx'?: (Buffer | Uint8Array | string);
 }
 
 export interface AssetTransfer {
@@ -23,4 +26,7 @@ export interface AssetTransfer {
   'inputs': (_taprpc_TransferInput)[];
   'outputs': (_taprpc_TransferOutput)[];
   'anchorTxBlockHash': (_taprpc_ChainHash | null);
+  'anchorTxBlockHeight': (number);
+  'label': (string);
+  'anchorTx': (Buffer);
 }

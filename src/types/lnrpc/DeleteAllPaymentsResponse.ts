@@ -2,7 +2,9 @@
 
 
 export interface DeleteAllPaymentsResponsePartial {
+  'status'?: (string);
 }
 
 export interface DeleteAllPaymentsResponse {
+  'status': (string);
 }

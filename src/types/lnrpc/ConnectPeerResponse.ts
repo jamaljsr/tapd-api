@@ -2,7 +2,9 @@
 
 
 export interface ConnectPeerResponsePartial {
+  'status'?: (string);
 }
 
 export interface ConnectPeerResponse {
+  'status': (string);
 }

@@ -2,7 +2,9 @@
 
 
 export interface AbandonChannelResponsePartial {
+  'status'?: (string);
 }
 
 export interface AbandonChannelResponse {
+  'status': (string);
 }

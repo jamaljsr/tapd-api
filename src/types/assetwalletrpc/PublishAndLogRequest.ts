@@ -8,6 +8,8 @@ export interface PublishAndLogRequestPartial {
   'passiveAssetPsbts'?: (Buffer | Uint8Array | string)[];
   'changeOutputIndex'?: (number);
   'lndLockedUtxos'?: (_taprpc_OutPointPartial)[];
+  'skipAnchorTxBroadcast'?: (boolean);
+  'label'?: (string);
 }
 
 export interface PublishAndLogRequest {
@@ -16,4 +18,6 @@ export interface PublishAndLogRequest {
   'passiveAssetPsbts': (Buffer)[];
   'changeOutputIndex': (number);
   'lndLockedUtxos': (_taprpc_OutPoint)[];
+  'skipAnchorTxBroadcast': (boolean);
+  'label': (string);
 }

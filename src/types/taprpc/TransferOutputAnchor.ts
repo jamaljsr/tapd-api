@@ -10,6 +10,7 @@ export interface TransferOutputAnchorPartial {
   'merkleRoot'?: (Buffer | Uint8Array | string);
   'tapscriptSibling'?: (Buffer | Uint8Array | string);
   'numPassiveAssets'?: (number);
+  'pkScript'?: (Buffer | Uint8Array | string);
 }
 
 export interface TransferOutputAnchor {
@@ -20,4 +21,5 @@ export interface TransferOutputAnchor {
   'merkleRoot': (Buffer);
   'tapscriptSibling': (Buffer);
   'numPassiveAssets': (number);
+  'pkScript': (Buffer);
 }

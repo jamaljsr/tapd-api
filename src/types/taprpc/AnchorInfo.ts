@@ -1,5 +1,6 @@
 // Original file: protos/taprootassets.proto
 
+import type { Long } from '@grpc/proto-loader';
 
 export interface AnchorInfoPartial {
   'anchorTx'?: (Buffer | Uint8Array | string);
@@ -9,6 +10,7 @@ export interface AnchorInfoPartial {
   'merkleRoot'?: (Buffer | Uint8Array | string);
   'tapscriptSibling'?: (Buffer | Uint8Array | string);
   'blockHeight'?: (number);
+  'blockTimestamp'?: (number | string | Long);
 }
 
 export interface AnchorInfo {
@@ -19,4 +21,5 @@ export interface AnchorInfo {
   'merkleRoot': (Buffer);
   'tapscriptSibling': (Buffer);
   'blockHeight': (number);
+  'blockTimestamp': (string);
 }

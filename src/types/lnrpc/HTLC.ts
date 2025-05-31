@@ -10,6 +10,7 @@ export interface HTLCPartial {
   'htlcIndex'?: (number | string | Long);
   'forwardingChannel'?: (number | string | Long);
   'forwardingHtlcIndex'?: (number | string | Long);
+  'lockedIn'?: (boolean);
 }
 
 export interface HTLC {
@@ -20,4 +21,5 @@ export interface HTLC {
   'htlcIndex': (string);
   'forwardingChannel': (string);
   'forwardingHtlcIndex': (string);
+  'lockedIn': (boolean);
 }

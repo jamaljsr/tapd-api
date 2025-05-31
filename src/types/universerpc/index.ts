@@ -25,6 +25,7 @@ export * from './GroupedUniverseEvents';
 export * from './ID';
 export * from './InfoRequest';
 export * from './InfoResponse';
+export * from './IssuanceData';
 export * from './ListFederationServersRequest';
 export * from './ListFederationServersResponse';
 export * from './MerkleSumNode';

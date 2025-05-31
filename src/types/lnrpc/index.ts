@@ -135,6 +135,7 @@ export * from './MPPRecord';
 export * from './MacaroonId';
 export * from './MacaroonPermission';
 export * from './MacaroonPermissionList';
+export * from './MetadataValues';
 export * from './MiddlewareRegistration';
 export * from './MultiChanBackup';
 export * from './NetworkInfo';

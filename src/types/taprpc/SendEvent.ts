@@ -16,6 +16,8 @@ export interface SendEventPartial {
   'anchorTransaction'?: (_taprpc_AnchorTransactionPartial | null);
   'transfer'?: (_taprpc_AssetTransferPartial | null);
   'error'?: (string);
+  'transferLabel'?: (string);
+  'nextSendState'?: (string);
 }
 
 export interface SendEvent {
@@ -28,4 +30,6 @@ export interface SendEvent {
   'anchorTransaction': (_taprpc_AnchorTransaction | null);
   'transfer': (_taprpc_AssetTransfer | null);
   'error': (string);
+  'transferLabel': (string);
+  'nextSendState': (string);
 }

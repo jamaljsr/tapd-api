@@ -2,7 +2,9 @@
 
 
 export interface VerifyChanBackupResponsePartial {
+  'chanPoints'?: (string)[];
 }
 
 export interface VerifyChanBackupResponse {
+  'chanPoints': (string)[];
 }

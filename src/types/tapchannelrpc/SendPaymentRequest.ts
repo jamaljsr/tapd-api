@@ -10,6 +10,7 @@ export interface SendPaymentRequestPartial {
   'paymentRequest'?: (_routerrpc_SendPaymentRequestPartial | null);
   'rfqId'?: (Buffer | Uint8Array | string);
   'allowOverpay'?: (boolean);
+  'groupKey'?: (Buffer | Uint8Array | string);
 }
 
 export interface SendPaymentRequest {
@@ -19,4 +20,5 @@ export interface SendPaymentRequest {
   'paymentRequest': (_routerrpc_SendPaymentRequest | null);
   'rfqId': (Buffer);
   'allowOverpay': (boolean);
+  'groupKey': (Buffer);
 }

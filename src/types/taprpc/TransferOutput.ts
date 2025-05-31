@@ -18,6 +18,7 @@ export interface TransferOutputPartial {
   'lockTime'?: (number | string | Long);
   'relativeLockTime'?: (number | string | Long);
   'proofDeliveryStatus'?: (_taprpc_ProofDeliveryStatusPartial);
+  'assetId'?: (Buffer | Uint8Array | string);
 }
 
 export interface TransferOutput {
@@ -32,4 +33,5 @@ export interface TransferOutput {
   'lockTime': (string);
   'relativeLockTime': (string);
   'proofDeliveryStatus': (_taprpc_ProofDeliveryStatus);
+  'assetId': (Buffer);
 }

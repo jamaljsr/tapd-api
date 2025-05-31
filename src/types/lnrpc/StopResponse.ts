@@ -2,7 +2,9 @@
 
 
 export interface StopResponsePartial {
+  'status'?: (string);
 }
 
 export interface StopResponse {
+  'status': (string);
 }

@@ -10,6 +10,8 @@ export interface CommitVirtualPsbtsRequestPartial {
   'add'?: (boolean);
   'targetConf'?: (number);
   'satPerVbyte'?: (number | string | Long);
+  'customLockId'?: (Buffer | Uint8Array | string);
+  'lockExpirationSeconds'?: (number | string | Long);
   'anchorChangeOutput'?: "existingOutputIndex"|"add";
   'fees'?: "targetConf"|"satPerVbyte";
 }
@@ -22,6 +24,8 @@ export interface CommitVirtualPsbtsRequest {
   'add'?: (boolean);
   'targetConf'?: (number);
   'satPerVbyte'?: (string);
+  'customLockId': (Buffer);
+  'lockExpirationSeconds': (string);
   'anchorChangeOutput': "existingOutputIndex"|"add";
   'fees': "targetConf"|"satPerVbyte";
 }

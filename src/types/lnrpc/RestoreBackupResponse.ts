@@ -2,7 +2,9 @@
 
 
 export interface RestoreBackupResponsePartial {
+  'numRestored'?: (number);
 }
 
 export interface RestoreBackupResponse {
+  'numRestored': (number);
 }

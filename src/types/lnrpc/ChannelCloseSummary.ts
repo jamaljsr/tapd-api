@@ -47,6 +47,7 @@ export interface ChannelCloseSummaryPartial {
   'resolutions'?: (_lnrpc_ResolutionPartial)[];
   'aliasScids'?: (number | string | Long)[];
   'zeroConfConfirmedScid'?: (number | string | Long);
+  'customChannelData'?: (Buffer | Uint8Array | string);
 }
 
 export interface ChannelCloseSummary {
@@ -65,4 +66,5 @@ export interface ChannelCloseSummary {
   'resolutions': (_lnrpc_Resolution)[];
   'aliasScids': (string)[];
   'zeroConfConfirmedScid': (string);
+  'customChannelData': (Buffer);
 }

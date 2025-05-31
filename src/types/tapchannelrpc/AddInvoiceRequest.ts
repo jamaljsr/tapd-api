@@ -10,6 +10,7 @@ export interface AddInvoiceRequestPartial {
   'peerPubkey'?: (Buffer | Uint8Array | string);
   'invoiceRequest'?: (_lnrpc_InvoicePartial | null);
   'hodlInvoice'?: (_tapchannelrpc_HodlInvoicePartial | null);
+  'groupKey'?: (Buffer | Uint8Array | string);
 }
 
 export interface AddInvoiceRequest {
@@ -18,4 +19,5 @@ export interface AddInvoiceRequest {
   'peerPubkey': (Buffer);
   'invoiceRequest': (_lnrpc_Invoice | null);
   'hodlInvoice': (_tapchannelrpc_HodlInvoice | null);
+  'groupKey': (Buffer);
 }
