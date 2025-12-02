@@ -39,6 +39,7 @@ export interface ProtoGrpcType {
     Channel: MessageTypeDefinition
     ChannelAcceptRequest: MessageTypeDefinition
     ChannelAcceptResponse: MessageTypeDefinition
+    ChannelAuthProof: MessageTypeDefinition
     ChannelBackup: MessageTypeDefinition
     ChannelBackupSubscription: MessageTypeDefinition
     ChannelBackups: MessageTypeDefinition
@@ -67,12 +68,13 @@ export interface ProtoGrpcType {
     ClosedChannelsResponse: MessageTypeDefinition
     CoinSelectionStrategy: EnumTypeDefinition
     CommitmentType: EnumTypeDefinition
-    ConfirmationUpdate: MessageTypeDefinition
     ConnectPeerRequest: MessageTypeDefinition
     ConnectPeerResponse: MessageTypeDefinition
     CustomMessage: MessageTypeDefinition
     DebugLevelRequest: MessageTypeDefinition
     DebugLevelResponse: MessageTypeDefinition
+    DelCanceledInvoiceReq: MessageTypeDefinition
+    DelCanceledInvoiceResp: MessageTypeDefinition
     DeleteAllPaymentsRequest: MessageTypeDefinition
     DeleteAllPaymentsResponse: MessageTypeDefinition
     DeleteMacaroonIDRequest: MessageTypeDefinition
@@ -239,6 +241,7 @@ export interface ProtoGrpcType {
     AddAssetSellOfferResponse: MessageTypeDefinition
     AddAssetSellOrderRequest: MessageTypeDefinition
     AddAssetSellOrderResponse: MessageTypeDefinition
+    AssetSpec: MessageTypeDefinition
     AssetSpecifier: MessageTypeDefinition
     FixedPoint: MessageTypeDefinition
     InvalidQuoteResponse: MessageTypeDefinition
@@ -267,6 +270,8 @@ export interface ProtoGrpcType {
     DeleteAliasesResponse: MessageTypeDefinition
     FailureDetail: EnumTypeDefinition
     FinalHtlcEvent: MessageTypeDefinition
+    FindBaseAliasRequest: MessageTypeDefinition
+    FindBaseAliasResponse: MessageTypeDefinition
     ForwardEvent: MessageTypeDefinition
     ForwardFailEvent: MessageTypeDefinition
     ForwardHtlcInterceptRequest: MessageTypeDefinition
@@ -307,6 +312,7 @@ export interface ProtoGrpcType {
     XImportMissionControlResponse: MessageTypeDefinition
   }
   tapchannelrpc: {
+    AcceptedSellQuotes: MessageTypeDefinition
     AddInvoiceRequest: MessageTypeDefinition
     AddInvoiceResponse: MessageTypeDefinition
     AssetPayReq: MessageTypeDefinition
@@ -328,6 +334,7 @@ export interface ProtoGrpcType {
     AddrReceivesRequest: MessageTypeDefinition
     AddrReceivesResponse: MessageTypeDefinition
     AddrVersion: EnumTypeDefinition
+    AddressWithAmount: MessageTypeDefinition
     AnchorInfo: MessageTypeDefinition
     AnchorTransaction: MessageTypeDefinition
     Asset: MessageTypeDefinition
@@ -338,6 +345,7 @@ export interface ProtoGrpcType {
     AssetHumanReadable: MessageTypeDefinition
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
+    AssetOutPoint: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
@@ -354,6 +362,7 @@ export interface ProtoGrpcType {
     ExportProofRequest: MessageTypeDefinition
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
+    FetchAssetMetaResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition

@@ -15,6 +15,10 @@ export interface ForwardingEventPartial {
   'timestampNs'?: (number | string | Long);
   'peerAliasIn'?: (string);
   'peerAliasOut'?: (string);
+  'incomingHtlcId'?: (number | string | Long);
+  'outgoingHtlcId'?: (number | string | Long);
+  '_incomingHtlcId'?: "incomingHtlcId";
+  '_outgoingHtlcId'?: "outgoingHtlcId";
 }
 
 export interface ForwardingEvent {
@@ -30,4 +34,8 @@ export interface ForwardingEvent {
   'timestampNs': (string);
   'peerAliasIn': (string);
   'peerAliasOut': (string);
+  'incomingHtlcId'?: (string);
+  'outgoingHtlcId'?: (string);
+  '_incomingHtlcId': "incomingHtlcId";
+  '_outgoingHtlcId': "outgoingHtlcId";
 }

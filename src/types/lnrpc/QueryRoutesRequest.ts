@@ -27,6 +27,7 @@ export interface QueryRoutesRequestPartial {
   'destFeatures'?: (_lnrpc_FeatureBitPartial)[];
   'timePref'?: (number | string);
   'blindedPaymentPaths'?: (_lnrpc_BlindedPaymentPathPartial)[];
+  'outgoingChanIds'?: (number | string | Long)[];
 }
 
 export interface QueryRoutesRequest {
@@ -48,4 +49,5 @@ export interface QueryRoutesRequest {
   'destFeatures': (_lnrpc_FeatureBit)[];
   'timePref': (number);
   'blindedPaymentPaths': (_lnrpc_BlindedPaymentPath)[];
+  'outgoingChanIds': (string)[];
 }

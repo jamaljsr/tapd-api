@@ -1,6 +1,7 @@
 // Original file: protos/rfqrpc/rfq.proto
 
 import type { FixedPointPartial as _rfqrpc_FixedPointPartial, FixedPoint as _rfqrpc_FixedPoint } from '../rfqrpc/FixedPoint';
+import type { AssetSpecPartial as _rfqrpc_AssetSpecPartial, AssetSpec as _rfqrpc_AssetSpec } from '../rfqrpc/AssetSpec';
 import type { Long } from '@grpc/proto-loader';
 
 export interface PeerAcceptedSellQuotePartial {
@@ -11,6 +12,8 @@ export interface PeerAcceptedSellQuotePartial {
   'bidAssetRate'?: (_rfqrpc_FixedPointPartial | null);
   'expiry'?: (number | string | Long);
   'minTransportableMsat'?: (number | string | Long);
+  'priceOracleMetadata'?: (string);
+  'assetSpec'?: (_rfqrpc_AssetSpecPartial | null);
 }
 
 export interface PeerAcceptedSellQuote {
@@ -21,4 +24,6 @@ export interface PeerAcceptedSellQuote {
   'bidAssetRate': (_rfqrpc_FixedPoint | null);
   'expiry': (string);
   'minTransportableMsat': (string);
+  'priceOracleMetadata': (string);
+  'assetSpec': (_rfqrpc_AssetSpec | null);
 }

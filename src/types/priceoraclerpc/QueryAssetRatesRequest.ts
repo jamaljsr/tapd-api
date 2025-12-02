@@ -3,6 +3,7 @@
 import type { TransactionTypePartial as _priceoraclerpc_TransactionTypePartial, TransactionType as _priceoraclerpc_TransactionType } from '../priceoraclerpc/TransactionType';
 import type { AssetSpecifierPartial as _priceoraclerpc_AssetSpecifierPartial, AssetSpecifier as _priceoraclerpc_AssetSpecifier } from '../priceoraclerpc/AssetSpecifier';
 import type { AssetRatesPartial as _priceoraclerpc_AssetRatesPartial, AssetRates as _priceoraclerpc_AssetRates } from '../priceoraclerpc/AssetRates';
+import type { IntentPartial as _priceoraclerpc_IntentPartial, Intent as _priceoraclerpc_Intent } from '../priceoraclerpc/Intent';
 import type { Long } from '@grpc/proto-loader';
 
 export interface QueryAssetRatesRequestPartial {
@@ -12,6 +13,9 @@ export interface QueryAssetRatesRequestPartial {
   'paymentAsset'?: (_priceoraclerpc_AssetSpecifierPartial | null);
   'paymentAssetMaxAmount'?: (number | string | Long);
   'assetRatesHint'?: (_priceoraclerpc_AssetRatesPartial | null);
+  'intent'?: (_priceoraclerpc_IntentPartial);
+  'counterpartyId'?: (Buffer | Uint8Array | string);
+  'metadata'?: (string);
 }
 
 export interface QueryAssetRatesRequest {
@@ -21,4 +25,7 @@ export interface QueryAssetRatesRequest {
   'paymentAsset': (_priceoraclerpc_AssetSpecifier | null);
   'paymentAssetMaxAmount': (string);
   'assetRatesHint': (_priceoraclerpc_AssetRates | null);
+  'intent': (_priceoraclerpc_Intent);
+  'counterpartyId': (Buffer);
+  'metadata': (string);
 }

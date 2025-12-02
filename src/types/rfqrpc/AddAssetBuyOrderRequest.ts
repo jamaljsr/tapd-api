@@ -10,6 +10,7 @@ export interface AddAssetBuyOrderRequestPartial {
   'peerPubKey'?: (Buffer | Uint8Array | string);
   'timeoutSeconds'?: (number);
   'skipAssetChannelCheck'?: (boolean);
+  'priceOracleMetadata'?: (string);
 }
 
 export interface AddAssetBuyOrderRequest {
@@ -19,4 +20,5 @@ export interface AddAssetBuyOrderRequest {
   'peerPubKey': (Buffer);
   'timeoutSeconds': (number);
   'skipAssetChannelCheck': (boolean);
+  'priceOracleMetadata': (string);
 }

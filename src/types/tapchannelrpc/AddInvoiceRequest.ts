@@ -11,6 +11,7 @@ export interface AddInvoiceRequestPartial {
   'invoiceRequest'?: (_lnrpc_InvoicePartial | null);
   'hodlInvoice'?: (_tapchannelrpc_HodlInvoicePartial | null);
   'groupKey'?: (Buffer | Uint8Array | string);
+  'priceOracleMetadata'?: (string);
 }
 
 export interface AddInvoiceRequest {
@@ -20,4 +21,5 @@ export interface AddInvoiceRequest {
   'invoiceRequest': (_lnrpc_Invoice | null);
   'hodlInvoice': (_tapchannelrpc_HodlInvoice | null);
   'groupKey': (Buffer);
+  'priceOracleMetadata': (string);
 }

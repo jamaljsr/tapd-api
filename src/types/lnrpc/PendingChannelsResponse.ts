@@ -113,6 +113,8 @@ export interface _lnrpc_PendingChannelsResponse_PendingOpenChannelPartial {
   'commitWeight'?: (number | string | Long);
   'feePerKw'?: (number | string | Long);
   'fundingExpiryBlocks'?: (number);
+  'confirmationsUntilActive'?: (number);
+  'confirmationHeight'?: (number);
 }
 
 export interface _lnrpc_PendingChannelsResponse_PendingOpenChannel {
@@ -121,6 +123,8 @@ export interface _lnrpc_PendingChannelsResponse_PendingOpenChannel {
   'commitWeight': (string);
   'feePerKw': (string);
   'fundingExpiryBlocks': (number);
+  'confirmationsUntilActive': (number);
+  'confirmationHeight': (number);
 }
 
 export interface _lnrpc_PendingChannelsResponse_WaitingCloseChannelPartial {

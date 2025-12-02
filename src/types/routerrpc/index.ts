@@ -10,6 +10,8 @@ export * from './DeleteAliasesRequest';
 export * from './DeleteAliasesResponse';
 export * from './FailureDetail';
 export * from './FinalHtlcEvent';
+export * from './FindBaseAliasRequest';
+export * from './FindBaseAliasResponse';
 export * from './ForwardEvent';
 export * from './ForwardFailEvent';
 export * from './ForwardHtlcInterceptRequest';

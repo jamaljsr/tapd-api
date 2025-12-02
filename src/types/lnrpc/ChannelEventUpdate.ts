@@ -14,6 +14,7 @@ export const _lnrpc_ChannelEventUpdate_UpdateType = {
   INACTIVE_CHANNEL: 'INACTIVE_CHANNEL',
   PENDING_OPEN_CHANNEL: 'PENDING_OPEN_CHANNEL',
   FULLY_RESOLVED_CHANNEL: 'FULLY_RESOLVED_CHANNEL',
+  CHANNEL_FUNDING_TIMEOUT: 'CHANNEL_FUNDING_TIMEOUT',
 } as const;
 
 export type _lnrpc_ChannelEventUpdate_UpdateTypePartial =
@@ -29,6 +30,8 @@ export type _lnrpc_ChannelEventUpdate_UpdateTypePartial =
   | 4
   | 'FULLY_RESOLVED_CHANNEL'
   | 5
+  | 'CHANNEL_FUNDING_TIMEOUT'
+  | 6
 
 export type _lnrpc_ChannelEventUpdate_UpdateType = typeof _lnrpc_ChannelEventUpdate_UpdateType[keyof typeof _lnrpc_ChannelEventUpdate_UpdateType]
 
@@ -40,7 +43,8 @@ export interface ChannelEventUpdatePartial {
   'type'?: (_lnrpc_ChannelEventUpdate_UpdateTypePartial);
   'pendingOpenChannel'?: (_lnrpc_PendingUpdatePartial | null);
   'fullyResolvedChannel'?: (_lnrpc_ChannelPointPartial | null);
-  'channel'?: "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel";
+  'channelFundingTimeout'?: (_lnrpc_ChannelPointPartial | null);
+  'channel'?: "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel"|"channelFundingTimeout";
 }
 
 export interface ChannelEventUpdate {
@@ -51,5 +55,6 @@ export interface ChannelEventUpdate {
   'type': (_lnrpc_ChannelEventUpdate_UpdateType);
   'pendingOpenChannel'?: (_lnrpc_PendingUpdate | null);
   'fullyResolvedChannel'?: (_lnrpc_ChannelPoint | null);
-  'channel': "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel";
+  'channelFundingTimeout'?: (_lnrpc_ChannelPoint | null);
+  'channel': "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel"|"channelFundingTimeout";
 }

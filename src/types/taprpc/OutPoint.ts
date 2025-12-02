@@ -1,4 +1,4 @@
-// Original file: protos/taprootassets.proto
+// Original file: protos/tapcommon.proto
 
 
 export interface OutPointPartial {

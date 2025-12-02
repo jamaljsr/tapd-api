@@ -12,6 +12,7 @@ export interface AssetStatsAssetPartial {
   'genesisHeight'?: (number);
   'genesisTimestamp'?: (number | string | Long);
   'anchorPoint'?: (string);
+  'decimalDisplay'?: (number);
 }
 
 export interface AssetStatsAsset {
@@ -23,4 +24,5 @@ export interface AssetStatsAsset {
   'genesisHeight': (number);
   'genesisTimestamp': (string);
   'anchorPoint': (string);
+  'decimalDisplay': (number);
 }

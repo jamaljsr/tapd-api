@@ -1,6 +1,7 @@
 // Original file: protos/lightning.proto
 
 import type { RoutingPolicyPartial as _lnrpc_RoutingPolicyPartial, RoutingPolicy as _lnrpc_RoutingPolicy } from '../lnrpc/RoutingPolicy';
+import type { ChannelAuthProofPartial as _lnrpc_ChannelAuthProofPartial, ChannelAuthProof as _lnrpc_ChannelAuthProof } from '../lnrpc/ChannelAuthProof';
 import type { Long } from '@grpc/proto-loader';
 
 export interface ChannelEdgePartial {
@@ -13,6 +14,7 @@ export interface ChannelEdgePartial {
   'node1Policy'?: (_lnrpc_RoutingPolicyPartial | null);
   'node2Policy'?: (_lnrpc_RoutingPolicyPartial | null);
   'customRecords'?: ({[key: number]: Buffer | Uint8Array | string});
+  'authProof'?: (_lnrpc_ChannelAuthProofPartial | null);
 }
 
 export interface ChannelEdge {
@@ -25,4 +27,5 @@ export interface ChannelEdge {
   'node1Policy': (_lnrpc_RoutingPolicy | null);
   'node2Policy': (_lnrpc_RoutingPolicy | null);
   'customRecords': ({[key: number]: Buffer});
+  'authProof': (_lnrpc_ChannelAuthProof | null);
 }

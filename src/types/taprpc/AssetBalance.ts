@@ -6,9 +6,11 @@ import type { Long } from '@grpc/proto-loader';
 export interface AssetBalancePartial {
   'assetGenesis'?: (_taprpc_GenesisInfoPartial | null);
   'balance'?: (number | string | Long);
+  'groupKey'?: (Buffer | Uint8Array | string);
 }
 
 export interface AssetBalance {
   'assetGenesis': (_taprpc_GenesisInfo | null);
   'balance': (string);
+  'groupKey': (Buffer);
 }
