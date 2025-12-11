@@ -8,6 +8,8 @@ export interface ForwardingHistoryRequestPartial {
   'indexOffset'?: (number);
   'numMaxEvents'?: (number);
   'peerAliasLookup'?: (boolean);
+  'incomingChanIds'?: (number | string | Long)[];
+  'outgoingChanIds'?: (number | string | Long)[];
 }
 
 export interface ForwardingHistoryRequest {
@@ -16,4 +18,6 @@ export interface ForwardingHistoryRequest {
   'indexOffset': (number);
   'numMaxEvents': (number);
   'peerAliasLookup': (boolean);
+  'incomingChanIds': (string)[];
+  'outgoingChanIds': (string)[];
 }

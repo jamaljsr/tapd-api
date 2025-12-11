@@ -13,6 +13,7 @@ curl https://raw.githubusercontent.com/lightninglabs/taproot-assets/${TAG}/taprp
 curl https://raw.githubusercontent.com/lightninglabs/taproot-assets/${TAG}/taprpc/rfqrpc/rfq.proto --create-dirs -o protos/rfqrpc/rfq.proto
 curl https://raw.githubusercontent.com/lightninglabs/taproot-assets/${TAG}/taprpc/tapchannelrpc/tapchannel.proto --create-dirs -o protos/tapchannelrpc/tapchannel.proto
 curl https://raw.githubusercontent.com/lightninglabs/taproot-assets/${TAG}/taprpc/universerpc/universe.proto --create-dirs -o protos/universerpc/universe.proto
+curl https://raw.githubusercontent.com/lightninglabs/taproot-assets/${TAG}/taprpc/tapcommon.proto --create-dirs -o protos/tapcommon.proto
 
 echo ""
 echo "Updating protos from lnd release tag: ${LND_TAG}"

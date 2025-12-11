@@ -15,6 +15,8 @@ export interface NewAddrRequestPartial {
   'proofCourierAddr'?: (string);
   'assetVersion'?: (_taprpc_AssetVersionPartial);
   'addressVersion'?: (_taprpc_AddrVersionPartial);
+  'groupKey'?: (Buffer | Uint8Array | string);
+  'skipProofCourierConnCheck'?: (boolean);
 }
 
 export interface NewAddrRequest {
@@ -26,4 +28,6 @@ export interface NewAddrRequest {
   'proofCourierAddr': (string);
   'assetVersion': (_taprpc_AssetVersion);
   'addressVersion': (_taprpc_AddrVersion);
+  'groupKey': (Buffer);
+  'skipProofCourierConnCheck': (boolean);
 }

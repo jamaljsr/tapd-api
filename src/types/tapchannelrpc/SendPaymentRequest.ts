@@ -11,6 +11,7 @@ export interface SendPaymentRequestPartial {
   'rfqId'?: (Buffer | Uint8Array | string);
   'allowOverpay'?: (boolean);
   'groupKey'?: (Buffer | Uint8Array | string);
+  'priceOracleMetadata'?: (string);
 }
 
 export interface SendPaymentRequest {
@@ -21,4 +22,5 @@ export interface SendPaymentRequest {
   'rfqId': (Buffer);
   'allowOverpay': (boolean);
   'groupKey': (Buffer);
+  'priceOracleMetadata': (string);
 }

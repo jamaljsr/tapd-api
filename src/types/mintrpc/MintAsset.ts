@@ -23,7 +23,7 @@ export interface MintAssetPartial {
   'scriptKey'?: (_taprpc_ScriptKeyPartial | null);
   'decimalDisplay'?: (number);
   'externalGroupKey'?: (_taprpc_ExternalKeyPartial | null);
-  'universeCommitments'?: (boolean);
+  'enableSupplyCommitments'?: (boolean);
 }
 
 export interface MintAsset {
@@ -41,5 +41,5 @@ export interface MintAsset {
   'scriptKey': (_taprpc_ScriptKey | null);
   'decimalDisplay': (number);
   'externalGroupKey': (_taprpc_ExternalKey | null);
-  'universeCommitments': (boolean);
+  'enableSupplyCommitments': (boolean);
 }

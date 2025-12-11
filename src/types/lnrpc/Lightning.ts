@@ -35,6 +35,8 @@ import type { ConnectPeerResponsePartial as _lnrpc_ConnectPeerResponsePartial, C
 import type { CustomMessagePartial as _lnrpc_CustomMessagePartial, CustomMessage as _lnrpc_CustomMessage } from '../lnrpc/CustomMessage';
 import type { DebugLevelRequestPartial as _lnrpc_DebugLevelRequestPartial, DebugLevelRequest as _lnrpc_DebugLevelRequest } from '../lnrpc/DebugLevelRequest';
 import type { DebugLevelResponsePartial as _lnrpc_DebugLevelResponsePartial, DebugLevelResponse as _lnrpc_DebugLevelResponse } from '../lnrpc/DebugLevelResponse';
+import type { DelCanceledInvoiceReqPartial as _lnrpc_DelCanceledInvoiceReqPartial, DelCanceledInvoiceReq as _lnrpc_DelCanceledInvoiceReq } from '../lnrpc/DelCanceledInvoiceReq';
+import type { DelCanceledInvoiceRespPartial as _lnrpc_DelCanceledInvoiceRespPartial, DelCanceledInvoiceResp as _lnrpc_DelCanceledInvoiceResp } from '../lnrpc/DelCanceledInvoiceResp';
 import type { DeleteAllPaymentsRequestPartial as _lnrpc_DeleteAllPaymentsRequestPartial, DeleteAllPaymentsRequest as _lnrpc_DeleteAllPaymentsRequest } from '../lnrpc/DeleteAllPaymentsRequest';
 import type { DeleteAllPaymentsResponsePartial as _lnrpc_DeleteAllPaymentsResponsePartial, DeleteAllPaymentsResponse as _lnrpc_DeleteAllPaymentsResponse } from '../lnrpc/DeleteAllPaymentsResponse';
 import type { DeleteMacaroonIDRequestPartial as _lnrpc_DeleteMacaroonIDRequestPartial, DeleteMacaroonIDRequest as _lnrpc_DeleteMacaroonIDRequest } from '../lnrpc/DeleteMacaroonIDRequest';
@@ -237,6 +239,15 @@ export interface LightningClient extends grpc.Client {
   deleteAllPayments(argument: _lnrpc_DeleteAllPaymentsRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_DeleteAllPaymentsResponse>): grpc.ClientUnaryCall;
   deleteAllPayments(argument: _lnrpc_DeleteAllPaymentsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_DeleteAllPaymentsResponse>): grpc.ClientUnaryCall;
   deleteAllPayments(argument: _lnrpc_DeleteAllPaymentsRequestPartial, callback: grpc.requestCallback<_lnrpc_DeleteAllPaymentsResponse>): grpc.ClientUnaryCall;
+  
+  DeleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  DeleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  DeleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  DeleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  deleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  deleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  deleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
+  deleteCanceledInvoice(argument: _lnrpc_DelCanceledInvoiceReqPartial, callback: grpc.requestCallback<_lnrpc_DelCanceledInvoiceResp>): grpc.ClientUnaryCall;
   
   DeleteMacaroonID(argument: _lnrpc_DeleteMacaroonIDRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_DeleteMacaroonIDResponse>): grpc.ClientUnaryCall;
   DeleteMacaroonID(argument: _lnrpc_DeleteMacaroonIDRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_DeleteMacaroonIDResponse>): grpc.ClientUnaryCall;
@@ -718,6 +729,8 @@ export interface LightningHandlers extends grpc.UntypedServiceImplementation {
   
   DeleteAllPayments: grpc.handleUnaryCall<_lnrpc_DeleteAllPaymentsRequest, _lnrpc_DeleteAllPaymentsResponsePartial>;
   
+  DeleteCanceledInvoice: grpc.handleUnaryCall<_lnrpc_DelCanceledInvoiceReq, _lnrpc_DelCanceledInvoiceRespPartial>;
+  
   DeleteMacaroonID: grpc.handleUnaryCall<_lnrpc_DeleteMacaroonIDRequest, _lnrpc_DeleteMacaroonIDResponsePartial>;
   
   DeletePayment: grpc.handleUnaryCall<_lnrpc_DeletePaymentRequest, _lnrpc_DeletePaymentResponsePartial>;
@@ -844,6 +857,7 @@ export interface LightningDefinition extends grpc.ServiceDefinition {
   DebugLevel: MethodDefinition<_lnrpc_DebugLevelRequestPartial, _lnrpc_DebugLevelResponsePartial, _lnrpc_DebugLevelRequest, _lnrpc_DebugLevelResponse>
   DecodePayReq: MethodDefinition<_lnrpc_PayReqStringPartial, _lnrpc_PayReqPartial, _lnrpc_PayReqString, _lnrpc_PayReq>
   DeleteAllPayments: MethodDefinition<_lnrpc_DeleteAllPaymentsRequestPartial, _lnrpc_DeleteAllPaymentsResponsePartial, _lnrpc_DeleteAllPaymentsRequest, _lnrpc_DeleteAllPaymentsResponse>
+  DeleteCanceledInvoice: MethodDefinition<_lnrpc_DelCanceledInvoiceReqPartial, _lnrpc_DelCanceledInvoiceRespPartial, _lnrpc_DelCanceledInvoiceReq, _lnrpc_DelCanceledInvoiceResp>
   DeleteMacaroonID: MethodDefinition<_lnrpc_DeleteMacaroonIDRequestPartial, _lnrpc_DeleteMacaroonIDResponsePartial, _lnrpc_DeleteMacaroonIDRequest, _lnrpc_DeleteMacaroonIDResponse>
   DeletePayment: MethodDefinition<_lnrpc_DeletePaymentRequestPartial, _lnrpc_DeletePaymentResponsePartial, _lnrpc_DeletePaymentRequest, _lnrpc_DeletePaymentResponse>
   DescribeGraph: MethodDefinition<_lnrpc_ChannelGraphRequestPartial, _lnrpc_ChannelGraphPartial, _lnrpc_ChannelGraphRequest, _lnrpc_ChannelGraph>

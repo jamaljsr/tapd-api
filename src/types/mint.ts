@@ -39,6 +39,7 @@ export interface ProtoGrpcType {
     AddrReceivesRequest: MessageTypeDefinition
     AddrReceivesResponse: MessageTypeDefinition
     AddrVersion: EnumTypeDefinition
+    AddressWithAmount: MessageTypeDefinition
     AnchorInfo: MessageTypeDefinition
     AnchorTransaction: MessageTypeDefinition
     Asset: MessageTypeDefinition
@@ -49,6 +50,7 @@ export interface ProtoGrpcType {
     AssetHumanReadable: MessageTypeDefinition
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
+    AssetOutPoint: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
@@ -65,6 +67,7 @@ export interface ProtoGrpcType {
     ExportProofRequest: MessageTypeDefinition
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
+    FetchAssetMetaResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition

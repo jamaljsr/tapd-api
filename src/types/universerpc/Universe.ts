@@ -17,9 +17,17 @@ import type { DeleteFederationServerRequestPartial as _universerpc_DeleteFederat
 import type { DeleteFederationServerResponsePartial as _universerpc_DeleteFederationServerResponsePartial, DeleteFederationServerResponse as _universerpc_DeleteFederationServerResponse } from '../universerpc/DeleteFederationServerResponse';
 import type { DeleteRootQueryPartial as _universerpc_DeleteRootQueryPartial, DeleteRootQuery as _universerpc_DeleteRootQuery } from '../universerpc/DeleteRootQuery';
 import type { DeleteRootResponsePartial as _universerpc_DeleteRootResponsePartial, DeleteRootResponse as _universerpc_DeleteRootResponse } from '../universerpc/DeleteRootResponse';
+import type { FetchSupplyCommitRequestPartial as _universerpc_FetchSupplyCommitRequestPartial, FetchSupplyCommitRequest as _universerpc_FetchSupplyCommitRequest } from '../universerpc/FetchSupplyCommitRequest';
+import type { FetchSupplyCommitResponsePartial as _universerpc_FetchSupplyCommitResponsePartial, FetchSupplyCommitResponse as _universerpc_FetchSupplyCommitResponse } from '../universerpc/FetchSupplyCommitResponse';
+import type { FetchSupplyLeavesRequestPartial as _universerpc_FetchSupplyLeavesRequestPartial, FetchSupplyLeavesRequest as _universerpc_FetchSupplyLeavesRequest } from '../universerpc/FetchSupplyLeavesRequest';
+import type { FetchSupplyLeavesResponsePartial as _universerpc_FetchSupplyLeavesResponsePartial, FetchSupplyLeavesResponse as _universerpc_FetchSupplyLeavesResponse } from '../universerpc/FetchSupplyLeavesResponse';
 import type { IDPartial as _universerpc_IDPartial, ID as _universerpc_ID } from '../universerpc/ID';
+import type { IgnoreAssetOutPointRequestPartial as _universerpc_IgnoreAssetOutPointRequestPartial, IgnoreAssetOutPointRequest as _universerpc_IgnoreAssetOutPointRequest } from '../universerpc/IgnoreAssetOutPointRequest';
+import type { IgnoreAssetOutPointResponsePartial as _universerpc_IgnoreAssetOutPointResponsePartial, IgnoreAssetOutPointResponse as _universerpc_IgnoreAssetOutPointResponse } from '../universerpc/IgnoreAssetOutPointResponse';
 import type { InfoRequestPartial as _universerpc_InfoRequestPartial, InfoRequest as _universerpc_InfoRequest } from '../universerpc/InfoRequest';
 import type { InfoResponsePartial as _universerpc_InfoResponsePartial, InfoResponse as _universerpc_InfoResponse } from '../universerpc/InfoResponse';
+import type { InsertSupplyCommitRequestPartial as _universerpc_InsertSupplyCommitRequestPartial, InsertSupplyCommitRequest as _universerpc_InsertSupplyCommitRequest } from '../universerpc/InsertSupplyCommitRequest';
+import type { InsertSupplyCommitResponsePartial as _universerpc_InsertSupplyCommitResponsePartial, InsertSupplyCommitResponse as _universerpc_InsertSupplyCommitResponse } from '../universerpc/InsertSupplyCommitResponse';
 import type { ListFederationServersRequestPartial as _universerpc_ListFederationServersRequestPartial, ListFederationServersRequest as _universerpc_ListFederationServersRequest } from '../universerpc/ListFederationServersRequest';
 import type { ListFederationServersResponsePartial as _universerpc_ListFederationServersResponsePartial, ListFederationServersResponse as _universerpc_ListFederationServersResponse } from '../universerpc/ListFederationServersResponse';
 import type { MultiverseRootRequestPartial as _universerpc_MultiverseRootRequestPartial, MultiverseRootRequest as _universerpc_MultiverseRootRequest } from '../universerpc/MultiverseRootRequest';
@@ -39,6 +47,8 @@ import type { SyncRequestPartial as _universerpc_SyncRequestPartial, SyncRequest
 import type { SyncResponsePartial as _universerpc_SyncResponsePartial, SyncResponse as _universerpc_SyncResponse } from '../universerpc/SyncResponse';
 import type { UniverseAssetStatsPartial as _universerpc_UniverseAssetStatsPartial, UniverseAssetStats as _universerpc_UniverseAssetStats } from '../universerpc/UniverseAssetStats';
 import type { UniverseKeyPartial as _universerpc_UniverseKeyPartial, UniverseKey as _universerpc_UniverseKey } from '../universerpc/UniverseKey';
+import type { UpdateSupplyCommitRequestPartial as _universerpc_UpdateSupplyCommitRequestPartial, UpdateSupplyCommitRequest as _universerpc_UpdateSupplyCommitRequest } from '../universerpc/UpdateSupplyCommitRequest';
+import type { UpdateSupplyCommitResponsePartial as _universerpc_UpdateSupplyCommitResponsePartial, UpdateSupplyCommitResponse as _universerpc_UpdateSupplyCommitResponse } from '../universerpc/UpdateSupplyCommitResponse';
 
 export interface UniverseClient extends grpc.Client {
   AddFederationServer(argument: _universerpc_AddFederationServerRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AddFederationServerResponse>): grpc.ClientUnaryCall;
@@ -95,6 +105,33 @@ export interface UniverseClient extends grpc.Client {
   deleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
   deleteFederationServer(argument: _universerpc_DeleteFederationServerRequestPartial, callback: grpc.requestCallback<_universerpc_DeleteFederationServerResponse>): grpc.ClientUnaryCall;
   
+  FetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  FetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  FetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  FetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  fetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  fetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  fetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  fetchSupplyCommit(argument: _universerpc_FetchSupplyCommitRequestPartial, callback: grpc.requestCallback<_universerpc_FetchSupplyCommitResponse>): grpc.ClientUnaryCall;
+  
+  FetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  FetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  FetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  FetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  fetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  fetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  fetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  fetchSupplyLeaves(argument: _universerpc_FetchSupplyLeavesRequestPartial, callback: grpc.requestCallback<_universerpc_FetchSupplyLeavesResponse>): grpc.ClientUnaryCall;
+  
+  IgnoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  IgnoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  IgnoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  IgnoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  ignoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  ignoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  ignoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  ignoreAssetOutPoint(argument: _universerpc_IgnoreAssetOutPointRequestPartial, callback: grpc.requestCallback<_universerpc_IgnoreAssetOutPointResponse>): grpc.ClientUnaryCall;
+  
   Info(argument: _universerpc_InfoRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
   Info(argument: _universerpc_InfoRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
   Info(argument: _universerpc_InfoRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InfoResponse>): grpc.ClientUnaryCall;
@@ -112,6 +149,15 @@ export interface UniverseClient extends grpc.Client {
   insertProof(argument: _universerpc_AssetProofPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   insertProof(argument: _universerpc_AssetProofPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
   insertProof(argument: _universerpc_AssetProofPartial, callback: grpc.requestCallback<_universerpc_AssetProofResponse>): grpc.ClientUnaryCall;
+  
+  InsertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  InsertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  InsertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  InsertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  insertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  insertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  insertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
+  insertSupplyCommit(argument: _universerpc_InsertSupplyCommitRequestPartial, callback: grpc.requestCallback<_universerpc_InsertSupplyCommitResponse>): grpc.ClientUnaryCall;
   
   ListFederationServers(argument: _universerpc_ListFederationServersRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_ListFederationServersResponse>): grpc.ClientUnaryCall;
   ListFederationServers(argument: _universerpc_ListFederationServersRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_ListFederationServersResponse>): grpc.ClientUnaryCall;
@@ -212,6 +258,15 @@ export interface UniverseClient extends grpc.Client {
   universeStats(argument: _universerpc_StatsRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_StatsResponse>): grpc.ClientUnaryCall;
   universeStats(argument: _universerpc_StatsRequestPartial, callback: grpc.requestCallback<_universerpc_StatsResponse>): grpc.ClientUnaryCall;
   
+  UpdateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  UpdateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  UpdateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  UpdateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  updateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  updateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  updateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  updateSupplyCommit(argument: _universerpc_UpdateSupplyCommitRequestPartial, callback: grpc.requestCallback<_universerpc_UpdateSupplyCommitResponse>): grpc.ClientUnaryCall;
+  
 }
 
 export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
@@ -227,9 +282,17 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   DeleteFederationServer: grpc.handleUnaryCall<_universerpc_DeleteFederationServerRequest, _universerpc_DeleteFederationServerResponsePartial>;
   
+  FetchSupplyCommit: grpc.handleUnaryCall<_universerpc_FetchSupplyCommitRequest, _universerpc_FetchSupplyCommitResponsePartial>;
+  
+  FetchSupplyLeaves: grpc.handleUnaryCall<_universerpc_FetchSupplyLeavesRequest, _universerpc_FetchSupplyLeavesResponsePartial>;
+  
+  IgnoreAssetOutPoint: grpc.handleUnaryCall<_universerpc_IgnoreAssetOutPointRequest, _universerpc_IgnoreAssetOutPointResponsePartial>;
+  
   Info: grpc.handleUnaryCall<_universerpc_InfoRequest, _universerpc_InfoResponsePartial>;
   
   InsertProof: grpc.handleUnaryCall<_universerpc_AssetProof, _universerpc_AssetProofResponsePartial>;
+  
+  InsertSupplyCommit: grpc.handleUnaryCall<_universerpc_InsertSupplyCommitRequest, _universerpc_InsertSupplyCommitResponsePartial>;
   
   ListFederationServers: grpc.handleUnaryCall<_universerpc_ListFederationServersRequest, _universerpc_ListFederationServersResponsePartial>;
   
@@ -253,6 +316,8 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   UniverseStats: grpc.handleUnaryCall<_universerpc_StatsRequest, _universerpc_StatsResponsePartial>;
   
+  UpdateSupplyCommit: grpc.handleUnaryCall<_universerpc_UpdateSupplyCommitRequest, _universerpc_UpdateSupplyCommitResponsePartial>;
+  
 }
 
 export interface UniverseDefinition extends grpc.ServiceDefinition {
@@ -262,8 +327,12 @@ export interface UniverseDefinition extends grpc.ServiceDefinition {
   AssetRoots: MethodDefinition<_universerpc_AssetRootRequestPartial, _universerpc_AssetRootResponsePartial, _universerpc_AssetRootRequest, _universerpc_AssetRootResponse>
   DeleteAssetRoot: MethodDefinition<_universerpc_DeleteRootQueryPartial, _universerpc_DeleteRootResponsePartial, _universerpc_DeleteRootQuery, _universerpc_DeleteRootResponse>
   DeleteFederationServer: MethodDefinition<_universerpc_DeleteFederationServerRequestPartial, _universerpc_DeleteFederationServerResponsePartial, _universerpc_DeleteFederationServerRequest, _universerpc_DeleteFederationServerResponse>
+  FetchSupplyCommit: MethodDefinition<_universerpc_FetchSupplyCommitRequestPartial, _universerpc_FetchSupplyCommitResponsePartial, _universerpc_FetchSupplyCommitRequest, _universerpc_FetchSupplyCommitResponse>
+  FetchSupplyLeaves: MethodDefinition<_universerpc_FetchSupplyLeavesRequestPartial, _universerpc_FetchSupplyLeavesResponsePartial, _universerpc_FetchSupplyLeavesRequest, _universerpc_FetchSupplyLeavesResponse>
+  IgnoreAssetOutPoint: MethodDefinition<_universerpc_IgnoreAssetOutPointRequestPartial, _universerpc_IgnoreAssetOutPointResponsePartial, _universerpc_IgnoreAssetOutPointRequest, _universerpc_IgnoreAssetOutPointResponse>
   Info: MethodDefinition<_universerpc_InfoRequestPartial, _universerpc_InfoResponsePartial, _universerpc_InfoRequest, _universerpc_InfoResponse>
   InsertProof: MethodDefinition<_universerpc_AssetProofPartial, _universerpc_AssetProofResponsePartial, _universerpc_AssetProof, _universerpc_AssetProofResponse>
+  InsertSupplyCommit: MethodDefinition<_universerpc_InsertSupplyCommitRequestPartial, _universerpc_InsertSupplyCommitResponsePartial, _universerpc_InsertSupplyCommitRequest, _universerpc_InsertSupplyCommitResponse>
   ListFederationServers: MethodDefinition<_universerpc_ListFederationServersRequestPartial, _universerpc_ListFederationServersResponsePartial, _universerpc_ListFederationServersRequest, _universerpc_ListFederationServersResponse>
   MultiverseRoot: MethodDefinition<_universerpc_MultiverseRootRequestPartial, _universerpc_MultiverseRootResponsePartial, _universerpc_MultiverseRootRequest, _universerpc_MultiverseRootResponse>
   PushProof: MethodDefinition<_universerpc_PushProofRequestPartial, _universerpc_PushProofResponsePartial, _universerpc_PushProofRequest, _universerpc_PushProofResponse>
@@ -275,4 +344,5 @@ export interface UniverseDefinition extends grpc.ServiceDefinition {
   SetFederationSyncConfig: MethodDefinition<_universerpc_SetFederationSyncConfigRequestPartial, _universerpc_SetFederationSyncConfigResponsePartial, _universerpc_SetFederationSyncConfigRequest, _universerpc_SetFederationSyncConfigResponse>
   SyncUniverse: MethodDefinition<_universerpc_SyncRequestPartial, _universerpc_SyncResponsePartial, _universerpc_SyncRequest, _universerpc_SyncResponse>
   UniverseStats: MethodDefinition<_universerpc_StatsRequestPartial, _universerpc_StatsResponsePartial, _universerpc_StatsRequest, _universerpc_StatsResponse>
+  UpdateSupplyCommit: MethodDefinition<_universerpc_UpdateSupplyCommitRequestPartial, _universerpc_UpdateSupplyCommitResponsePartial, _universerpc_UpdateSupplyCommitRequest, _universerpc_UpdateSupplyCommitResponse>
 }

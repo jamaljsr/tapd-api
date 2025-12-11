@@ -7,6 +7,7 @@ export const ScriptKeyType = {
   SCRIPT_KEY_BURN: 'SCRIPT_KEY_BURN',
   SCRIPT_KEY_TOMBSTONE: 'SCRIPT_KEY_TOMBSTONE',
   SCRIPT_KEY_CHANNEL: 'SCRIPT_KEY_CHANNEL',
+  SCRIPT_KEY_UNIQUE_PEDERSEN: 'SCRIPT_KEY_UNIQUE_PEDERSEN',
 } as const;
 
 export type ScriptKeyTypePartial =
@@ -22,5 +23,7 @@ export type ScriptKeyTypePartial =
   | 4
   | 'SCRIPT_KEY_CHANNEL'
   | 5
+  | 'SCRIPT_KEY_UNIQUE_PEDERSEN'
+  | 6
 
 export type ScriptKeyType = typeof ScriptKeyType[keyof typeof ScriptKeyType]

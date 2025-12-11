@@ -8,6 +8,8 @@ import type { BuildRouteRequestPartial as _routerrpc_BuildRouteRequestPartial, B
 import type { BuildRouteResponsePartial as _routerrpc_BuildRouteResponsePartial, BuildRouteResponse as _routerrpc_BuildRouteResponse } from '../routerrpc/BuildRouteResponse';
 import type { DeleteAliasesRequestPartial as _routerrpc_DeleteAliasesRequestPartial, DeleteAliasesRequest as _routerrpc_DeleteAliasesRequest } from '../routerrpc/DeleteAliasesRequest';
 import type { DeleteAliasesResponsePartial as _routerrpc_DeleteAliasesResponsePartial, DeleteAliasesResponse as _routerrpc_DeleteAliasesResponse } from '../routerrpc/DeleteAliasesResponse';
+import type { FindBaseAliasRequestPartial as _routerrpc_FindBaseAliasRequestPartial, FindBaseAliasRequest as _routerrpc_FindBaseAliasRequest } from '../routerrpc/FindBaseAliasRequest';
+import type { FindBaseAliasResponsePartial as _routerrpc_FindBaseAliasResponsePartial, FindBaseAliasResponse as _routerrpc_FindBaseAliasResponse } from '../routerrpc/FindBaseAliasResponse';
 import type { ForwardHtlcInterceptRequestPartial as _routerrpc_ForwardHtlcInterceptRequestPartial, ForwardHtlcInterceptRequest as _routerrpc_ForwardHtlcInterceptRequest } from '../routerrpc/ForwardHtlcInterceptRequest';
 import type { ForwardHtlcInterceptResponsePartial as _routerrpc_ForwardHtlcInterceptResponsePartial, ForwardHtlcInterceptResponse as _routerrpc_ForwardHtlcInterceptResponse } from '../routerrpc/ForwardHtlcInterceptResponse';
 import type { GetMissionControlConfigRequestPartial as _routerrpc_GetMissionControlConfigRequestPartial, GetMissionControlConfigRequest as _routerrpc_GetMissionControlConfigRequest } from '../routerrpc/GetMissionControlConfigRequest';
@@ -181,6 +183,15 @@ export interface RouterClient extends grpc.Client {
   xDeleteLocalChanAliases(argument: _routerrpc_DeleteAliasesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteAliasesResponse>): grpc.ClientUnaryCall;
   xDeleteLocalChanAliases(argument: _routerrpc_DeleteAliasesRequestPartial, callback: grpc.requestCallback<_routerrpc_DeleteAliasesResponse>): grpc.ClientUnaryCall;
   
+  XFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  XFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  XFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  XFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  xFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  xFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  xFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  xFindBaseLocalChanAlias(argument: _routerrpc_FindBaseAliasRequestPartial, callback: grpc.requestCallback<_routerrpc_FindBaseAliasResponse>): grpc.ClientUnaryCall;
+  
   XImportMissionControl(argument: _routerrpc_XImportMissionControlRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_XImportMissionControlResponse>): grpc.ClientUnaryCall;
   XImportMissionControl(argument: _routerrpc_XImportMissionControlRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_XImportMissionControlResponse>): grpc.ClientUnaryCall;
   XImportMissionControl(argument: _routerrpc_XImportMissionControlRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_XImportMissionControlResponse>): grpc.ClientUnaryCall;
@@ -231,6 +242,8 @@ export interface RouterHandlers extends grpc.UntypedServiceImplementation {
   
   XDeleteLocalChanAliases: grpc.handleUnaryCall<_routerrpc_DeleteAliasesRequest, _routerrpc_DeleteAliasesResponsePartial>;
   
+  XFindBaseLocalChanAlias: grpc.handleUnaryCall<_routerrpc_FindBaseAliasRequest, _routerrpc_FindBaseAliasResponsePartial>;
+  
   XImportMissionControl: grpc.handleUnaryCall<_routerrpc_XImportMissionControlRequest, _routerrpc_XImportMissionControlResponsePartial>;
   
 }
@@ -255,5 +268,6 @@ export interface RouterDefinition extends grpc.ServiceDefinition {
   UpdateChanStatus: MethodDefinition<_routerrpc_UpdateChanStatusRequestPartial, _routerrpc_UpdateChanStatusResponsePartial, _routerrpc_UpdateChanStatusRequest, _routerrpc_UpdateChanStatusResponse>
   XAddLocalChanAliases: MethodDefinition<_routerrpc_AddAliasesRequestPartial, _routerrpc_AddAliasesResponsePartial, _routerrpc_AddAliasesRequest, _routerrpc_AddAliasesResponse>
   XDeleteLocalChanAliases: MethodDefinition<_routerrpc_DeleteAliasesRequestPartial, _routerrpc_DeleteAliasesResponsePartial, _routerrpc_DeleteAliasesRequest, _routerrpc_DeleteAliasesResponse>
+  XFindBaseLocalChanAlias: MethodDefinition<_routerrpc_FindBaseAliasRequestPartial, _routerrpc_FindBaseAliasResponsePartial, _routerrpc_FindBaseAliasRequest, _routerrpc_FindBaseAliasResponse>
   XImportMissionControl: MethodDefinition<_routerrpc_XImportMissionControlRequestPartial, _routerrpc_XImportMissionControlResponsePartial, _routerrpc_XImportMissionControlRequest, _routerrpc_XImportMissionControlResponse>
 }

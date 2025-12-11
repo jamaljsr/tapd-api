@@ -16,6 +16,7 @@ export interface ProtoGrpcType {
     AddrReceivesRequest: MessageTypeDefinition
     AddrReceivesResponse: MessageTypeDefinition
     AddrVersion: EnumTypeDefinition
+    AddressWithAmount: MessageTypeDefinition
     AnchorInfo: MessageTypeDefinition
     AnchorTransaction: MessageTypeDefinition
     Asset: MessageTypeDefinition
@@ -26,6 +27,7 @@ export interface ProtoGrpcType {
     AssetHumanReadable: MessageTypeDefinition
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
+    AssetOutPoint: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
@@ -42,6 +44,7 @@ export interface ProtoGrpcType {
     ExportProofRequest: MessageTypeDefinition
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
+    FetchAssetMetaResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
@@ -126,11 +129,19 @@ export interface ProtoGrpcType {
     DeleteFederationServerResponse: MessageTypeDefinition
     DeleteRootQuery: MessageTypeDefinition
     DeleteRootResponse: MessageTypeDefinition
+    FetchSupplyCommitRequest: MessageTypeDefinition
+    FetchSupplyCommitResponse: MessageTypeDefinition
+    FetchSupplyLeavesRequest: MessageTypeDefinition
+    FetchSupplyLeavesResponse: MessageTypeDefinition
     GlobalFederationSyncConfig: MessageTypeDefinition
     GroupedUniverseEvents: MessageTypeDefinition
     ID: MessageTypeDefinition
+    IgnoreAssetOutPointRequest: MessageTypeDefinition
+    IgnoreAssetOutPointResponse: MessageTypeDefinition
     InfoRequest: MessageTypeDefinition
     InfoResponse: MessageTypeDefinition
+    InsertSupplyCommitRequest: MessageTypeDefinition
+    InsertSupplyCommitResponse: MessageTypeDefinition
     IssuanceData: MessageTypeDefinition
     ListFederationServersRequest: MessageTypeDefinition
     ListFederationServersResponse: MessageTypeDefinition
@@ -151,6 +162,11 @@ export interface ProtoGrpcType {
     SortDirection: EnumTypeDefinition
     StatsRequest: MessageTypeDefinition
     StatsResponse: MessageTypeDefinition
+    SupplyCommitChainData: MessageTypeDefinition
+    SupplyCommitSubtreeRoot: MessageTypeDefinition
+    SupplyLeafBlockHeader: MessageTypeDefinition
+    SupplyLeafEntry: MessageTypeDefinition
+    SupplyLeafKey: MessageTypeDefinition
     SyncRequest: MessageTypeDefinition
     SyncResponse: MessageTypeDefinition
     SyncTarget: MessageTypeDefinition
@@ -161,6 +177,8 @@ export interface ProtoGrpcType {
     UniverseKey: MessageTypeDefinition
     UniverseRoot: MessageTypeDefinition
     UniverseSyncMode: EnumTypeDefinition
+    UpdateSupplyCommitRequest: MessageTypeDefinition
+    UpdateSupplyCommitResponse: MessageTypeDefinition
   }
 }
 

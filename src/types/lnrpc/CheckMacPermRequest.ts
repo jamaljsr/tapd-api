@@ -6,10 +6,12 @@ export interface CheckMacPermRequestPartial {
   'macaroon'?: (Buffer | Uint8Array | string);
   'permissions'?: (_lnrpc_MacaroonPermissionPartial)[];
   'fullMethod'?: (string);
+  'checkDefaultPermsFromFullMethod'?: (boolean);
 }
 
 export interface CheckMacPermRequest {
   'macaroon': (Buffer);
   'permissions': (_lnrpc_MacaroonPermission)[];
   'fullMethod': (string);
+  'checkDefaultPermsFromFullMethod': (boolean);
 }

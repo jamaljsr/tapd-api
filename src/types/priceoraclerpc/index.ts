@@ -1,6 +1,7 @@
 export * from './AssetRates';
 export * from './AssetSpecifier';
 export * from './FixedPoint';
+export * from './Intent';
 export * from './PriceOracle';
 export * from './QueryAssetRatesErrResponse';
 export * from './QueryAssetRatesOkResponse';

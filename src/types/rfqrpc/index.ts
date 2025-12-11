@@ -7,6 +7,7 @@ export * from './AddAssetSellOfferRequest';
 export * from './AddAssetSellOfferResponse';
 export * from './AddAssetSellOrderRequest';
 export * from './AddAssetSellOrderResponse';
+export * from './AssetSpec';
 export * from './AssetSpecifier';
 export * from './FixedPoint';
 export * from './InvalidQuoteResponse';
