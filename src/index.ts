@@ -26,7 +26,7 @@ export interface TapdClientOptions {
    * @cert tapd's TLS certificate in HEX format.
    */
 
-  cert: string;
+  cert?: string;
 }
 
 /**
