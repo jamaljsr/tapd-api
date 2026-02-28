@@ -21,14 +21,25 @@ export const loadProto = <T>(
     }
   );
 
-  const channelCredentials = grpc.credentials.createSsl(
-    Buffer.from(options.cert, 'hex')
-  );
+  let credentials;
 
-  const credentials = grpc.credentials.combineChannelCredentials(
-    channelCredentials,
-    callCredentials
-  );
+  if (options.cert) {
+    const channelCredentials = grpc.credentials.createSsl(
+      Buffer.from(options.cert, 'hex')
+    );
+  
+    credentials = grpc.credentials.combineChannelCredentials(
+      channelCredentials,
+      callCredentials
+    );
+  } else {
+    const channelCredentials = grpc.credentials.createSsl();
+
+    credentials = grpc.credentials.combineChannelCredentials(
+      channelCredentials,
+      callCredentials
+    );
+  }
 
   const params: grpc.ClientOptions = {
     'grpc.max_receive_message_length': -1,
