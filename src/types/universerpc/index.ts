@@ -16,6 +16,8 @@ export * from './AssetStatsAsset';
 export * from './AssetStatsQuery';
 export * from './AssetStatsSnapshot';
 export * from './AssetTypeFilter';
+export * from './DeleteAssetLeafRequest';
+export * from './DeleteAssetLeafResponse';
 export * from './DeleteFederationServerRequest';
 export * from './DeleteFederationServerResponse';
 export * from './DeleteRootQuery';

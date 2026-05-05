@@ -125,6 +125,8 @@ export interface ProtoGrpcType {
     AssetStatsQuery: MessageTypeDefinition
     AssetStatsSnapshot: MessageTypeDefinition
     AssetTypeFilter: EnumTypeDefinition
+    DeleteAssetLeafRequest: MessageTypeDefinition
+    DeleteAssetLeafResponse: MessageTypeDefinition
     DeleteFederationServerRequest: MessageTypeDefinition
     DeleteFederationServerResponse: MessageTypeDefinition
     DeleteRootQuery: MessageTypeDefinition

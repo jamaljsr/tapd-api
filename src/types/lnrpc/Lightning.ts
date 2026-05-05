@@ -91,6 +91,7 @@ import type { NodeInfoPartial as _lnrpc_NodeInfoPartial, NodeInfo as _lnrpc_Node
 import type { NodeInfoRequestPartial as _lnrpc_NodeInfoRequestPartial, NodeInfoRequest as _lnrpc_NodeInfoRequest } from '../lnrpc/NodeInfoRequest';
 import type { NodeMetricsRequestPartial as _lnrpc_NodeMetricsRequestPartial, NodeMetricsRequest as _lnrpc_NodeMetricsRequest } from '../lnrpc/NodeMetricsRequest';
 import type { NodeMetricsResponsePartial as _lnrpc_NodeMetricsResponsePartial, NodeMetricsResponse as _lnrpc_NodeMetricsResponse } from '../lnrpc/NodeMetricsResponse';
+import type { OnionMessageUpdatePartial as _lnrpc_OnionMessageUpdatePartial, OnionMessageUpdate as _lnrpc_OnionMessageUpdate } from '../lnrpc/OnionMessageUpdate';
 import type { OpenChannelRequestPartial as _lnrpc_OpenChannelRequestPartial, OpenChannelRequest as _lnrpc_OpenChannelRequest } from '../lnrpc/OpenChannelRequest';
 import type { OpenStatusUpdatePartial as _lnrpc_OpenStatusUpdatePartial, OpenStatusUpdate as _lnrpc_OpenStatusUpdate } from '../lnrpc/OpenStatusUpdate';
 import type { PayReqPartial as _lnrpc_PayReqPartial, PayReq as _lnrpc_PayReq } from '../lnrpc/PayReq';
@@ -114,6 +115,8 @@ import type { SendCustomMessageRequestPartial as _lnrpc_SendCustomMessageRequest
 import type { SendCustomMessageResponsePartial as _lnrpc_SendCustomMessageResponsePartial, SendCustomMessageResponse as _lnrpc_SendCustomMessageResponse } from '../lnrpc/SendCustomMessageResponse';
 import type { SendManyRequestPartial as _lnrpc_SendManyRequestPartial, SendManyRequest as _lnrpc_SendManyRequest } from '../lnrpc/SendManyRequest';
 import type { SendManyResponsePartial as _lnrpc_SendManyResponsePartial, SendManyResponse as _lnrpc_SendManyResponse } from '../lnrpc/SendManyResponse';
+import type { SendOnionMessageRequestPartial as _lnrpc_SendOnionMessageRequestPartial, SendOnionMessageRequest as _lnrpc_SendOnionMessageRequest } from '../lnrpc/SendOnionMessageRequest';
+import type { SendOnionMessageResponsePartial as _lnrpc_SendOnionMessageResponsePartial, SendOnionMessageResponse as _lnrpc_SendOnionMessageResponse } from '../lnrpc/SendOnionMessageResponse';
 import type { SendRequestPartial as _lnrpc_SendRequestPartial, SendRequest as _lnrpc_SendRequest } from '../lnrpc/SendRequest';
 import type { SendResponsePartial as _lnrpc_SendResponsePartial, SendResponse as _lnrpc_SendResponse } from '../lnrpc/SendResponse';
 import type { SendToRouteRequestPartial as _lnrpc_SendToRouteRequestPartial, SendToRouteRequest as _lnrpc_SendToRouteRequest } from '../lnrpc/SendToRouteRequest';
@@ -122,6 +125,7 @@ import type { SignMessageResponsePartial as _lnrpc_SignMessageResponsePartial, S
 import type { StopRequestPartial as _lnrpc_StopRequestPartial, StopRequest as _lnrpc_StopRequest } from '../lnrpc/StopRequest';
 import type { StopResponsePartial as _lnrpc_StopResponsePartial, StopResponse as _lnrpc_StopResponse } from '../lnrpc/StopResponse';
 import type { SubscribeCustomMessagesRequestPartial as _lnrpc_SubscribeCustomMessagesRequestPartial, SubscribeCustomMessagesRequest as _lnrpc_SubscribeCustomMessagesRequest } from '../lnrpc/SubscribeCustomMessagesRequest';
+import type { SubscribeOnionMessagesRequestPartial as _lnrpc_SubscribeOnionMessagesRequestPartial, SubscribeOnionMessagesRequest as _lnrpc_SubscribeOnionMessagesRequest } from '../lnrpc/SubscribeOnionMessagesRequest';
 import type { TransactionPartial as _lnrpc_TransactionPartial, Transaction as _lnrpc_Transaction } from '../lnrpc/Transaction';
 import type { TransactionDetailsPartial as _lnrpc_TransactionDetailsPartial, TransactionDetails as _lnrpc_TransactionDetails } from '../lnrpc/TransactionDetails';
 import type { VerifyChanBackupResponsePartial as _lnrpc_VerifyChanBackupResponsePartial, VerifyChanBackupResponse as _lnrpc_VerifyChanBackupResponse } from '../lnrpc/VerifyChanBackupResponse';
@@ -583,6 +587,15 @@ export interface LightningClient extends grpc.Client {
   sendMany(argument: _lnrpc_SendManyRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_SendManyResponse>): grpc.ClientUnaryCall;
   sendMany(argument: _lnrpc_SendManyRequestPartial, callback: grpc.requestCallback<_lnrpc_SendManyResponse>): grpc.ClientUnaryCall;
   
+  SendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  SendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  SendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  SendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  sendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  sendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  sendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  sendOnionMessage(argument: _lnrpc_SendOnionMessageRequestPartial, callback: grpc.requestCallback<_lnrpc_SendOnionMessageResponse>): grpc.ClientUnaryCall;
+  
   SendPayment(metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientDuplexStream<_lnrpc_SendRequestPartial, _lnrpc_SendResponse>;
   SendPayment(options?: grpc.CallOptions): grpc.ClientDuplexStream<_lnrpc_SendRequestPartial, _lnrpc_SendResponse>;
   sendPayment(metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientDuplexStream<_lnrpc_SendRequestPartial, _lnrpc_SendResponse>;
@@ -653,6 +666,11 @@ export interface LightningClient extends grpc.Client {
   SubscribeInvoices(argument: _lnrpc_InvoiceSubscriptionPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Invoice>;
   subscribeInvoices(argument: _lnrpc_InvoiceSubscriptionPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Invoice>;
   subscribeInvoices(argument: _lnrpc_InvoiceSubscriptionPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Invoice>;
+  
+  SubscribeOnionMessages(argument: _lnrpc_SubscribeOnionMessagesRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_OnionMessageUpdate>;
+  SubscribeOnionMessages(argument: _lnrpc_SubscribeOnionMessagesRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_OnionMessageUpdate>;
+  subscribeOnionMessages(argument: _lnrpc_SubscribeOnionMessagesRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_OnionMessageUpdate>;
+  subscribeOnionMessages(argument: _lnrpc_SubscribeOnionMessagesRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_OnionMessageUpdate>;
   
   SubscribePeerEvents(argument: _lnrpc_PeerEventSubscriptionPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_PeerEvent>;
   SubscribePeerEvents(argument: _lnrpc_PeerEventSubscriptionPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_PeerEvent>;
@@ -807,6 +825,8 @@ export interface LightningHandlers extends grpc.UntypedServiceImplementation {
   
   SendMany: grpc.handleUnaryCall<_lnrpc_SendManyRequest, _lnrpc_SendManyResponsePartial>;
   
+  SendOnionMessage: grpc.handleUnaryCall<_lnrpc_SendOnionMessageRequest, _lnrpc_SendOnionMessageResponsePartial>;
+  
   SendPayment: grpc.handleBidiStreamingCall<_lnrpc_SendRequest, _lnrpc_SendResponsePartial>;
   
   SendPaymentSync: grpc.handleUnaryCall<_lnrpc_SendRequest, _lnrpc_SendResponsePartial>;
@@ -828,6 +848,8 @@ export interface LightningHandlers extends grpc.UntypedServiceImplementation {
   SubscribeCustomMessages: grpc.handleServerStreamingCall<_lnrpc_SubscribeCustomMessagesRequest, _lnrpc_CustomMessagePartial>;
   
   SubscribeInvoices: grpc.handleServerStreamingCall<_lnrpc_InvoiceSubscription, _lnrpc_InvoicePartial>;
+  
+  SubscribeOnionMessages: grpc.handleServerStreamingCall<_lnrpc_SubscribeOnionMessagesRequest, _lnrpc_OnionMessageUpdatePartial>;
   
   SubscribePeerEvents: grpc.handleServerStreamingCall<_lnrpc_PeerEventSubscription, _lnrpc_PeerEventPartial>;
   
@@ -896,6 +918,7 @@ export interface LightningDefinition extends grpc.ServiceDefinition {
   SendCoins: MethodDefinition<_lnrpc_SendCoinsRequestPartial, _lnrpc_SendCoinsResponsePartial, _lnrpc_SendCoinsRequest, _lnrpc_SendCoinsResponse>
   SendCustomMessage: MethodDefinition<_lnrpc_SendCustomMessageRequestPartial, _lnrpc_SendCustomMessageResponsePartial, _lnrpc_SendCustomMessageRequest, _lnrpc_SendCustomMessageResponse>
   SendMany: MethodDefinition<_lnrpc_SendManyRequestPartial, _lnrpc_SendManyResponsePartial, _lnrpc_SendManyRequest, _lnrpc_SendManyResponse>
+  SendOnionMessage: MethodDefinition<_lnrpc_SendOnionMessageRequestPartial, _lnrpc_SendOnionMessageResponsePartial, _lnrpc_SendOnionMessageRequest, _lnrpc_SendOnionMessageResponse>
   SendPayment: MethodDefinition<_lnrpc_SendRequestPartial, _lnrpc_SendResponsePartial, _lnrpc_SendRequest, _lnrpc_SendResponse>
   SendPaymentSync: MethodDefinition<_lnrpc_SendRequestPartial, _lnrpc_SendResponsePartial, _lnrpc_SendRequest, _lnrpc_SendResponse>
   SendToRoute: MethodDefinition<_lnrpc_SendToRouteRequestPartial, _lnrpc_SendResponsePartial, _lnrpc_SendToRouteRequest, _lnrpc_SendResponse>
@@ -907,6 +930,7 @@ export interface LightningDefinition extends grpc.ServiceDefinition {
   SubscribeChannelGraph: MethodDefinition<_lnrpc_GraphTopologySubscriptionPartial, _lnrpc_GraphTopologyUpdatePartial, _lnrpc_GraphTopologySubscription, _lnrpc_GraphTopologyUpdate>
   SubscribeCustomMessages: MethodDefinition<_lnrpc_SubscribeCustomMessagesRequestPartial, _lnrpc_CustomMessagePartial, _lnrpc_SubscribeCustomMessagesRequest, _lnrpc_CustomMessage>
   SubscribeInvoices: MethodDefinition<_lnrpc_InvoiceSubscriptionPartial, _lnrpc_InvoicePartial, _lnrpc_InvoiceSubscription, _lnrpc_Invoice>
+  SubscribeOnionMessages: MethodDefinition<_lnrpc_SubscribeOnionMessagesRequestPartial, _lnrpc_OnionMessageUpdatePartial, _lnrpc_SubscribeOnionMessagesRequest, _lnrpc_OnionMessageUpdate>
   SubscribePeerEvents: MethodDefinition<_lnrpc_PeerEventSubscriptionPartial, _lnrpc_PeerEventPartial, _lnrpc_PeerEventSubscription, _lnrpc_PeerEvent>
   SubscribeTransactions: MethodDefinition<_lnrpc_GetTransactionsRequestPartial, _lnrpc_TransactionPartial, _lnrpc_GetTransactionsRequest, _lnrpc_Transaction>
   UpdateChannelPolicy: MethodDefinition<_lnrpc_PolicyUpdateRequestPartial, _lnrpc_PolicyUpdateResponsePartial, _lnrpc_PolicyUpdateRequest, _lnrpc_PolicyUpdateResponse>

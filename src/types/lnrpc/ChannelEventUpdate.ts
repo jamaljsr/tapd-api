@@ -4,6 +4,7 @@ import type { ChannelPartial as _lnrpc_ChannelPartial, Channel as _lnrpc_Channel
 import type { ChannelCloseSummaryPartial as _lnrpc_ChannelCloseSummaryPartial, ChannelCloseSummary as _lnrpc_ChannelCloseSummary } from '../lnrpc/ChannelCloseSummary';
 import type { ChannelPointPartial as _lnrpc_ChannelPointPartial, ChannelPoint as _lnrpc_ChannelPoint } from '../lnrpc/ChannelPoint';
 import type { PendingUpdatePartial as _lnrpc_PendingUpdatePartial, PendingUpdate as _lnrpc_PendingUpdate } from '../lnrpc/PendingUpdate';
+import type { ChannelCommitUpdatePartial as _lnrpc_ChannelCommitUpdatePartial, ChannelCommitUpdate as _lnrpc_ChannelCommitUpdate } from '../lnrpc/ChannelCommitUpdate';
 
 // Original file: protos/lightning.proto
 
@@ -15,6 +16,7 @@ export const _lnrpc_ChannelEventUpdate_UpdateType = {
   PENDING_OPEN_CHANNEL: 'PENDING_OPEN_CHANNEL',
   FULLY_RESOLVED_CHANNEL: 'FULLY_RESOLVED_CHANNEL',
   CHANNEL_FUNDING_TIMEOUT: 'CHANNEL_FUNDING_TIMEOUT',
+  CHANNEL_UPDATE: 'CHANNEL_UPDATE',
 } as const;
 
 export type _lnrpc_ChannelEventUpdate_UpdateTypePartial =
@@ -32,6 +34,8 @@ export type _lnrpc_ChannelEventUpdate_UpdateTypePartial =
   | 5
   | 'CHANNEL_FUNDING_TIMEOUT'
   | 6
+  | 'CHANNEL_UPDATE'
+  | 7
 
 export type _lnrpc_ChannelEventUpdate_UpdateType = typeof _lnrpc_ChannelEventUpdate_UpdateType[keyof typeof _lnrpc_ChannelEventUpdate_UpdateType]
 
@@ -44,7 +48,8 @@ export interface ChannelEventUpdatePartial {
   'pendingOpenChannel'?: (_lnrpc_PendingUpdatePartial | null);
   'fullyResolvedChannel'?: (_lnrpc_ChannelPointPartial | null);
   'channelFundingTimeout'?: (_lnrpc_ChannelPointPartial | null);
-  'channel'?: "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel"|"channelFundingTimeout";
+  'updatedChannel'?: (_lnrpc_ChannelCommitUpdatePartial | null);
+  'channel'?: "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel"|"channelFundingTimeout"|"updatedChannel";
 }
 
 export interface ChannelEventUpdate {
@@ -56,5 +61,6 @@ export interface ChannelEventUpdate {
   'pendingOpenChannel'?: (_lnrpc_PendingUpdate | null);
   'fullyResolvedChannel'?: (_lnrpc_ChannelPoint | null);
   'channelFundingTimeout'?: (_lnrpc_ChannelPoint | null);
-  'channel': "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel"|"channelFundingTimeout";
+  'updatedChannel'?: (_lnrpc_ChannelCommitUpdate | null);
+  'channel': "openChannel"|"closedChannel"|"activeChannel"|"inactiveChannel"|"pendingOpenChannel"|"fullyResolvedChannel"|"channelFundingTimeout"|"updatedChannel";
 }
