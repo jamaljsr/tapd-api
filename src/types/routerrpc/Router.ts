@@ -8,6 +8,8 @@ import type { BuildRouteRequestPartial as _routerrpc_BuildRouteRequestPartial, B
 import type { BuildRouteResponsePartial as _routerrpc_BuildRouteResponsePartial, BuildRouteResponse as _routerrpc_BuildRouteResponse } from '../routerrpc/BuildRouteResponse';
 import type { DeleteAliasesRequestPartial as _routerrpc_DeleteAliasesRequestPartial, DeleteAliasesRequest as _routerrpc_DeleteAliasesRequest } from '../routerrpc/DeleteAliasesRequest';
 import type { DeleteAliasesResponsePartial as _routerrpc_DeleteAliasesResponsePartial, DeleteAliasesResponse as _routerrpc_DeleteAliasesResponse } from '../routerrpc/DeleteAliasesResponse';
+import type { DeleteForwardingHistoryRequestPartial as _routerrpc_DeleteForwardingHistoryRequestPartial, DeleteForwardingHistoryRequest as _routerrpc_DeleteForwardingHistoryRequest } from '../routerrpc/DeleteForwardingHistoryRequest';
+import type { DeleteForwardingHistoryResponsePartial as _routerrpc_DeleteForwardingHistoryResponsePartial, DeleteForwardingHistoryResponse as _routerrpc_DeleteForwardingHistoryResponse } from '../routerrpc/DeleteForwardingHistoryResponse';
 import type { FindBaseAliasRequestPartial as _routerrpc_FindBaseAliasRequestPartial, FindBaseAliasRequest as _routerrpc_FindBaseAliasRequest } from '../routerrpc/FindBaseAliasRequest';
 import type { FindBaseAliasResponsePartial as _routerrpc_FindBaseAliasResponsePartial, FindBaseAliasResponse as _routerrpc_FindBaseAliasResponse } from '../routerrpc/FindBaseAliasResponse';
 import type { ForwardHtlcInterceptRequestPartial as _routerrpc_ForwardHtlcInterceptRequestPartial, ForwardHtlcInterceptRequest as _routerrpc_ForwardHtlcInterceptRequest } from '../routerrpc/ForwardHtlcInterceptRequest';
@@ -48,6 +50,15 @@ export interface RouterClient extends grpc.Client {
   buildRoute(argument: _routerrpc_BuildRouteRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_BuildRouteResponse>): grpc.ClientUnaryCall;
   buildRoute(argument: _routerrpc_BuildRouteRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_BuildRouteResponse>): grpc.ClientUnaryCall;
   buildRoute(argument: _routerrpc_BuildRouteRequestPartial, callback: grpc.requestCallback<_routerrpc_BuildRouteResponse>): grpc.ClientUnaryCall;
+  
+  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
   
   EstimateRouteFee(argument: _routerrpc_RouteFeeRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_RouteFeeResponse>): grpc.ClientUnaryCall;
   EstimateRouteFee(argument: _routerrpc_RouteFeeRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_RouteFeeResponse>): grpc.ClientUnaryCall;
@@ -206,6 +217,8 @@ export interface RouterClient extends grpc.Client {
 export interface RouterHandlers extends grpc.UntypedServiceImplementation {
   BuildRoute: grpc.handleUnaryCall<_routerrpc_BuildRouteRequest, _routerrpc_BuildRouteResponsePartial>;
   
+  DeleteForwardingHistory: grpc.handleUnaryCall<_routerrpc_DeleteForwardingHistoryRequest, _routerrpc_DeleteForwardingHistoryResponsePartial>;
+  
   EstimateRouteFee: grpc.handleUnaryCall<_routerrpc_RouteFeeRequest, _routerrpc_RouteFeeResponsePartial>;
   
   GetMissionControlConfig: grpc.handleUnaryCall<_routerrpc_GetMissionControlConfigRequest, _routerrpc_GetMissionControlConfigResponsePartial>;
@@ -250,6 +263,7 @@ export interface RouterHandlers extends grpc.UntypedServiceImplementation {
 
 export interface RouterDefinition extends grpc.ServiceDefinition {
   BuildRoute: MethodDefinition<_routerrpc_BuildRouteRequestPartial, _routerrpc_BuildRouteResponsePartial, _routerrpc_BuildRouteRequest, _routerrpc_BuildRouteResponse>
+  DeleteForwardingHistory: MethodDefinition<_routerrpc_DeleteForwardingHistoryRequestPartial, _routerrpc_DeleteForwardingHistoryResponsePartial, _routerrpc_DeleteForwardingHistoryRequest, _routerrpc_DeleteForwardingHistoryResponse>
   EstimateRouteFee: MethodDefinition<_routerrpc_RouteFeeRequestPartial, _routerrpc_RouteFeeResponsePartial, _routerrpc_RouteFeeRequest, _routerrpc_RouteFeeResponse>
   GetMissionControlConfig: MethodDefinition<_routerrpc_GetMissionControlConfigRequestPartial, _routerrpc_GetMissionControlConfigResponsePartial, _routerrpc_GetMissionControlConfigRequest, _routerrpc_GetMissionControlConfigResponse>
   HtlcInterceptor: MethodDefinition<_routerrpc_ForwardHtlcInterceptResponsePartial, _routerrpc_ForwardHtlcInterceptRequestPartial, _routerrpc_ForwardHtlcInterceptResponse, _routerrpc_ForwardHtlcInterceptRequest>

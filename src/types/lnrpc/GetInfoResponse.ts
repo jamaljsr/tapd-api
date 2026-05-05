@@ -2,6 +2,7 @@
 
 import type { ChainPartial as _lnrpc_ChainPartial, Chain as _lnrpc_Chain } from '../lnrpc/Chain';
 import type { FeaturePartial as _lnrpc_FeaturePartial, Feature as _lnrpc_Feature } from '../lnrpc/Feature';
+import type { GraphCacheStatusPartial as _lnrpc_GraphCacheStatusPartial, GraphCacheStatus as _lnrpc_GraphCacheStatus } from '../lnrpc/GraphCacheStatus';
 import type { Long } from '@grpc/proto-loader';
 
 export interface GetInfoResponsePartial {
@@ -25,6 +26,8 @@ export interface GetInfoResponsePartial {
   'commitHash'?: (string);
   'requireHtlcInterceptor'?: (boolean);
   'storeFinalHtlcResolutions'?: (boolean);
+  'walletSynced'?: (boolean);
+  'graphCacheStatus'?: (_lnrpc_GraphCacheStatusPartial);
 }
 
 export interface GetInfoResponse {
@@ -48,4 +51,6 @@ export interface GetInfoResponse {
   'commitHash': (string);
   'requireHtlcInterceptor': (boolean);
   'storeFinalHtlcResolutions': (boolean);
+  'walletSynced': (boolean);
+  'graphCacheStatus': (_lnrpc_GraphCacheStatus);
 }

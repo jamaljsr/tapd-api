@@ -8,6 +8,8 @@ export * from './ChanStatusAction';
 export * from './CircuitKey';
 export * from './DeleteAliasesRequest';
 export * from './DeleteAliasesResponse';
+export * from './DeleteForwardingHistoryRequest';
+export * from './DeleteForwardingHistoryResponse';
 export * from './FailureDetail';
 export * from './FinalHtlcEvent';
 export * from './FindBaseAliasRequest';

@@ -47,6 +47,7 @@ export interface ProtoGrpcType {
     ChannelBalanceResponse: MessageTypeDefinition
     ChannelCloseSummary: MessageTypeDefinition
     ChannelCloseUpdate: MessageTypeDefinition
+    ChannelCommitUpdate: MessageTypeDefinition
     ChannelConstraints: MessageTypeDefinition
     ChannelEdge: MessageTypeDefinition
     ChannelEdgeUpdate: MessageTypeDefinition
@@ -111,6 +112,7 @@ export interface ProtoGrpcType {
     GetRecoveryInfoRequest: MessageTypeDefinition
     GetRecoveryInfoResponse: MessageTypeDefinition
     GetTransactionsRequest: MessageTypeDefinition
+    GraphCacheStatus: EnumTypeDefinition
     GraphTopologySubscription: MessageTypeDefinition
     GraphTopologyUpdate: MessageTypeDefinition
     HTLC: MessageTypeDefinition
@@ -167,6 +169,7 @@ export interface ProtoGrpcType {
     NodeMetricsResponse: MessageTypeDefinition
     NodePair: MessageTypeDefinition
     NodeUpdate: MessageTypeDefinition
+    OnionMessageUpdate: MessageTypeDefinition
     Op: MessageTypeDefinition
     OpenChannelRequest: MessageTypeDefinition
     OpenStatusUpdate: MessageTypeDefinition
@@ -209,6 +212,8 @@ export interface ProtoGrpcType {
     SendCustomMessageResponse: MessageTypeDefinition
     SendManyRequest: MessageTypeDefinition
     SendManyResponse: MessageTypeDefinition
+    SendOnionMessageRequest: MessageTypeDefinition
+    SendOnionMessageResponse: MessageTypeDefinition
     SendRequest: MessageTypeDefinition
     SendResponse: MessageTypeDefinition
     SendToRouteRequest: MessageTypeDefinition
@@ -219,6 +224,7 @@ export interface ProtoGrpcType {
     StopResponse: MessageTypeDefinition
     StreamAuth: MessageTypeDefinition
     SubscribeCustomMessagesRequest: MessageTypeDefinition
+    SubscribeOnionMessagesRequest: MessageTypeDefinition
     TimestampedError: MessageTypeDefinition
     Transaction: MessageTypeDefinition
     TransactionDetails: MessageTypeDefinition
@@ -268,6 +274,8 @@ export interface ProtoGrpcType {
     CircuitKey: MessageTypeDefinition
     DeleteAliasesRequest: MessageTypeDefinition
     DeleteAliasesResponse: MessageTypeDefinition
+    DeleteForwardingHistoryRequest: MessageTypeDefinition
+    DeleteForwardingHistoryResponse: MessageTypeDefinition
     FailureDetail: EnumTypeDefinition
     FinalHtlcEvent: MessageTypeDefinition
     FindBaseAliasRequest: MessageTypeDefinition
